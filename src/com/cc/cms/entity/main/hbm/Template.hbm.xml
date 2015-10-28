@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cc.cms.entity.main">
+	<class name="Template" table="cms_template">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="java.lang.Integer" column="TEMPLATE_ID" ><generator class="native" /></id>
+		<property name="name" type="java.lang.String" column="NAME" length="100" not-null="true" />
+		<property name="resPath" type="java.lang.String" column="RES_PATH" length="200" not-null="true" />
+		<property name="imgPath" type="java.lang.String" column="IMG_PATH" length="200" />
+		<property name="version" type="java.lang.String" column="version" length="50" />
+		<property name="author" type="java.lang.String" column="author" length="100" />
+		<property name="description" type="java.lang.String" column="description" length="1000" />
+		<property name="priority" type="java.lang.Integer" column="PRIORITY" />
+		<property name="isDisabled" type="java.lang.Boolean" column="IS_DISABLED" />
+		<property name="createTime" type="java.util.Date" column="CREATE_TIME" length="23" />
+	</class>
+</hibernate-mapping>

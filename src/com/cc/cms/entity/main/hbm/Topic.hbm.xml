@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cc.cms.entity.main">
+	<class name="Topic" table="cms_topic">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="java.lang.Integer" column="topic_id"><generator class="native"/></id>
+		<property name="name" column="name" type="string" not-null="true" length="150"/>
+		<property name="shortName" column="short_name" type="string" not-null="false" length="150"/>
+		<property name="keywords" column="keywords" type="string" not-null="false" length="255"/>
+		<property name="description" column="description" type="string" not-null="false" length="255"/>
+		<property name="titleImg" column="title_img" type="string" not-null="false" length="100"/>
+		<property name="contentImg" column="content_img" type="string" not-null="false" length="100"/>
+		<property name="createTime" column="create_time" type="java.util.Date" length="23" />
+		<property name="priority" column="priority" type="integer" not-null="true" length="10"/>
+		<property name="disabled" column="is_disabled" type="java.lang.Boolean" />
+		<property name="recommend" column="is_recommend" type="java.lang.Boolean" />
+		<many-to-one name="site" column="site_id" class="Site" not-null="true"></many-to-one>
+		<many-to-one name="user" column="user_id" class="User" not-null="true"></many-to-one>
+		<many-to-one name="template" column="template_id" class="Template" not-null="false" lazy="false" ></many-to-one>
+		<many-to-one name="channel" column="channel_id" class="Channel" not-null="false" lazy="false"></many-to-one>
+	</class>
+	<sql-query name="Topic.deleteContentRef">
+		delete from cms_content_topic where topic_id=?
+	</sql-query>
+</hibernate-mapping>

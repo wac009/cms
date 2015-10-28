@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cc.cms.entity.main">
+	<class name="UserSite" table="cms_user_site">
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Integer" column="usersite_id"><generator class="native"/></id>
+		<property name="checkStep" column="check_step" type="java.lang.Byte" not-null="true" length="3"/>
+		<property name="allChannel" column="is_all_channel" type="java.lang.Boolean" not-null="true"/>
+		<many-to-one name="user" column="user_id" class="User" not-null="true"></many-to-one>
+		<many-to-one name="site" column="site_id" class="Site" not-null="true"></many-to-one>
+	</class>
+</hibernate-mapping>

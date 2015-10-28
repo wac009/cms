@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cc.cms.entity.main">
+	<class name="Channel" table="cms_channel" dynamic-update="true">
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Integer" column="channel_id"><generator class="native"/></id>
+		<property name="path" column="path" type="string" not-null="false" length="30"/>
+		<property name="lft" column="lft" type="integer" not-null="true" length="10"/>
+		<property name="rgt" column="rgt" type="integer" not-null="true" length="10"/>
+		<property name="priority" column="priority" type="java.lang.Integer" not-null="true" length="10"/>
+		<one-to-one name="ext" class="ChannelExt" cascade="delete" lazy="false"/>
+		<one-to-one name="channelTxt" class="ChannelTxt" cascade="delete" lazy="false"/>
+		<many-to-one name="site" column="site_id" class="Site" not-null="true"></many-to-one>
+		<many-to-one name="model" column="model_id" class="Model" not-null="true"></many-to-one>
+		<many-to-one name="parent" column="parent_id" class="Channel" not-null="false"></many-to-one>
+		<set name="child" inverse="true" cascade="delete" lazy="false" sort="com.cc.common.orm.PriorityComparator">
+			<cache usage="read-write"/>
+			<key column="parent_id"/>
+			<one-to-many class="Channel"/>
+		</set>
+		<set name="viewGroups" table="cms_chnl_group_view" sort="com.cc.common.orm.PriorityComparator" lazy="false">
+			<cache usage="read-write"/>
+			<key column="channel_id"/>
+			<many-to-many column="group_id" class="Group"/>
+		</set>
+		<set name="contriGroups" table="cms_chnl_group_contri" sort="com.cc.common.orm.PriorityComparator" lazy="false">
+			<cache usage="read-write"/>
+			<key column="channel_id"/>
+			<many-to-many column="group_id" class="Group"/>
+		</set>
+		<set name="users" table="cms_channel_user" lazy="false">
+			<cache usage="read-write"/>
+			<key column="channel_id"/>
+			<many-to-many column="user_id" class="User"/>
+		</set>
+		<map name="attr" table="cms_channel_attr" cascade="all-delete-orphan">
+			<cache usage="read-write"/>
+			<key column="channel_id" not-null="true"/>
+			<map-key column="attr_name" type="string" length="30"/>
+			<element column="attr_value" type="string" length="255"/>
+		</map>
+	</class>
+</hibernate-mapping>

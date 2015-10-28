@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cc.cms.entity.main">
+	<class name="User" table="cms_user">
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Integer" column="user_id"><generator class="assigned"/></id>
+		<property name="username" column="username" type="string" not-null="true" length="100"/>
+		<property name="email" column="email" type="string" not-null="false" length="100"/>
+		<property name="registerTime" column="register_time" type="java.util.Date" not-null="true" length="19"/>
+		<property name="registerIp" column="register_ip" type="string" not-null="true" length="50"/>
+		<property name="lastLoginTime" column="last_login_time" type="java.util.Date" not-null="false" length="19"/>
+		<property name="lastLoginIp" column="last_login_ip" type="string" not-null="false" length="50"/>
+		<property name="currentLoginTime" column="current_login_time" type="java.util.Date" not-null="false" length="19"/>
+		<property name="currentLoginIp" column="current_login_ip" type="string" not-null="false" length="50"/>
+		<property name="loginCount" column="login_count" type="integer" not-null="true" length="10"/>
+		<property name="rank" column="rank" type="integer" not-null="true" length="10"/>
+		<property name="uploadTotal" column="upload_total" type="java.lang.Long" not-null="true" length="19"/>
+		<property name="uploadSize" column="upload_size" type="integer" not-null="true" length="10"/>
+		<property name="uploadDate" column="upload_date" type="java.util.Date" not-null="false" length="19"/>
+		<property name="admin" column="is_admin" type="java.lang.Boolean" not-null="true"/>
+		<property name="viewonlyAdmin" column="is_viewonly" type="java.lang.Boolean" not-null="true"/>
+		<property name="selfAdmin" column="is_selfonly" type="java.lang.Boolean" not-null="true"/>
+		<property name="disabled" column="is_disabled" type="java.lang.Boolean" not-null="true"/>
+		<property name="delete" column="is_delete" type="java.lang.Boolean" not-null="true"/>
+		<many-to-one name="group" column="group_id" class="Group" not-null="true"></many-to-one>
+		<one-to-one name="ext" class="UserExt" cascade="delete" lazy="false"/>
+		<set name="userSites" inverse="true" cascade="delete">
+			<key column="user_id"/>
+			<one-to-many class="UserSite"/>
+		</set>
+		<set name="roles" table="cms_user_role" lazy="false">
+			<key column="user_id"/>
+			<many-to-many column="role_id" class="Role"/>
+		</set>
+		<set name="channels" table="cms_channel_user"  lazy="false">
+			<cache usage="read-write"/>
+			<key column="user_id"/>
+			<many-to-many column="channel_id" class="Channel"/>
+		</set>
+		<set name="collectContents" table="cms_user_collection">
+			<key column="user_id"/>
+			<many-to-many column="content_id" class="Content"/>
+		</set>
+		<set name="sendMessages" inverse="true" cascade="delete">
+			<key column="msg_send_user"/>
+			<one-to-many class="com.cc.cms.entity.assist.Message"/>
+		</set>
+		<set name="receivMessages" inverse="true" cascade="delete">
+			<key column="msg_receiver_user"/>
+			<one-to-many class="com.cc.cms.entity.assist.Message"/>
+		</set>
+		<set name="sendReceiverMessages" inverse="true" cascade="delete">
+			<key column="msg_send_user"/>
+			<one-to-many class="com.cc.cms.entity.assist.ReceiverMessage"/>
+		</set>
+		<set name="receivReceiverMessages" inverse="true" cascade="delete">
+			<key column="msg_receiver_user"/>
+			<one-to-many class="com.cc.cms.entity.assist.ReceiverMessage"/>
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cc.cms.entity.main">
+	<class name="Content" table="cms_content">
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Integer" column="content_id"><generator class="native"/></id>
+		<property name="sortDate" column="sort_date" type="java.util.Date" not-null="true" length="19"/>
+		<property name="topLevel" column="top_level" type="java.lang.Byte" not-null="true" length="10"/>
+		<property name="hasTitleImg" column="has_title_img" type="java.lang.Boolean" not-null="true"/>
+		<property name="recommend" column="is_recommend" type="java.lang.Boolean" not-null="true"/>
+		<property name="comment" column="is_comment" type="java.lang.Boolean" />
+		<property name="acquisition" column="is_acquisition" type="java.lang.Boolean" />
+		<property name="priority" column="priority" type="integer" not-null="true" length="10"/>
+		<property name="status" column="status" type="java.lang.Byte" not-null="true" length="10"/>
+		<property name="viewsDay" column="views_day" type="integer" not-null="true" length="10"/>
+		<property name="commentsDay" column="comments_day" type="java.lang.Short" not-null="true" length="5"/>
+		<property name="downloadsDay" column="downloads_day" type="java.lang.Short" not-null="true" length="5"/>
+		<property name="upsDay" column="ups_day" type="java.lang.Short" not-null="true" length="5"/>
+		<one-to-one name="contentExt" class="ContentExt" cascade="delete" lazy="false"/>
+		<one-to-one name="contentCount" class="ContentCount" cascade="delete" lazy="false"/>
+		<one-to-one name="contentTxt" class="ContentTxt" cascade="delete" lazy="false"/>
+		<one-to-one name="contentCheck" class="ContentCheck" cascade="delete" lazy="false"/>
+		<many-to-one name="contentType" class="ContentType" column="type_id" not-null="false" lazy="false" />
+		<many-to-one name="site" column="site_id" class="Site" not-null="true" lazy="false"></many-to-one>
+		<many-to-one name="user" column="user_id" class="User" not-null="false" lazy="false"></many-to-one>
+		<many-to-one name="channel" column="channel_id" class="Channel" not-null="false" lazy="false"></many-to-one>
+		<set name="channels" table="cms_content_channel" lazy="false">
+			<key column="content_id"/>
+			<many-to-many column="channel_id" class="Channel"/>
+		</set>
+		<set name="topics" table="cms_content_topic" lazy="false">
+			<key column="content_id"/>
+			<many-to-many column="topic_id" class="Topic"/>
+		</set>
+		<set name="viewGroups" table="cms_content_group_view" lazy="false">
+			<cache usage="read-write"/>
+			<key column="content_id"/>
+			<many-to-many column="group_id" class="Group"/>
+		</set>
+		<set name="collectUsers" table="cms_user_collection" lazy="false">
+			<key column="content_id"/>
+			<many-to-many column="user_id" class="User"/>
+		</set>
+		<list name="tags" table="cms_contenttag" lazy="false" >
+			<cache usage="read-write"/>
+			<key column="content_id"/>
+			<list-index column="priority"/>
+			<many-to-many column="tag_id" class="ContentTag"/>
+		</list>
+		<list name="pictures" table="cms_content_picture" lazy="false">
+			<cache usage="read-write"/>
+			<key column="content_id"/>
+			<list-index column="priority"/>
+			<composite-element class="ContentPicture">
+				<property name="imgPath" column="img_path" type="string" length="100" not-null="true"/>
+				<property name="description" column="description" type="string" length="255" not-null="false"/>
+			</composite-element>
+		</list>
+		<list name="attachments" table="cms_content_attachment" lazy="false">
+			<cache usage="read-write"/>
+			<key column="content_id"/>
+			<list-index column="priority"/>
+			<composite-element class="ContentAttachment">
+				<property name="path" column="attachment_path" type="string" length="255" not-null="true"/>
+				<property name="name" column="attachment_name" type="string" length="100" not-null="true"/>
+				<property name="filename" column="filename" type="string" length="100" not-null="false"/>
+				<property name="count" column="download_count" type="java.lang.Integer" length="10" not-null="true"/>
+			</composite-element>
+		</list>
+		<map name="attr" table="cms_content_attr" cascade="all-delete-orphan">
+			<cache usage="read-write"/>
+			<key column="content_id" not-null="true"/>
+			<map-key column="attr_name" type="string" length="30"/>
+			<element column="attr_value" type="string" length="255"/>
+		</map>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.cc.cms.entity.main.Periodical" table="cms_periodical">
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Integer">
+			<column name="PERIODICAL_ID" />
+			<generator class="native" />
+		</id>
+		<property name="year" type="java.lang.String">
+			<column name="YEAR" length="10" />
+		</property>
+		<property name="yearPeriod" type="java.lang.Integer">
+			<column name="YEAR_PERIOD" />
+		</property>
+		<property name="totalPeriod" type="java.lang.Integer">
+			<column name="TOTAL_PERIOD" />
+		</property>
+		<property name="imgPath" type="java.lang.String">
+			<column name="IMG_PATH" />
+		</property>
+		<property name="description" type="java.lang.String">
+			<column name="DESCRIPTION" />
+		</property>
+		<property name="disabled" type="java.lang.Boolean">
+			<column name="IS_DISABLED" />
+		</property>
+		<property name="current" type="java.lang.Boolean">
+			<column name="Is_Current" />
+		</property>
+		<property name="lock" type="java.lang.Boolean">
+			<column name="IS_LOCK" />
+		</property>
+		<property name="addTime" type="java.util.Date">
+			<column name="ADD_TIME" length="23" />
+		</property>
+		<property name="priority" type="java.lang.Integer">
+			<column name="PRIORITY" />
+		</property>
+		<many-to-one name="publication" class="com.cc.cms.entity.main.Publication" fetch="select">
+			<column name="PUBLICATION_ID" not-null="true" />
+		</many-to-one>
+		<component name="attachment" class="com.cc.cms.entity.main.PeriodicalAttachment">
+			<property name="path" column="attachment_path" type="string" length="255" not-null="true"/>
+			<property name="name" column="attachment_name" type="string" length="100" not-null="true"/>
+			<property name="filename" column="filename" type="string" length="100" not-null="false"/>
+			<property name="count" column="download_count" type="java.lang.Integer" length="10" not-null="true"/>
+		</component>
+	</class>
+</hibernate-mapping>

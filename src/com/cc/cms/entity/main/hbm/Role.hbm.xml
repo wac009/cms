@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cc.cms.entity.main">
+	<class name="Role" table="cms_role">
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write"/>
+		<id name="id" type="integer" column="role_id"><generator class="native"/></id>
+		<property name="name" column="role_name" type="string" not-null="true" length="100"/>
+		<property name="description" column="description" type="string" not-null="true" length="100"/>
+		<property name="priority" column="priority" type="java.lang.Integer" not-null="true" />
+		<property name="super" column="is_super" type="java.lang.Boolean" not-null="true"/>
+		<set name="permissions" table="cms_role_permission" >
+			<key column="role_id" not-null="true" />
+			<many-to-many class="Permission" column="permission_id"  />
+		</set>
+		<set name="sites" table="cms_role_site" lazy="false">
+			<key column="role_id" not-null="true" />
+			<many-to-many class="Site" column="site_id"  />
+		</set>
+		<set name="users" table="cms_user_role" lazy="false">
+			<key column="role_id" not-null="true" />
+			<many-to-many class="User" column="user_id" />
+		</set>
+	</class>
+</hibernate-mapping>

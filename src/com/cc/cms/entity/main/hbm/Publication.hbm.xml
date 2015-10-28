@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cc.cms.entity.main.Publication" table="cms_publication">
+    	<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write"/>
+        <id name="id" type="java.lang.Integer">
+            <column name="PUBLICATION_ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="enName" type="java.lang.String">
+            <column name="EN_NAME" />
+        </property>
+        <property name="path" type="java.lang.String">
+            <column name="path" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="imgPath" type="java.lang.String">
+            <column name="IMG_PATH" />
+        </property>
+        <property name="priority" type="java.lang.Integer">
+            <column name="PRIORITY" />
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME" length="23" />
+        </property>
+        <property name="addTime" type="java.util.Date">
+            <column name="ADD_TIME" length="23" />
+        </property>
+        <property name="disabled" type="java.lang.Boolean">
+            <column name="IS_DISABLED" />
+        </property>
+        <many-to-one name="website" class="com.cc.cms.entity.main.Site" fetch="select">
+            <column name="SITE_ID" />
+        </many-to-one>
+        <many-to-one name="type" class="com.cc.cms.entity.main.PublicationType" fetch="select">
+            <column name="TYPE_ID" />
+        </many-to-one>
+        <set name="periodicals" order-by="priority desc" sort="com.cc.common.orm.PriorityComparator">
+            <key>
+                <column name="PUBLICATION_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.cc.cms.entity.main.Periodical" />
+        </set>
+    </class>
+</hibernate-mapping>

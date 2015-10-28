@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cc.cms.entity.main">
+	<class name="Permission" table="cms_permission">
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write" />
+		<id name="id" type="java.lang.Integer" column="permission_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="java.lang.String" column="name" length="100" />
+		<property name="url" type="java.lang.String" column="url" length="200" />
+		<property name="lft" type="java.lang.Integer" column="lft" not-null="true" />
+		<property name="rgt" type="java.lang.Integer" column="rgt" not-null="true" />
+		<property name="funcs" type="java.lang.String" column="funcs" length="1000" />
+		<property name="description" type="java.lang.String" column="description" length="250" />
+		<property name="priority" type="java.lang.Integer" column="priority" not-null="true" />
+		<property name="isMenu" type="java.lang.Boolean" column="is_menu" not-null="true" />
+		<property name="isQuick" type="java.lang.Boolean" column="is_quick" not-null="true" />
+		<many-to-one name="parent" column="parent_id" class="Permission"  lazy="false"></many-to-one>
+		<set name="child"  inverse="true" order-by="priority asc" lazy="false" sort="com.cc.common.orm.PriorityComparator">
+			<cache usage="read-write" />
+			<key column="parent_id" />
+			<one-to-many class="Permission" />
+		</set>
+		<set name="roles" table="cms_role_permission" lazy="false" >
+			<key column="permission_id" not-null="true" />
+			<many-to-many class="Role" column="role_id" />
+		</set>
+	</class>
+</hibernate-mapping>
