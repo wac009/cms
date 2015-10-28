@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false"> 
+	<contextName>cncacms2</contextName> 
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="R" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	    <File>cnca_log.txt</File>
+	    <encoder>
+	      <pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] [%c] [%p] - %m%n</pattern>
+	    </encoder>
+	    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+	      <maxIndex>1</maxIndex>
+	      <FileNamePattern>cnca_log.txt.%i</FileNamePattern>
+	    </rollingPolicy>
+	    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+	      <MaxFileSize>200KB</MaxFileSize>
+	    </triggeringPolicy>
+	</appender>
+	<logger name="com.cc">
+		<level value="DEBUG" />
+	</logger>
+	<logger name="org.slf4j.Logger">
+		<level value="DEBUG" />
+	</logger>
+	<logger name="org.springframework">
+		<level value="WARN" />
+	</logger>
+	<logger name="org.hibernate">
+		<level value="WARN" />
+	</logger>
+	<logger name="org.apache.struts2">
+		<level value="WARN" />
+	</logger>
+	<logger name="com.opensymphony.xwork2">
+		<level value="WARN" />
+	</logger>
+	<root level="INFO" >
+		<appender-ref ref="stdout" />
+		<appender-ref ref="R" />
+	</root>
+</configuration>
+
