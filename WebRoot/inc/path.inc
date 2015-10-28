@@ -5,8 +5,8 @@
   String baseMngPath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/manage/";
   String filePath = request.getRequestURI();
   
-  String r_c ="/res/c";
-  String r_m="/res/m";
-  String r_f ="/res/w";
-  String r_t ="/res/t";
+  String r_c ="/resource/common";
+  String r_m="/resource/manage";
+  String r_f ="/resource/w";
+  String r_t ="/resource/template";
 %>
