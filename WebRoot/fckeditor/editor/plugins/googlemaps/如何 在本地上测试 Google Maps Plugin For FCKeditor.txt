@@ -1,0 +1,51 @@
+
+如何 在本地上测试 Google Maps Plugin For FCKeditor
+
+Author: Lajox ; Email: lajox@19www.com
+
+================================================
+
+本地上测试 Google Maps Plugin For FCKeditor：
+
+========
+方法1：
+
+用http://localhost 登陆本地站点
+
+修改 fckeditor/fckconfig.js
+配置修改  FCKConfig.GoogleMaps_Key ='' ; //Google Maps API (Google Maps Key)
+GoogleMaps_Key值设定为：ABQIAAAAlXu5Pw6DFAUgqM2wQn01gxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSy5hTGQdsosYD3dz6faZHVrO-02A
+即： FCKConfig.GoogleMaps_Key ='ABQIAAAAlXu5Pw6DFAUgqM2wQn01gxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSy5hTGQdsosYD3dz6faZHVrO-02A' ;
+
+注：localhost 的 Google Maps API:  ABQIAAAAlXu5Pw6DFAUgqM2wQn01gxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSy5hTGQdsosYD3dz6faZHVrO-02A 
+
+--------------
+方法2：
+
+用记事本打开 C:\WINDOWS\system32\drivers\etc\hosts 
+最后一行 添加  127.0.0.1 www.newzz.fr.cr
+ 其中 www.newzz.fr.cr 为您的网站地址
+
+用 127.0.0.1 打开本地 blog。
+登陆 后台 进行blog设置，修改URL路径 http://www.newzz.fr.cr
+注销 再重新登陆，就变成登陆地址www.newzz.fr.cr
+
+修改 fckeditor/fckconfig.js
+配置修改  FCKConfig.GoogleMaps_Key ='' ; //Google Maps API (Google Maps Key)
+把GoogleMaps_Key值设定为 您申请的 网站的Google Maps API。 
+
+最后：
+用记事本打开 C:\WINDOWS\system32\drivers\etc\hosts
+删除这行  127.0.0.1 www.newzz.fr.cr
+
+
+附加（如果尚未申请 您网站的Google Maps API，可用以下代替 ）：
+
+localhost  Google Maps API:   ABQIAAAAlXu5Pw6DFAUgqM2wQn01gxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSy5hTGQdsosYD3dz6faZHVrO-02A 
+www.newzz.fr.cr  Google Maps API:   ABQIAAAAo9Kzikr1N2BHcyLj6jAIxRRQkciLVXRZBaA2q4KL-8zC0Ik2HxTRVhF4TtDlIHLWcdlTD0kIlEMkKA
+www.19www.com  Google Maps API:   ABQIAAAAo9Kzikr1N2BHcyLj6jAIxRTGW4sHfKBROq8u6GOkfdZ9vGJ4CRT0iPdGudCl9vkJsbd5J-QbtZzXsw
+
+=====================================================
+
+
+

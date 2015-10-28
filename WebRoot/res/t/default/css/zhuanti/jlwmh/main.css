@@ -1,0 +1,67 @@
+
+body{margin:0;	padding:0;	text-align:center;font-size:14px;}
+#container{	  width:1000px;	  margin:0 auto;	  background-color:#FFF;	  text-align:left;	  }
+
+
+	  #header{background-color:#FFF; width:1000px; height:192px;}
+	       #banner{ background: url(../../../img/zhuanti/jlwmh/banner.jpg) no-repeat; width:1000px; height:160px;}
+		   #navi{ background:url(../../../img/zhuanti/jlwmh/title-t.jpg) repeat-x;width:950px;height:27px; padding-left:50px;}
+	       #navi a{width:105px;float:left;text-decoration:none; font-size:15px; font-family: "黑体"; color:#FFF; padding-top:5px;}
+		   #navi a:hover{ color: #000}
+		   
+		   
+	   .guanhuai-dongtai{width:290px; height:300px;background-color:#FFF; margin-top:5px; float:left; border:#CCC 1px solid;}
+	       .guanhuai-dongtai .title{width:290px; height:26px; background: url(../../../img/zhuanti/jlwmh/title-l.jpg) no-repeat;}
+		           .guanhuai-dongtai .title .tt{ width:100px; height:30px; font-family:"黑体";font-size:15px; color:#FFF; float:left; padding-top:5px; padding-left:20px; font:bold; float:left; font-weight:500}
+				   .guanhuai-dongtai .title .more{float:right; margin-right:15px; margin-top:6px;}
+				   .guanhuai-dongtai .title .more a{color:#000; font-size:12px; font:"宋体"; margin-top:5px;}
+				   .guanhuai-dongtai .title .more a:hover{ color:#C00}
+		   .guanhuai-dongtai .list{width:290px;float:left; background-color:#FFF; padding-top:7px;}
+		           .guanhuai-dongtai .list ul{ margin:0; padding:0;}
+				   .guanhuai-dongtai .list ul li{ list-style:none; width:280px; height:28px; float:left; background: url(../../../img/zhuanti/jlwmh/fh2.jpg) no-repeat; background-position:10px 3px;}
+				   .guanhuai-dongtai .list ul li a{text-decoration:none; font:"宋体";color:#000; overflow:hidden; font-size:12px; margin-left:30px;}
+				   .guanhuai-dongtai .list ul li a:hover{ color:#C00}	   
+   
+	   
+	   .content{width:328px; height:300px;background-color:#FFF; margin-top:5px; float:left; border:#CCC 1px solid;}
+	       .content .title{width:328px; height:26px; background: url(../../../img/zhuanti/jlwmh/title-l.jpg) no-repeat;}
+		           .content .title .tt{ width:200px; height:30px; font-family:"黑体";font-size:15px; color:#FFF; float:left; padding-top:5px; padding-left:20px; font:bold;}
+				   .content .title .more{margin-top:6px; float:right; margin-right:15px;}
+				   .content .title .more a{text-decoration:none; color:#000; font-size:12px; font:"宋体";}
+				   .content .title .more a:hover{ color:#C00}
+		   .content .list{width:328px; height:230px;float:left; background-color:#FFF; padding-top:7px;}
+		           .content .list ul{ margin:0; padding:0;}
+				   .content .list ul li{ list-style:none; width:310px; height:28px; float:left; background: url(../../../img/zhuanti/jlwmh/fh2.jpg) no-repeat; background-position:10px 3px;}
+				   .content .list ul li a{text-decoration:none; font:"宋体";color:#000; overflow:hidden; font-size:12px; margin-left:30px;}
+				   .content .list ul li a:hover{ color:#C00}
+
+
+			.content-right{width:328px; height:300px;background-color:#FFF; margin-top:5px; float:left; border:#CCC 1px solid; margin-left:5px;}
+					   .content-right .title{width:328px; height:26px; background: url(../../../img/zhuanti/jlwmh/title-l.jpg) no-repeat;}
+							   .content-right .title .tt{ width:200px; height:30px; font-family:"黑体";font-size:15px; color:#FFF; float:left; padding-top:5px; padding-left:20px; font:bold;}
+							   .content-right .title .more{margin-top:6px; float:right; margin-right:15px;}
+							   .content-right .title .more a{text-decoration:none; color:#000; font-size:12px; font:"宋体";}
+							   .content-right .title .more a:hover{ color:#C00}
+					   .content-right .list{width:328px; height:230px;float:left; background-color:#FFF; padding-top:7px;}
+							   .content-right .list ul{ margin:0; padding:0;}
+							   .content-right .list ul li{ list-style:none; width:310px; height:28px; float:left; background: url(../../../img/zhuanti/jlwmh/fh2.jpg) no-repeat; background-position:10px 3px;}
+							   .content-right .list ul li a{text-decoration:none; font:"宋体";color:#000; overflow:hidden; font-size:12px; margin-left:30px;}
+							   .content-right .list ul li a:hover{ color:#C00}
+		 
+		 
+#liangdian{ width:998px; height:160px; border:#CCC 1px solid; float:left; margin-top:5px;}
+#liangdian .title{ width:100px; height:168; float:left; padding:5px 0 0 10px;}
+#liangdian .ldlist{padding:10px;overflow: hidden;}
+#liangdian img{width:160;height:140px;}
+		
+.time {float: right;}		
+#flash{width:395px; height:293px;background-color:#FFF; margin:5px 5px 0 5px; float:left; border:#CCC 1px solid; padding:5px 2px 2px 6px}
+#flash a{ margin-left:18px;}
+
+	   
+#footer{clear:both;float:left; background-color:#FFF;width:1000px;height:50px;margin-top:30px;font-size:12px;
+	        font:"宋体"; text-align:center;line-height:20px;border-top: #C00 2px solid;padding-top:20px;} 
+	        
+	        
+	        
+	        

@@ -1,0 +1,11 @@
+<!--banner-->
+	<div id="banner"></div>
+    <!--导航-->
+    <div id="navi">
+    	[@cms_channel_list]
+     		<dt class="menu_first"><a href="${base}/" target="_self" [#if !channel??]class="selected"[/#if]><span>网站首页</span></a></dt>
+         	[#list tag_list as c]
+				<dt><a href="${c.url}" target="_blank" [#if channel??&&channel.id==c.id] class="selected" [/#if]><span>${c.name}</span></a></dt>
+			[/#list]
+         [/@cms_channel_list]
+    </div>

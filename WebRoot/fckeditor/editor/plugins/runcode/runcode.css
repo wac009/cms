@@ -1,0 +1,34 @@
+﻿.Bold {
+font-weight: bold;
+}
+.Title {
+font-weight: bold;
+font-size: 18px;
+color: #c30;
+}
+.codeHead {
+font-weight: bold;
+font-size: 12px;
+padding: 5px;
+padding-left: 15px;
+background: #fff;
+border-bottom: 1px solid #ddd;
+}
+.codeText {
+border: 1px solid #ddd;
+/*width: 620px;*/
+overflow: auto;
+margin: 0 0 1.1em;
+padding: 0;
+word-break: break-all;
+background: #fff;
+font: 12px 'Courier New', Monospace;
+}
+
+.codebutton {
+	background: url('bg_button.png') repeat-x;
+	border: 1px solid #99CC66;
+	color: #517928;
+	font-family: Verdana, Arial, Tahoma, 宋体;
+	font-size: 9pt;
+}

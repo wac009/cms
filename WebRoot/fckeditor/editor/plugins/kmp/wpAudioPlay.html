@@ -1,0 +1,142 @@
+﻿<!----
+/*********************************************************************************************************/
+/**
+ * FCKeditor KMP (Flash MP3 Player: AudioPlayer) Plugin For Fckeditor (Support: Lajox ; Email: lajox@19www.com)
+ */
+/*********************************************************************************************************/
+----->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Insert Audio Play Properties</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="hiswing" content="noindex, nofollow" />
+		<script type="text/javascript" src="../../dialog/common/fck_dialog_common.js"></script>
+		<link href="../../dialog/common/fck_dialog_common.css" type="text/css" rel="stylesheet">
+		<script src="wpAudioPlay.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		function change(k,s){
+		var inp;
+		inp=s;
+		inp=inp.replace("0x","");
+		inp="#"+inp;
+		document.getElementById(k).style.background=inp;
+		}
+		</script>
+	</head>
+	<body scroll="no" style="overflow: hidden">
+<div id="divInfo">
+ <table width="100%" border="0">
+  <tr>
+    <td><span fckLang="DlgKMPMusicURL">Music URL</span></td>
+  </tr>
+  <tr>
+    <td><span style="vertical-align: top;">
+      <input type="text" id="txtUrl" style="width:280px;"/>
+    </span>
+	<span id="spanBrowse" style="display: block" rowspan="2">
+    <input id="btnBrowse" onclick="BrowseServer();" type="button" value="Browse Server" fckLang="DlgBtnBrowseServer" />
+    </span>
+	</td>
+  </tr>
+  <tr>
+    <td><hr></td>
+  </tr>
+  <tr>
+    <td>
+    <span fckLang="DlgKMPMusicTitle">Music Title</span>
+    <input name="musicTitle" type="text" id="musicTitle" size="35" /><br>
+    <span fckLang="DlgKMPMusicArtist">Music Artist</span>
+    <input name="musicArtist" type="text" id="musicArtist" size="35" />
+	</td>
+  </tr>
+  <tr>
+    <td><hr></td>
+  </tr>
+  <tr>
+    <td><span fckLang="DlgKMPPlayerControl">Player Controls:</span></td>
+  </tr>
+  <tr>
+    <td>
+	<span fckLang="DlgKMPChkAutoStart">AutoStart</span><input id="autoStart" type="checkbox" >&nbsp;&nbsp;&nbsp;&nbsp;
+	<span fckLang="DlgKMPChkLoop">Loop</span><input id="loop" type="checkbox" >&nbsp;&nbsp;&nbsp;&nbsp;
+	<span fckLang="DlgKMPChkAlwayOpen">AlwayOpen</span><input id="alwayOpen" type="checkbox" ></td>
+  </tr>
+  <tr>
+    <td><span fckLang="DlgKMPWidth">Width</span> &nbsp;<input name="PlayerWidth" type="text" id="PlayerWidth" size="4" value="290" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span fckLang="DlgKMPHeight">Height</span> &nbsp;<input name="PlayerHeight" type="text" id="PlayerHeight" size="4" value="24" /></td>
+  </tr>
+  <tr>
+    <td>
+	<table cellspacing="0" cellpadding="0" width="380" align="center" border="0">
+	<tr>
+    <td height="50" width="15%"><input type="button" value="Preview" fckLang="DlgKMPPreview" onclick="makepreview();"></td>
+	<td height="50" width="85%">&nbsp;<span id="previewing"></span></td>
+	</tr>
+	</table>
+	</td>
+  </tr>
+</table>
+ </div>
+<div id="divAdvanced" style="DISPLAY: none">
+ <TABLE cellSpacing="0" cellPadding="0" border="0" width="385">
+ <TBODY>
+  <tr width=width="385">
+    <td><span fckLang="DlgKMPOtherControl">Other Controls:</span></td>
+  </tr>
+   <tr>
+    <td><img src="Analysis.jpg" border="0"/></td>
+  </tr>
+   <tr>
+    <td height="10"></td>
+  </tr>
+  <tr>
+    <td>
+ <table cellspacing="0" cellpadding="0" width="384" align="center" border="0">
+    <tbody>
+        <tr width="100%">
+            <td width="30%" align="right"><span fckLang="Dlg_leftbg" width="65%">Left background:</span>&nbsp;&nbsp;&nbsp;</td>
+            <td width="20%"><input  type="text" id="leftbg" size="8" value="0x49BEFB" style="background:#49BEFB;" onchange="change('leftbg',this.value)";/><a href="#" onclick="SelectColor1();" style="font-size:14pt; text-decoration:none; color:#000000;">■</a></td>
+            <td width="30%" align="right"><span fckLang="Dlg_lefticon">Left icon:</span>&nbsp;&nbsp;&nbsp;</td>
+            <td width="20%"><input  type="text" id="lefticon" size="8" value="0xFFFFFF" style="background:#FFFFFF;" onchange="change('lefticon',this.value)"/><a href="#" onclick="SelectColor2();" style="font-size:14pt; text-decoration:none; color:#000000;">■</a></td>
+        </tr>
+        <tr>
+            <td align="right"><span fckLang="Dlg_text">Text:</span>&nbsp;&nbsp;&nbsp;</td>
+            <td><input  type="text" id="text" size="8" value="0x333333" style="background:#333333;" onchange="change('text',this.value)"/><a href="#" onclick="SelectColor3();"  style="font-size:14pt; text-decoration:none; color:#000000;">■</a></td>
+            <td align="right"><span fckLang="Dlg_loader">Loder bar:</span>&nbsp;&nbsp;&nbsp;</td>
+            <td><input  type="text" id="loader" size="8" value="0xCCEE00" style="background:#CCEE00;"/ onchange="change('loader',this.value)"><a href="#" onclick="SelectColor4();" style="font-size:14pt; text-decoration:none; color:#000000;">■</a></td>
+        </tr>
+        <tr>
+            <td align="right"><span fckLang="Dlg_bg">Background:</span>&nbsp;&nbsp;&nbsp;</td>
+            <td><input  type="text" id="bg" size="8" value="0xCDDFF3" style="background:#CDDFF3;"/ onchange="change('bg',this.value)"><a href="#" onclick="SelectColor5();"  style="font-size:14pt; text-decoration:none; color:#000000;">■</a></td>
+            <td align="right"><span fckLang="Dlg_slider">Slider:</span>&nbsp;&nbsp;&nbsp;</td>
+            <td><input  type="text" id="slider" size="8" value="0x666666" style="background:#666666;"/ onchange="change('slider',this.value)"><a href="#" onclick="SelectColor6();"  style="font-size:14pt; text-decoration:none; color:#000000;">■</a></td>
+        </tr>
+        <tr>
+            <td align="right"><span fckLang="Dlg_track">Track:</span>&nbsp;&nbsp;&nbsp;</td>
+            <td><input  type="text" id="track" size="8" value="0xFFFFFF" style="background:#FFFFFF;"/ onchange="change('track',this.value)"><a href="#" onclick="SelectColor7();"  style="font-size:14pt; text-decoration:none; color:#000000;">■</a></td>
+            <td align="right"><span fckLang="Dlg_rightbg">Right background:</span>&nbsp;&nbsp;&nbsp;</td>
+            <td><input  type="text" id="rightbg" size="8" 	value="0xFF8500" style="background:#FF8500;" onchange="change('rightbg',this.value)"><a href="#" onclick="SelectColor8();"  style="font-size:14pt; text-decoration:none; color:#000000;">■</a></td>
+        </tr>
+        <tr>
+            <td align="right"><span fckLang="Dlg_rightbghover">Right background hover:</span>&nbsp;&nbsp;&nbsp;</td>
+            <td><input  type="text" id="rightbghover" size="8"value="0xA5D200" style="background:#A5D200;" onchange="change('rightbghover',this.value)"><a href="#" onclick="SelectColor9();"  style="font-size:14pt; text-decoration:none; color:#000000;">■</a></td>
+            <td align="right"><span fckLang="Dlg_righticon">Right icon:</span>&nbsp;&nbsp;&nbsp;</td>
+            <td><input  type="text" id="righticon" size="8" value="0xFFFFFF" style="background:#FFFFFF;" onchange="change('righticon',this.value)"/><a href="#" onclick="SelectColor10();"  style="font-size:14pt; text-decoration:none; color:#000000;">■</a></td>
+        </tr>
+        <tr>
+            <td align="right"><span fckLang="Dlg_righticonhover">Right icon hover:</span>&nbsp;&nbsp;&nbsp;</td>
+            <td><input  type="text" id="righticonhover" size="8" value="0x2E8B57" style="background:#2E8B57;" onchange="change('righticonhover',this.value)"/><a href="#" onclick="SelectColor11();"  style="font-size:14pt; text-decoration:none; color:#000000;">■</a></td>
+            <td align="right"><span fckLang="Dlg_border">Border:</span>&nbsp;&nbsp;&nbsp;</td>
+            <td><input  type="text" id="border" size="8" value="0xFFFFFF" style="background:#FFFFFF;" onchange="change('border',this.value)"/><a href="#" onclick="SelectColor12();"  style="font-size:14pt; text-decoration:none; color:#000000;">■</a></td>
+        </tr>
+		</tbody>
+</table>
+	</td>
+  </tr>
+		 </TBODY>
+			</TABLE>
+ </div>
+	</body>
+</html>

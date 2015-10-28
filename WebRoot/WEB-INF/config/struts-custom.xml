@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="struts-web" abstract="true" extends="struts-core">
+		<!--自定义result-type <result-types> <result-type name="pageCache" class="com.cc.cms.PageCacheResult" 
+			/> </result-types> -->
+		<!--自定义全局返回参数 -->
+		<global-results>
+			<result name="indexPage" type="redirect">/</result>
+			<result name="redirect" type="redirect">${redirectUrl}</result>
+			<result name="login">/WEB-INF/manage/login.jsp</result>
+			<result name="timeout">/WEB-INF/manage/timeout.jsp</result>
+			<result name="successPage">/WEB-INF/result/success.jsp</result>
+			<result name="warningPage">/WEB-INF/result/warning.jsp</result>
+			<result name="errorPage">/WEB-INF/result/error.jsp</result>
+			<result name="errorPageLeft">/WEB-INF/result/errorLeft.jsp</result>
+
+			<result name="websiteClosed">/website_closed.html</result>
+			<result name="websiteNotFound">/website_not_found.html</result>
+		</global-results>
+	</package>
+	<package name="struts-ajax" abstract="true" extends="ajax-default">
+		<!--自定义result-type -->
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult">
+				<param name="jsonRoot">jsonRoot</param>
+			</result-type>
+		</result-types>
+		<!--自定义全局返回参数 -->
+		<global-results>
+			<result name="json" type="json">
+				<!--root 从返回结果中根据ognl表达式取出你需要输出的结果 -->
+				<param name="root">jsonRoot</param>
+				<!-- 输出结果中需要包含的属性值，这里正则表达式和属性名匹配，可以用“,”分割填充多个正则表达式 -->
+				<param name="includeProperties">
+				</param>
+				<!-- 输出结果需要剔除的属性值，也支持正则表达式匹配属性名，可以用“,”分割填充多个正则表达式 -->
+				<param name="excludeProperties ">
+				</param>
+				<!-- 表示是否去掉空值， 默认值是false，如果设置为true会自动将为空的值过滤，只输出不为空的值 -->
+				<param name="excludeNullProperties">
+				</param>
+				<!-- 表示是否忽略等级，也就是继承关系，比如：TestAction继承于BaseAction，那么TestAction中返回的json字符串默认是不会包含父类BaseAction的属性值，ignoreHierarchy值默认为true，设置为false后会将父类和子类的属性一起返回 -->
+				<param name="ignoreHierarchy">
+					false
+				</param>
+			</result>
+			<result name="ajaxjson">/WEB-INF/result/ajaxjson.jsp		</result>
+			<result name="jsonstring">/WEB-INF/result/jsonstring.jsp	</result>
+		</global-results>
+	</package>
+	<package name="struts-inde" abstract="true" extends="inde-default">
+	</package>
+</struts>

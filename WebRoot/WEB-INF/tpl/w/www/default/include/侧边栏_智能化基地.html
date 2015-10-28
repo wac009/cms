@@ -1,0 +1,36 @@
+
+<div class="w245 fr">
+   <div class="right_top">
+     <h2>文件下载</h2>
+   </div>
+   <div class="right_div">
+     <div class="w98  mt5 h158">
+     	[@cms_content_list count='6' titLen='15' channelOption='2' channelId='334' append='...']
+       <ul class="order">
+         [#list tag_list as d]
+         <li><a href="${d.url}" title="${d.title?replace('<br/>','')}" target="_blank">[@text_cut s=d.title?replace('<br/>','') len=titLen append=append/]</a></li>
+         [/#list]
+       </ul>
+       [/@cms_content_list]
+     </div>
+   </div>
+</div>
+
+<div class="w245 fr mt5">
+   <div class="right_top">
+     <h2>养老政策</h2>
+   </div>
+   <div class="right_div">
+     		<div class="w98 mt5 h253 list">
+                 <div class="text">
+                          <ul>
+                             [@cms_content_list count='10' titLen='15' channelOption='2' channelId='6' append='...']
+						          [#list tag_list as a]
+						          	<li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+								  [/#list]
+						         [/@cms_content_list]
+                          </ul>
+                 </div>
+             </div>
+   </div>
+</div>

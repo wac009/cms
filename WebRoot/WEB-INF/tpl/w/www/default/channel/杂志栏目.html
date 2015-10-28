@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${channel.title!channel.name} - ${site.name}</title>
+<meta http-equiv="keywords" content="${channel.keywords!}"/>
+<meta http-equiv="description" content="${channel.description!}"/>
+[#include "default/include/head_res.inc"/]
+</head>
+
+<body>
+[#include "default/include/页头顶栏.html"/]
+<div id="container">
+[#include "default/include/页头导航栏.html"/]
+[#include "default/include/页头滚动栏.html"/]
+
+<div id="content">
+	<div class="mt3 fl">
+		<div class="position"> 您现在正在浏览： <a href="${base}/">首页</a> &raquo; [#list channel.nodeList as n]<a href="${n.url}" target="_blank">${n.name}</a>[#if n_has_next] &raquo; [/#if][/#list]</div>
+		<div class="mt5">
+			<!-- 内容列表开始 -->
+					<div class="fl left_div" style="width:998px;min-height:600px;padding: 50px 0;">
+						<!-- 
+						<div >
+							<img src="${resTpl}/img/qikan/jcck.jpg" style="width:460px;float:left;"/>
+							<img src="${resTpl}/img/qikan/hzbd.jpg" style="width:460px;float:left;"/>
+						</div>
+						 -->
+						<div >
+							<div style="float:left;width:330px;text-align: center;">
+								<img src="${resTpl}/img/qikan/qk1.jpg" style="margin-bottom: 20px;"/>
+								<a href="http://old.cncaprc.gov.cn:8080/yuqing/2013/5/index.jsp" target="_blank" ><img src="${resTpl}/img/read.jpg" /></a>
+							</div>
+							<div style="float:left;width:330px;text-align: center;">
+								<img src="${resTpl}/img/qikan/qk2.jpg" style="margin-bottom: 20px;"/>
+								<a href="http://old.cncaprc.gov.cn:8080/jcck/2013/5/index.jsp" target="_blank" ><img src="${resTpl}/img/read.jpg" /></a>
+							</div>
+							<div style="float:left;width:330px;text-align: center;">
+								<img src="${resTpl}/img/qikan/qk3.jpg" style="margin-bottom: 20px;"/>
+								<a href="http://old.cncaprc.gov.cn:8080/hzbd/2013/5/index.jsp" target="_blank" ><img src="${resTpl}/img/read.jpg" /></a>
+							</div>
+						</div>
+			  </div>
+			  <!-- 内容列表结束 -->
+			</div>
+	</div>
+</div>
+[#include "default/include/页脚信息栏.html"/]
+</div>
+</body>
+</html>

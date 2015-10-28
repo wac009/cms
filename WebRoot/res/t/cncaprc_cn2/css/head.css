@@ -1,0 +1,26 @@
+/*----------------------------------------
+Name: head.css
+Developed by: 王成
+Copyright: 全国老龄办信息中心
+----------------------------------------*/
+
+@charset "utf-8";
+
+#header{width:100%;margin-top:10px;}
+
+#top{width:1000px;height:68px;margin:0 auto;}
+#top .logo{ float:left;}
+#top .date{ float:left;width:160px;height:30px;line-height:30px;margin-top:33px;}
+#top .weather{float:left;width:150px;height:30px;line-height:30px;margin-top:33px;}
+#top .func{float:right;width:350px;height:68px;margin-top:5p;}
+#top .func .f_link{width:350px;height:25px;line-height:25px;float:right;}
+#top .func .f_link .homepage{display:inline-block;margin-right:45px;float:left;}
+#top .func .f_link img{margin:0 3px;float:left;}
+#top .func .f_search{width:350px;float:right;margin-top:3px;}
+#top .func .f_search .intxt{width:300px;height:26px;border:1px solid #CCC;float:left;margin-right:2px;}
+#top .func .f_search .btn{border:none;width:46px;height:27px; background-image:url(../img/b_search.jpg);float:left;}
+
+#navi{width:100%;height:60px; background-color:#3267B7;}
+#navi .c{width:1000px;margin:0 auto;}
+#navi a{width:52px;float:left; color:#FFF; font-size:15px; text-decoration:none; margin:8px 0 5px 0; text-align:center;}
+#navi a.father{font-weight:bold;}

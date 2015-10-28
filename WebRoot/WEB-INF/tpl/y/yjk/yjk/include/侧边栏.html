@@ -1,0 +1,32 @@
+<div class="w245 fr">
+   <div class="right_top">
+     <h2>协会活动</h2>
+   </div>
+   <div class="right_div">
+     <!--图片_Begin-->
+     <div class="w98 ml10 h253">
+     	[@cms_content_list count='4' titLen='7' channelOption='0' channelId='15' append='...']
+       <ul class="list right_pic ">
+         [#list tag_list as d]
+         <li><a href="${d.url}" target="_blank"><img src="${d.titleImg!site.defImg}" alt="${d.title?replace('<br/>','')}" /></a><a href="${d.url}" title="${d.title?replace('<br/>','')}" target="_blank">[@text_cut s=d.title?replace('<br/>','') len=titLen append=append/]</a></li>
+         [/#list]
+       </ul>
+       [/@cms_content_list]
+     </div>
+     <!--图片_End-->
+     <!--热门资讯排行_Begin-->
+     <h2>热点排行</h2>
+     <div class="w98 h253">
+       <ul class="order">
+         [@cms_content_list count='10' titLen='14' orderBy='9' channelOption='1' append='...']
+         [#list tag_list as a]
+         <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+         [/#list]
+         [/@cms_content_list]
+       </ul>
+     </div>
+     <!--热门资讯排行_End-->
+   </div>
+   <div class="right_low"></div>
+   <!--相关文章_End-->
+</div>

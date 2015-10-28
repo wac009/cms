@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>投票结果 - ${site.name}</title>
+[#include "../include/head_res.inc"/]
+</head>
+
+<body>
+[#include "../include/页头顶栏.html"/]
+<div id="container">
+[#include "../include/页头导航栏.html"/]
+[#include "../include/页头滚动栏.html"/]
+
+<div id="content">
+	<div class="mt3 fl">
+		<div class="position"> 您现在正在浏览： <a href="${base}/">首页</a>&raquo; 投票结果</div>
+			<div class="mt5">
+				<!-- 内容列表开始 -->
+				<div class="w750 fl">
+				    <div class="left_top">
+				      <h2>投票结果</h2>
+				    </div>
+				    <div class="left_div w748">
+						<div class="w96" style="min-height:800px;">
+						 [#if status?? && status!=0]
+							<div class="prompt">
+							  <dl>
+								<dt></dt>
+								<dd class="msg">
+								  [#if status==1]
+									投票ID不能为空
+								  [#elseif status==2]
+									投票项不能为空  
+								  [#elseif status==100]
+									投票主题不存在
+								  [#elseif status==101]
+									投票项不合法
+								  [#elseif status==501]
+									需要登录才能投票
+								  [#elseif status==200]
+									投票主题已经关闭
+								  [#elseif status==201]
+									投票的选项个数大于允许的个数
+								  [#elseif status==202]
+									投票还没有开始
+								  [#elseif status==203]
+									投票已经结束
+								  [#elseif status==204]
+									您已经投过票了，请勿重复投票！<!--，同一会员不能重复投票-->
+								  [#elseif status==205]
+									您已经投过票，请勿重复投票！了<!--，，同一IP不能重复投票-->
+								  [#elseif status==206]
+									您已经投过票了，请勿重复投票！<!--，，同一COOKIE不能重复投票-->
+								  [#else]
+									投票失败  
+								  [/#if]
+								</dd>
+							  </dl>
+							</div>
+						 
+						   [#else]
+						    <div class="search_msg">
+								投票主题：<span class="red">${vote.title?html}</span>， 总票数：<span class="red">${vote.totalCount}</span>
+							</div>
+							<table width="650" border="0" align="center" cellpadding="0" cellspacing="0">
+							[#list vote.items as item]
+				              <tr>
+				                <td width="30" height="30" align="center" bgcolor="#F9F9F9">${item_index+1}、</td>
+				                <td width="620" bgcolor="#F9F9F9">${item.title?html} - (${item.voteCount}票)</td>
+				              </tr>
+				              <tr>
+				                <td height="30">&nbsp;</td>
+				                <td>
+								<img src="${resTpl}/img/vote/vote_bar.gif" width="${item.percent}%" height="10px" border="0"/> ${item.percent}%
+								</td>
+				              </tr>
+							  [/#list]
+				          </table>
+						   [/#if]
+						</div>
+				    </div>
+				  </div>
+				  <!-- 内容列表结束 -->
+				  [#include "../include/侧边栏.html"/]
+			</div>
+	</div>
+</div>
+[#include "../include/页脚信息栏.html"/]
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>	
+	<!--核心struts配置-->
+	<package name="struts-core" abstract="true" extends="struts-default">
+		<interceptors>
+			<!--IP地址拦截器-->
+			<interceptor name="ip" class="com.cc.common.struts2.interceptor.RemoteAddrInterceptor"></interceptor>
+            <!--URL 拦截器-->
+            <interceptor name="url" class="com.cc.common.struts2.interceptor.UrlInterceptor" />
+            <!--域名 拦截器-->
+            <interceptor name="domain" class="com.cc.common.struts2.interceptor.DomainNameInterceptor" />
+			<!--请求执行开始时间拦截器-->
+            <interceptor name="startTime" class="com.cc.common.struts2.interceptor.ProcessingStartInterceptor" />
+			<!--浏览器cookie识别 拦截器-->
+            <interceptor name="cookieIdentity" class="com.cc.cms.interceptor.CookieIdentityInterceptor" />
+            <!--用户权限控制 拦截器-->
+            <interceptor name="UAC" class="com.cc.core.interceptor.UserAccessControlInterceptor" />
+			<!--基本栈-->
+			<interceptor-stack name="simpleStack">
+				<interceptor-ref name="fileUpload"/>
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError"/>
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+					<param name="alwaysInvokeValidate">false</param>
+				</interceptor-ref>
+			</interceptor-stack>
+			<!--普通栈-->
+			<interceptor-stack name="commonStack">
+				<interceptor-ref name="startTime"/>
+				<interceptor-ref name="exception">
+					<param name="logEnabled">true</param>
+					<param name="logLevel">warn</param>
+				</interceptor-ref>
+				<interceptor-ref name="domain"/>
+				<interceptor-ref name="simpleStack"/>
+			</interceptor-stack>
+			<!--上传栈-->
+			<interceptor-stack name="uploadStack">
+				<interceptor-ref name="startTime"/>
+				<interceptor-ref name="exception">
+					<param name="logEnabled">true</param>
+					<param name="logLevel">warn</param>
+				</interceptor-ref>
+				<interceptor-ref name="domain"/>
+				<interceptor-ref name="fileUpload">
+					<!--
+						<param name="allowedTypes">
+							 image/bmp,image/png,image/gif,image/jpeg,image/pjpeg,application/x-shockwave-flash,text/css,text/js,text/javascript
+						</param>
+						-->
+				</interceptor-ref>
+				<interceptor-ref name="simpleStack"/>
+			</interceptor-stack>
+			<!--AJAX栈-->
+			<interceptor-stack name="ajaxStack">
+				<interceptor-ref name="startTime"/>
+				<interceptor-ref name="exception">
+					<param name="logEnabled">true</param>
+					<param name="logLevel">warn</param>
+				</interceptor-ref>
+				<interceptor-ref name="domain"/>
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError"/>
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">
+						input,back,cancel,browse
+					</param>
+				</interceptor-ref>
+			</interceptor-stack>
+			<!--标签栈-->
+			<interceptor-stack name="tagStack">
+				<interceptor-ref name="startTime"/>
+				<interceptor-ref name="exception">
+					<param name="logEnabled">true</param>
+					<param name="logLevel">warn</param>
+				</interceptor-ref>
+				<interceptor-ref name="url"/>
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*</param>
+				</interceptor-ref>
+			</interceptor-stack>
+			<!--独立页面栈-->
+			<interceptor-stack name="indeStack">
+				<interceptor-ref name="startTime"/>
+				<interceptor-ref name="exception">
+					<param name="logEnabled">true</param>
+					<param name="logLevel">warn</param>
+				</interceptor-ref>
+				<interceptor-ref name="domain"/>
+				<interceptor-ref name="cookieIdentity"/>
+				<interceptor-ref name="url"/>
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError"/>
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">
+						input,back,cancel,browse
+					</param>
+				</interceptor-ref>
+			</interceptor-stack>
+			<!--空栈-->
+			<interceptor-stack name="emptyStack">
+				<interceptor-ref name="exception"/>
+			</interceptor-stack>
+			
+			<!--begin 自定义拦截器栈-->
+			 <!--权限控制器栈-->
+            <interceptor-stack name="UACStack">
+				<interceptor-ref name="commonStack"></interceptor-ref>
+				<interceptor-ref name="UAC"></interceptor-ref>
+			</interceptor-stack>
+			<!--end 自定义拦截器栈-->
+			
+		</interceptors>
+		<default-interceptor-ref name="commonStack" />
+	</package>
+	<package name="upload-default" abstract="true" extends="struts-core">
+		<default-interceptor-ref name="uploadStack" />
+	</package>
+	<package name="empty-default" abstract="true" extends="struts-core">
+		<default-interceptor-ref name="emptyStack" />
+	</package>
+	<package name="ajax-default" abstract="true" extends="struts-core">
+		<default-interceptor-ref name="ajaxStack" />
+	</package>
+	<package name="tag-default" abstract="true" extends="struts-core">
+		<default-interceptor-ref name="tagStack" />
+	</package>
+	<package name="inde-default" abstract="true" extends="struts-core">
+		<default-interceptor-ref name="indeStack" />
+	</package>
+</struts>

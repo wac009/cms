@@ -1,0 +1,21 @@
+<div id="head" class="fl">
+	<!--导航-->
+    <div id="navi" class="fl">
+    	<ul>
+        	[@cms_channel_list]
+	     		<li ><a href="${base}/" target="_self" [#if !channel??]class="selected"[/#if]><span>网站首页</span></a></li>
+	         	[#list tag_list as c]
+					<li><a href="${c.url}" target="_self" [#if channel??&&channel.id==c.id] class="selected" [/#if]><span>${c.name}</span></a></li>
+				[/#list]
+	         [/@cms_channel_list]
+        </ul>
+    </div>        
+</div>
+<!--公司简介-->
+<div id="jianjie" class="fl">
+    <div class="text fl">
+        <div class="title">机构简介</div>
+        <div class="content">全国老龄办信息中心健康科技研究所和北京中民康健科技有限公司是全国老龄办信息中心（中国老龄协会老年人才信息中心）于2013年2月成立的新机构。研究所拥有多名全国资深的营养学专家和中医专家，与农科院、中国中医研究院和中科院合作，主要承担中老年健康用品的研发。研究范围包括药品、保健品、营养品和信息化产品，已经在多领域取得了明显的成果。</div>
+    </div>
+    <div class="pic fl"><img src="${resTpl}/img/jianjie.gif" /></div>
+</div>

@@ -1,0 +1,72 @@
+
+
+Google Maps Plugin for Bo-Blog 的 FCKeditor编辑器
+
+================================================================================================
+说明：
+
+ 由于 Bo-Blog 和 FCKeditor 兼容不是很完全的原因，
+  如果要Bo-Blog 的 FCKeditor编辑器能够正常使用 Google Maps Plugin，需要修改 Bo-Blog代码：
+
+请手动修改 global.php 和 inc/ubb.php 文件：
+
+1. 在global.php文件内容中查找：function safe_convert 这个函数。
+
+把以下内容：
+
+function safe_convert($string, $html=0, $filterslash=0) { //Words Filter
+	if ($html==0) {
+		$string=htmlspecialchars($string, ENT_QUOTES);
+		$string=str_replace("<","&lt;",$string);
+		$string=str_replace(">","&gt;",$string);
+		if ($filterslash==1) $string=str_replace("\\", '&#92;', $string);
+	} else {
+		$string=addslashes($string);
+		if ($filterslash==1) $string=str_replace("\\\\", '&#92;', $string);
+	}
+	$string=str_replace("\r","<br/>",$string);
+	$string=str_replace("\n","",$string);
+	$string=str_replace("\t","&nbsp;&nbsp;",$string);
+	$string=str_replace("  ","&nbsp;&nbsp;",$string);
+	$string=str_replace('|', '&#124;', $string);
+	$string=str_replace("&amp;#96;","&#96;",$string);
+	$string=str_replace("&amp;#92;","&#92;",$string);
+	$string=str_replace("&amp;#91;","&#91;",$string);
+	$string=str_replace("&amp;#93;","&#93;",$string);
+	return $string;
+}
+
+替换成以下内容：
+
+function safe_convert($string, $html=0, $filterslash=0) { //Words Filter
+	if ($html==0) {
+		$string=htmlspecialchars($string, ENT_QUOTES);
+		$string=str_replace("<","&lt;",$string);
+		$string=str_replace(">","&gt;",$string);
+		//if ($filterslash==1) $string=str_replace("\\", '&#92;', $string);
+	} else {
+		$string=addslashes($string);
+		//if ($filterslash==1) $string=str_replace("\\\\", '&#92;', $string);
+	}
+	$string=str_replace("\r","<br/>",$string);
+	//$string=str_replace("\n","",$string);
+	//$string=str_replace("\t","&nbsp;&nbsp;",$string);
+	//$string=str_replace("  ","&nbsp;&nbsp;",$string);
+	$string=str_replace('|', '&#124;', $string);
+	$string=str_replace("&amp;#96;","&#96;",$string);
+	$string=str_replace("&amp;#92;","&#92;",$string);
+	$string=str_replace("&amp;#91;","&#91;",$string);
+	$string=str_replace("&amp;#93;","&#93;",$string);
+	
+	return $string;
+}
+
+2. 在ubb.php文件内容中查找：function safe_convert 这个函数。
+
+查找：
+	$str=str_replace(array('{','}'), array('&#123;', '&#125;'), $str);
+
+替换成：
+	//$str=str_replace(array('{','}'), array('&#123;', '&#125;'), $str); //此行注释掉
+
+

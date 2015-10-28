@@ -1,0 +1,126 @@
+/*----------------------------------------
+Name: front.css
+Developed by: 王成
+Copyright: 全国老龄办信息中心
+----------------------------------------*/
+
+@charset "utf-8";
+
+@import url(fonts.css);
+@import url(common.css);
+@import url(head.css);
+@import url(footer.css);
+
+
+#container{width:966px;}
+#content{width:956px;background:#FFF;padding-left:15px;}
+
+
+#shipin{width:230px;height:300px;}
+#shipin .title{background:url(../img/title_sp.jpg) left top no-repeat;width:200px;height:38px;}
+#shipin .focus{width:200px;height:185px;}
+#shipin .focus img{ width:200px;height:150px;padding:1px; border:1px solid #CCC;}
+#shipin .focus .sub{width:200px;line-height:25px; text-align:center;font-size:14px;}
+#shipin .list{width:220px;height:50px;}
+#shipin .list ul li{ background:url(../img/style_li.jpg) left center no-repeat;line-height:25px;padding-left:15px;width:200px; overflow:hidden;}
+
+#center{width:450px;height:300px;}
+#gonggao{width:450px;height:100px;float:left;}
+#gonggao .title{background:url(../img/title_gg.jpg) left top no-repeat;width:140px;height:38px; float:left;}
+#gonggao .tit{width:300px;height:38px;line-height:38px; overflow:hidden; float:left;}
+#gonggao .sub{width:440px;height:60px; text-indent:24px;line-height:20px; padding:0 5px;}
+
+
+#dongtai{width:450px;height:200px;float:left;margin-top:5px;}
+#dongtai .title{background:url(../img/title_dt.jpg) left top no-repeat;width:200px;height:38px;}
+#dongtai .list{width:450px;height:140px;}
+#dongtai .list ul li{ background:url(../img/style_li.jpg) left center no-repeat;line-height:25px;padding-left:15px;width:450px; overflow:hidden;}
+
+
+#gongwen{width:260px;height:300px;float:left;}
+#gongwen .title{background:url(../img/title_wj.jpg) left top no-repeat;width:200px;height:38px;}
+#gongwen .list{width:260px;height:250px;}
+#gongwen .list ul li{ background:url(../img/style_li.jpg) left center no-repeat;line-height:25px;padding-left:15px;width:260px; overflow:hidden;}
+
+
+#huodong{width:914px;height:100px;padding:10px; border:1px solid #CCC;}
+#huodong .list ul li{float:left;width:182px;}
+#huodong .list ul li img{width:144px;height:97px;}
+
+
+#hezuo{width:926px;height:120px; background:url(../img/title_hz.jpg) left top no-repeat;padding-left:10px;padding-top:5px;}
+#hezuo .list ul li{float:left;}
+
+
+/*----------------------------------------
+二级、三级页面
+-----------------------------------------*/
+#content .c{width:934px;border:1px solid #ccc;border-top: 5px solid #E5DCD3;min-height:500px;}
+#content .title{widht:100px;height:35px;line-height:35px;border-bottom: 2px solid #E5DCD3;font-size:14px;font-weight: bold;padding:0 30px 0 15px;color:#999;}
+#content .txt{line-height:1.8em; font-size:14px; color:#000; margin-top:5px;min-height:400px;padding:10px 20px;;width:900px;}
+#content .txt img{text-align:center;}
+
+
+#content .txt .zhanshi{list-style: none;width:420px;height:130px;border:1px solid #ccc;padding:3px;margin-right:10px;}
+#content .txt .zhanshi .img{width:105px;height:120px;margin-right:5px;}
+#content .txt .zhanshi .img img{width:105px;height:120px;;}
+#content .txt .zhanshi .tit{widht:3000px;height:30px;line-height:30px;font-size:14px;font-weight: bold;}
+#content .txt .zhanshi .desc{width:300px;height:150px;line-height:25px;}
+
+
+/*浏览位置样式*/
+.position {width:998px;height:30px; line-height:30px; background:url(../img/box_bg.png) repeat-x; border:1px solid #EAEAEA ;text-indent:10px;}
+
+.ad_2{margin-top:5px;width:1000px;}
+.ad_21 img{width:190px;height:80px;float:left;}
+.ad_22 img{width:600px;height:80px;margin-left:10px;float:left;}
+.ad_23 img{width:190px;height:80px;margin-left:10px;float:left;}
+
+/*左侧版块样式*/
+.left_top{background:url(../img/title_bg_750.jpg) no-repeat;height:32px;}
+.left_top h2{height:30px; line-height:30px; padding:2px 0 0 20px; font-size:14px;color:#244f94;}
+.left_div{border:solid 1px #d8d8d8; overflow:hidden; }
+
+/*右则版块样式*/
+.right_top{height:34px; background:url(../img/title_bg_245.jpg);}
+.right_top h2{height:32px; line-height:32px !important;line-height:34px;color:#244f94;padding:2px 0 0 15px;}
+.right_div{border-left:solid 1px #d8d8d8; border-right:solid 1px #d8d8d8; border-bottom:solid 1px #d8d8d8;height:100%; overflow:hidden;}
+.right_low{height:7px; overflow:hidden;}
+.right_div div.w98{min-height:100px;}
+.right_div div.w98 dl.list dt{float:right;width:146px; line-height:25px; font-size:13px; font-weight:800; color:#06c;}
+.right_div div.w98 dl.list dd.text{float:right; width:146px; line-height:20px;}
+
+/*图文列表样式*/
+ul.right_pic{height:100%; text-align:center; overflow:hidden;}
+ul.right_pic li{width:100px; height:110px; float:left; margin:5px;}
+ul.right_pic li img{display:block; width:98px; height:90px; margin-bottom:4px; border:1px solid #ccc; padding:1px;}
+
+/*右侧信息排行列表样式*/
+.right_div h2{height:33px;line-height:33px;padding-left:15px;font-size:12px;background:url(../img/bg1.jpg) repeat-x;border-top:#eee 1px solid;}
+.right_div h2 span{background:url(../img/right_titlebg_1.jpg) 0 -100px; color:#990000; padding-left:15px;}
+ul.order{background:url(../img/num.gif) 8px 8px no-repeat; padding:3px 8px 0px 26px; overflow:hidden;}
+ul.order li{height:24px; line-height:22px !important; line-height:24px;}
+
+/*新闻正文*/
+.main{border:solid 1px #e5e5e5;  height:100%; overflow:hidden; padding:5px 0;border-top: 2px solid #003795;}
+.main b,.main strong{font-weight: bold;}
+.w92 h1{min-height:50px; line-height:50px; color:#000; font-size:22px; text-align:center;}
+.subtitle{font-size:16px;line-height:30px;text-align:center;}
+.msgbar{height:30px; line-height:30px; text-align:center; border-bottom:#ccc 1px solid; color:#999;}
+.msgbar a{color:#999;}
+.summary{width:96%; line-height:1.8em; text-indent:20px; font-size:14px; border:#59ACFF 1px solid; background:#ECF5FF; margin:15px auto; padding:8px;}
+.content{line-height:1.8em; font-size:14px; color:#000; margin-top:5px;min-height:400px;}
+.content img{text-align:center;}
+.pagebar{height:30px;line-height:30px; text-align:center;}
+.editor{height:30px; line-height:30px;text-align:right;margin-right:7px;color:#244f94;}
+.tags{line-height:1.8em; border:#FF6633 1px dashed; background:#FFFFCC; margin:5px auto 10px auto; padding:8px;}
+.tags a{margin:5px;}
+.other{height:60px; text-align:center; border-top:#ccc 1px solid; padding-top:10px;}
+.other ul{float:left; margin-left:10px;}
+.other ul li{height:26px; line-height:26px; text-align:left;}
+
+
+
+
+
+

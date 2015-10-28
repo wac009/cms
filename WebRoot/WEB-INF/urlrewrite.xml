@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN"	"http://tuckey.org/res/dtds/urlrewrite3.2.dtd">
+
+<urlrewrite>
+	<!--后台管理-->
+	<rule>
+		<from>^/manage(/)*$</from>
+		<to type="redirect">%{context-path}/manage/main_index.jspa</to>
+	</rule>
+</urlrewrite>
+

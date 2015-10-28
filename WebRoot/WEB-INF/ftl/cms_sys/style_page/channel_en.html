@@ -1,0 +1,20 @@
+[#--
+栏目翻页样式
+English
+pageClass: 翻页DIV class
+pageStyle: 翻页DIV style
+--]
+
+[#assign p=tag_pagination/]
+
+<div[#if pageClass??] class="${pageClass}"[/#if][#if pageStyle??] style="${pageStyle}"[/#if]>
+Total：${p.totalCount}  &nbsp;&nbsp; ${p.pageNo}/${p.totalPage}&nbsp;&nbsp;
+[#if p.firstPage]&nbsp;<a disabled="disabled">First</a>&nbsp;&nbsp; <a disabled="disabled">Prev</a>[#t/]
+[#else]&nbsp;<a href="${hrefFormer}${hrefLatter}">First</a> &nbsp;&nbsp;<a href="${hrefFormer}[#if p.prePage gt 1]_${p.prePage}[/#if]${hrefLatter}">Prev</a>[#t/]
+[/#if]
+&nbsp;&nbsp;
+[#if p.lastPage]&nbsp;<a disabled="disabled">Next</a>&nbsp;&nbsp; <a disabled="disabled">Last</a>
+[#else]&nbsp;<a href="${hrefFormer}_${p.nextPage}${hrefLatter}">Next</a> &nbsp;&nbsp;<a href="${hrefFormer}_${p.totalPage}${hrefLatter}">Last</a>
+[/#if]
+
+</div>

@@ -1,0 +1,15 @@
+body{	margin:0;	padding:0;	text-align:center;}
+#container{width:1000px;	  margin:0 auto;	  background-color:#FFF;	  text-align:left; font-family:"宋体"; color:#000; font-size:12px;}
+#header{background-color:#FFF; width:1000px; height:155px;}
+	 #banner{ background:url(../../img/2013lh/banner.jpg); width:1000px; height:155px;}
+.content{width:1000; height:300px;background-color:#FFF; margin-top:10px; float:left}
+	.content .title{width:1000px; height:46px; float:left; background:url(../../img/2013lh/title.jpg) no-repeat;}
+    .content .title .tt{ width:260px; height:70px; font:"黑体"; font-size:20px; color:#FFF; float:left; padding-top:8px; padding-left:55px; font:bold;}
+	.content .title .more{margin-top:10px; float:right; font:"宋体"; font-size:14px; font-weight:bold}
+	.content .title .more a{text-decoration:none; color:#C00; font-size:14px;}
+    .content .list{width:978px; height:230px;float:left; background-color:#FFF; border:#C00 solid 1px; padding:10px;}
+    .content .list ul{ margin:0; padding:0;}
+    .content .list ul li{ list-style:none; width:450px; height:15px; float:left; background:url(../../img/2013lh/fuhao.jpg) no-repeat; padding-left:15px; margin:10px;}
+	.content .list ul li a{text-decoration:none; font:"宋体";color:#000; overflow:hidden; margin-left:20px;}
+			   
+#footer{clear:both;float: left;background-color: #FFF;width:100%;height:50px;margin-top:50px;font-size:12px;font:"宋体";text-align: center;	 line-height:20px;}

@@ -1,0 +1,26 @@
+<div id="ns">
+     <div id="notice" class="fl">
+         <div class="notice-title">新闻快讯：</div>
+         <div class="notice-text">
+                 [@cms_content_list count='5' styleList='2-3' channelOption='2' channelId='130' append='...' useShortTitle='0' showTitleStyle='0' tpl='2'  rollSpeed='30'/]
+         </div>
+     </div>
+     <div id="search" class="fr">
+      <div class="searchform">
+	  <form action="${base}/search.jspx" target="_blank">
+        <input name="q" value="${q!'请输入关键词'}" type="text" id="txtKey" onfocus="if(this.value=='请输入关键词')this.value=''" onblur="if(this.value=='')this.value='请输入关键词'" maxlength="50" autocomplete="off" / >
+		<span id="fid_box" class="hide">
+			<select name="channelId" id="fid">
+			  <option value="">所有信息</option>
+			  [@cms_channel_list]
+			  [#list tag_list as c]
+			  <option value="${c.id}">${c.name}</option>
+			  [/#list]
+		      [/@cms_channel_list]
+			</select>
+		</span>
+        <input type="submit" id="btnSearch" value="" />
+      </form>
+	  </div>
+    </div>
+</div>

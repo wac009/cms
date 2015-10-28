@@ -1,0 +1,32 @@
+<div id="top">
+	<div class="logo"><a href="/"><img src="${resTpl}/img/logo.jpg" /></a></div>
+   <div class="date">
+	   <script language="Javascript"> 
+		var datelocalweek=new Array("星期日", "星期一", "星期二","星期三","星期四", "星期五","星期六"); 
+		var datelocalnow=new Date(); 
+		var datelocalyear=datelocalnow.getFullYear(); 
+		var datelocalmonth=(datelocalmonth="0"+(datelocalnow.getMonth()+1)).substr(datelocalmonth.length-2,2); 
+		var datelocalday=(datelocalday="0"+datelocalnow.getDate()).substr(datelocalday.length-2,2); 
+		var datelocalweekday=datelocalweek[datelocalnow.getDay()]; 
+		document.write(datelocalyear+"年"+datelocalmonth+"月"+datelocalday+"日"+" "+datelocalweekday); 
+		</script>
+         </div>
+         <div class="weather">
+         	<span class="fl mt3"><iframe src="http://m.weather.com.cn/m/pn7/weather.htm" allowtransparency="true"  width="195" height="20" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" align="buttom" ></iframe></span>
+         </div>
+         <div class="func">
+         	<div class="f_link">
+             	<span class="homepage"><a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.cncaprc.gov.cn');">设为主页</a></span>
+	            <span class="login">
+	           	   <img src="${resTpl}/img/b_weibo.jpg" /><img src="${resTpl}/img/b_qq.jpg" />
+	               <img src="${resTpl}/img/b_login.jpg" /><img src="${resTpl}/img/b_reg.jpg" />
+	            </span>
+	       </div>
+       <div class="f_search">
+       	<form>
+           	<input type="text" class="intxt"/>
+               <input type="button" class="btn" />
+           </form>
+       </div>
+   </div>
+</div>

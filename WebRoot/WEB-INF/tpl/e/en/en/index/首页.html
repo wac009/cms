@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${site.name}</title>
+<meta http-equiv="keywords" content="${site.name}"/>
+<meta http-equiv="description" content="${site.name}"/>
+[#include "../include/head_res.inc"/]
+</head>
+<!-- <img src="${resTpl}/img/ads/laonianfa.jpg" /> -->
+	<body>
+		[#include "../include/页头顶栏.html"/]
+		<div id="main">
+			[#include "../include/页头导航栏.html"/]
+			<div id="middle">
+		        <div id="left_module">
+		            <div id="L_1" >
+		                <ul>
+		                    <li><a href="http://en.cncaprc.gov.cn/a/47086.jhtml"><img src="${resTpl}/img/button-1.gif" /></a></li>
+		                    <li><a href="http://en.cncaprc.gov.cn/a/47087.jhtml"><img src="${resTpl}/img/button-2.gif" /></a></li>
+		                    <li><a href="http://en.cncaprc.gov.cn/a/47088.jhtml"><img src="${resTpl}/img/button-3.gif" /></a></li>
+		                    <li>[@cms_channel id='347']<a href="${tag_bean.url}" target="_blank" ><img src="${resTpl}/img/button-4.gif" /></a>>[/@cms_channel]</li>
+		                    <li>[@cms_channel id='348']<a href="${tag_bean.url}" target="_blank" ><img src="${resTpl}/img/button-5.gif" /></a>[/@cms_channel]</li>
+		                    <li>[@cms_channel id='349']<a href="${tag_bean.url}" target="_blank" ><img src="${resTpl}/img/button-6.gif" /></a>[/@cms_channel]</li>
+		                    <li>[@cms_channel id='350']<a href="${tag_bean.url}" target="_blank" ><img src="${resTpl}/img/button-7.gif" /></a>[/@cms_channel]</li>
+		                </ul>
+		            </div>
+		            <div id="L_2" ><img src="${resTpl}/img/ditu_but.gif" /></div>
+		            <div id="L_3" ><img src="${resTpl}/img/spbf-top.gif" />
+						[@cms_content_list count='1' titLen='13' channelOption='0' channelId='345' descLen='40' append='...']
+		              	 [#list tag_list as a]
+		               	  	<div class="img_tv"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg}" alt="${a.title?replace('<br/>','')}" /></a></div>
+		                 [/#list]
+		               [/@cms_content_list]
+		               [@cms_content_list count='4' titLen='13' channelOption='0' channelId='345' descLen='40' append='...']
+		              	 [#list tag_list as a]
+	                  		<div class="text_tv"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></div>
+		                 [/#list]
+		               [/@cms_content_list]
+		            </div>
+		            <div id="L_4" >
+		                <ul id="link_ul">
+		                    <li><span class="linkimg"><a href="http://english.cri.cn/">CRI English</a></span></li>
+		                    <li><span class="linkimg"><a href="http://english.cntv.cn/01/index.shtml">CCTV International</a></span></li>
+		                    <li><span class="linkimg"><a href="http://www.xinhuanet.com/english/home.htm">Xinhua News Agency</a></span></li>
+		                    <li><span class="linkimg"><a href="http://www.un.org/en/development/desa/population/">UN Population Division</a></span></li>
+		                    <li><span class="linkimg"><a href="http://www.un.org/esa/socdev/ageing/index.html">UN Programme on Ageing</a></span></li>
+		                    <li><span class="linkimg"><a href="http://www.helpage.org/">HelpAge International</a></span></li>
+		                    <li><span class="linkimg"><a href="http://www.globalaging.org/">Global Action on Aging</a></span></li>
+		                    <li><span class="linkimg"><a href="http://www.unfpa.org/public/">United Nations Population Fund</a></span></li>
+		                    <li><span class="linkimg"><a href="http://www.ifa-fiv.org/">Friends of International Federation on Ageing</a></span></li>
+		                    <li><span class="linkimg"><a href="http://www.ifa-fiv.org/">International Federation on Ageing</a></span></li>
+		                </ul>
+		            </div>
+		            <div id="L_5" ></div>
+		        </div>
+		        <div id="right_module">
+		            <div id="R_1" >
+		                <p class="lanmu_title"><img src="${resTpl}/img/arrow2.gif" />News
+		                	<span class="lanmu_title_span">[@cms_channel id='340']<a href="${tag_bean.url}" target="_blank" >More..>></a>[/@cms_channel]</span>
+		                </p>
+		                <div id="newdiv">
+		                    <div id="R_1_left"> 
+								<div id="slide_image">
+									[@cms_content_list typeId='3' styleList='3-1' titLen='20' append='...'  count='5' flashWidth='276' flashHeight='220' textHeight='20' channelId='340' channelOption='1' tpl='2' orderBy='3'/]
+						        </div>
+							</div>
+		                    <div id="R_1_right">
+		                        <ul id="newslist">
+									[@cms_content_list channelId='340' count='9' titLen='30' append='...' channelOption='0' dateFormat='MM-dd' ]
+							          [#list tag_list as a]
+							          <li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+									  [/#list]
+							         [/@cms_content_list]
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		            <div id="R_2" >
+		                <p class="lanmu_title"><img src="${resTpl}/img/arrow2.gif" />Policies & Regulations
+		                	<span class="lanmu_title_span">[@cms_channel id='341']<a href="${tag_bean.url}" target="_blank" >More..>></a>[/@cms_channel]</span>
+		                </p>
+		                <ul class="R_list">
+							[@cms_content_list channelId='341' count='10' titLen='20' append='...' channelOption='0' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          <li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+							  [/#list]
+					         [/@cms_content_list]
+		                </ul>
+		            </div>
+		            <div id="R_3" >
+		                <p class="lanmu_title"><img src="${resTpl}/img/arrow2.gif" />MIPAA Implementation
+		                	<span class="lanmu_title_span">[@cms_channel id='342']<a href="${tag_bean.url}" target="_blank" >More..>></a>[/@cms_channel]</span>
+		                </p>
+		                <ul class="R_list">
+							[@cms_content_list channelId='342' count='10' titLen='20' append='...' channelOption='0' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          <li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+							  [/#list]
+					         [/@cms_content_list]
+		                </ul>
+		            </div>
+		            <div id="R_4" >
+		                <p class="lanmu_title"><img src="${resTpl}/img/arrow2.gif" />Population Ageing
+		                	<span class="lanmu_title_span">[@cms_channel id='343']<a href="${tag_bean.url}" target="_blank" >More..>></a>[/@cms_channel]</span>
+		                </p>
+		                <ul class="R_list">
+							[@cms_content_list channelId='343' count='10' titLen='20' append='...' channelOption='0' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          <li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+							  [/#list]
+					         [/@cms_content_list]
+		                </ul>
+		            </div>
+		            <div id="R_5" >
+		                <p class="lanmu_title"><img src="${resTpl}/img/arrow2.gif" />International Exchanges
+		                	<span class="lanmu_title_span">[@cms_channel id='344']<a href="${tag_bean.url}" target="_blank" >More..>></a>[/@cms_channel]</span>
+		                </p>
+		                <ul class="R_list">
+							[@cms_content_list channelId='344' count='10' titLen='20' append='...' channelOption='0' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          <li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+							  [/#list]
+					         [/@cms_content_list]
+		                </ul>
+		            </div>
+		        </div>
+		    </div>
+		   [#include "../include/页脚信息栏.html"/]
+		</div>
+	</body>
+</html>

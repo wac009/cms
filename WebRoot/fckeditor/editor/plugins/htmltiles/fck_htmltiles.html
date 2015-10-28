@@ -1,0 +1,84 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+ * FCKeditor - The text editor for internet
+ * Copyright (C) 2003-2005 Frederico Caldeira Knabben
+ * 
+ * Licensed under the terms of the GNU Lesser General Public License:
+ * 		http://www.opensource.org/licenses/lgpl-license.php
+ * 
+ * For further information visit:
+ * 		http://www.fckeditor.net/
+ * 
+ * File Name: fck_htmltiles.html
+ * 	Plugin to insert predefined html tiles into the editor without erasing other contents.
+ * 
+ * File Authors:
+ * 		Marc Steffen Schomberg (steffen{at}schomberg.net)
+-->
+<!----
+/*********************************************************************************************************/
+/**
+ * 插入HTML模板 for Fckeditor (Support: Lajox ; Email: lajox@19www.com)
+ */
+/*********************************************************************************************************/
+---->
+
+<html>
+	<head>
+		<title>HtmlTile Properties</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta content="noindex, nofollow" name="robots">
+		<script language="javascript">
+
+// Declaration of available HTML tiles
+// This section may also be automatically generated and populated with database content.
+// Linebreaks are not possible here!
+
+var htmlTiles = new Object();
+
+htmlTiles["table1"] = '<table border="0" bgcolor="black" width="100%" cellspacing="1"><tr bgcolor="#ffcc33"><td width="33%"><b>列1</b></td><td width="33%"><b>列2</b></td><td width="33%"><b>列3</b></td></tr><tr bgcolor="white"><td><br></td><td><br></td><td><br></td></tr></table>';
+htmlTiles["table2"] = '<table border="0" bgcolor="black" width="100%" cellspacing="1"><tr bgcolor="#ffff99"><td width="33%"><b>列1</b></td><td width="33%"><b>列2</b></td><td width="33%"><b>列3</b></td></tr><tr bgcolor="white"><td><br></td><td><br></td><td><br></td></tr></table>';
+
+// --- enf of tiles declaration
+
+var oEditor = window.parent.InnerDialogLoaded() ;
+var FCKLang = oEditor.FCKLang ;
+var FCKHtmlTiles = oEditor.FCKHtmlTiles ;
+
+window.onload = function ()
+{
+	// First of all, translate the dialog box texts
+	oEditor.FCKLanguageManager.TranslatePage( document ) ;
+	
+	// Show the "Ok" button.
+	window.parent.SetOkButton( true ) ;
+}
+
+function Ok()
+{
+	FCKHtmlTiles.Insert(htmlTiles[document.getElementById('htmlTileName').value]);
+	return true ;
+}
+
+		</script>
+	</head>
+	<body scroll="no" style="OVERFLOW: hidden">
+		<table height="100%" cellSpacing="0" cellPadding="0" width="100%" border="0">
+			<tr>
+				<td>
+					<table cellSpacing="0" cellPadding="0" align="center" border="0">
+						<tr>
+							<td>
+								<span fckLang="HtmlTilesDlgName"><span fckLang="HtmlTilesDlgName">Template Name:</span></span><br><br>
+								<select id="htmlTileName">
+									<option value="table1" fckLang="HtmlTilesDlgStyle1">Style 1:
+									<option value="table2" fckLang="HtmlTilesDlgStyle2">Style 2:
+								</select>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

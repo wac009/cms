@@ -1,0 +1,23 @@
+﻿
+/*********************************************************************************************************/
+/**
+ * Image Maps Plugin for FCKeditor (Support: Lajox ; Email: lajox@19www.com)
+ */
+/*********************************************************************************************************/
+
+
+图像热区插件 for Fckeditor
+
+功能： 在编辑的文章中的图片给予图像热区定位超链接等等...
+
+添加说明：
+
+添加说明：
+
+1. 上传 imgmap文件夹到 fckeditor/editor/plugins/ 下 
+
+2. 修改 Fckeditor/fckconfig.js 中相应位置 添加一行下面代码，比如在最后一行添加：
+
+    FCKConfig.Plugins.Add( 'imgmap', 'zh-cn,en') ; //这里加入了图像热区 插件
+    
+3. 修改 Fckeditor/fckconfig.js ，在工具栏设置部分 FCKConfig.ToolbarSets中相应位置添加 'imgmapPopup'

@@ -1,0 +1,15 @@
+<div id="header">
+        <div id="banner"><a href="/" target="_self" ><img src="${resTpl}/img/logo.jpg" /></a></div>
+        <div id="navi">
+            [@cms_channel_list]
+	         	[#list tag_list as c]
+					<dt><a href="${c.url}" class="father" target="_blank" [#if channel??&&channel.id==c.id] class="selected" [/#if]><span>${c.name}</span></a></dt>
+					[@cms_channel_list parentId=c.id]
+			         	[#list tag_list as c2]
+							<dt><a href="${c2.url}" target="_blank" [#if channel??&&channel.id==c2.id] class="selected" [/#if]><span>${c2.name}</span></a></dt>
+						[/#list]
+			         [/@cms_channel_list]
+				[/#list]
+	         [/@cms_channel_list]
+        </div> 
+    </div>

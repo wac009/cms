@@ -1,0 +1,101 @@
+﻿<!--
+ * FCKeditor - The text editor for internet
+ * Copyright (C) 2003-2004 Frederico Caldeira Knabben
+ * 
+ * Licensed under the terms of the GNU Lesser General Public License:
+ * 		http://www.opensource.org/licenses/lgpl-license.php
+ * 
+ * For further information visit:
+ * 		http://www.fckeditor.net/
+ * 
+ * File Name: fileicon.html
+ * 	File Icons dialog window.
+ * 
+ * Version:  2.0 RC3
+ * Modified: 2005-01-27 11:20:10
+ * 
+ * File Authors:
+ * 		Andrey Grebnev (andrey.grebnev@blandware.com)
+-->
+<!----
+/*********************************************************************************************************/
+/**
+ * 插入图标插件 for Fckeditor (Support: Lajox ; Email: lajox@19www.com)
+ */
+/*********************************************************************************************************/
+---->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="robots" content="noindex, nofollow" />
+		<style type="text/css">
+			.HandIE { cursor: hand ; }
+			.HandMozilla { cursor: pointer ; }
+		</style>
+		<script type="text/javascript">
+		
+var oEditor = window.parent.InnerDialogLoaded() ;
+
+function setDefaults()
+{
+	// First of all, translate the dialog box texts
+	oEditor.FCKLanguageManager.TranslatePage(document) ;
+}
+
+function InsertFileIcon( url )
+{
+	var oImg = oEditor.FCK.CreateElement( 'IMG' ) ;
+	oImg.src = url ;
+
+	window.parent.Cancel() ;
+}
+
+function over(td)
+{
+	td.className = 'LightBackground HandIE HandMozilla' ;
+}
+
+function out(td)
+{
+	td.className = 'DarkBackground HandIE HandMozilla' ;
+}
+		</script>
+	</head>
+	<body onload="setDefaults()" scroll="no">
+		<table cellpadding="2" cellspacing="2" align="center" border="0" width="100%" height="100%">
+			<script type="text/javascript">
+<!--
+var FCKConfig = oEditor.FCKConfig ;
+
+var sBasePath = FCKConfig.FileIconPath ;
+var aImages   = FCKConfig.FileIconImages ;
+var cols      = FCKConfig.FileIconColumns ;
+
+var i = 0 ;
+while (i < aImages.length)
+{
+	document.write("<TR>") ;
+	for(var j = 0 ; j < cols ; j++) 
+	{
+		if (aImages[i])
+		{
+			var sTooltip = aImages[i] ;
+			var sUrl = sBasePath + aImages[i] + ".gif" ;
+			var sSrc = sBasePath + "32/" + aImages[i] + ".gif" ;
+			document.write("<TD width='1%' align='center' class='DarkBackground HandIE HandMozilla' onclick='InsertFileIcon(\"" + sUrl.replace(/"/g, '\\"' ) + "\")' onmouseover='over(this)' onmouseout='out(this)'>") ;
+			document.write("<img title='" + sTooltip + "' src='" + sSrc + "' border='0'>") ;
+		}
+		else
+			document.write("<TD width='1%' class='DarkBackground'>&nbsp;") ;
+		document.write("</TD>") ;
+		i++ ;
+	}
+	document.write("</TR>") ;
+}
+//-->
+			</script>
+		</table>
+	</body>
+</html>

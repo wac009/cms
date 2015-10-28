@@ -1,0 +1,17 @@
+<div id="twl">
+    [@cms_content_list channelId='212' count='3' titLen='10' append='...' channelOption='0' dateFormat='MM-dd' ]
+        [#list tag_list as a]
+        [#if a_index = 2]
+        <div class="box1">
+        [#else]
+        <div class="box1 mr10">
+        [/#if]
+	        <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a>
+	        <div class="cont">
+	        	<span class="title"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></span>
+	        	<span class="sub"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.description len='32'  append=append/]</a></span>
+	        </div>
+        </div>
+  		[/#list]
+   [/@cms_content_list]
+</div>

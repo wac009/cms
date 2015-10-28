@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>${title} - ${site.name}</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="${content.tagStr!}" http-equiv="keywords" />
+<meta content="${content.description!}" http-equiv="description" />
+[#include "../include/head_res.inc"/]
+<script type="text/javascript">
+$(function() {
+  Cms.attachment("${base}","${content.id}","${content.attachments?size}","attach");
+  Cms.viewCount("${base}","${content.id}");
+  Cms.siteFlow("${base}",location.href, document.referrer);
+});
+</script>
+</head>
+<body>
+[#include "../include/页头顶栏.html"/]
+<div id="container">
+[#include "../include/页头导航栏.html"/]
+
+<div id="content">
+	<div class="mt5 fl">
+		<div class="position">您现在正在浏览： <a href="${base}/">首页</a> &raquo; [#list channel.nodeList as n]<a target="_blank" href="${n.url}">${n.name}</a>[#if n_has_next] &raquo; [/#if][/#list] &raquo; 正文</div>
+		<div class="mt5">
+	        <div class="w748 fl main">
+			        <div class="w92">
+				        <h1>${content.title}</h1>
+				        [#if content.subTitle?? && content.subTitle!='']
+				        	<div class="subtitle">${content.subTitle}</div>
+				        [/#if]
+				        <div class="msgbar">
+				        	发布时间： ${content.date?string('yyyy-MM-dd')} &nbsp; 作者：${content.author!'未知'} &nbsp; 来源： ${content.origin!'未知'} 
+				        </div>
+				        [#if pagination.firstPage]
+				        	[#if content.description?? && content.description!='']
+				        	<div class="summary"><strong>摘要：</strong> [@text_cut s=content.description len='50' append='...'/]</div>
+				        	[/#if]
+				        [/#if]
+				        [#if content.attachments?size gt 0]
+				        	<div class="summary"><strong>附件下载：</strong> 
+				        		[#list content.attachments as attach]
+						  			【<a id="attach${attach_index}">${attach.name}</a>】&nbsp;&nbsp;
+						  		[/#list]
+						  	</div>
+						[/#if]
+				        [#if content.mediaPath?? && content.mediaType??]
+					        <p style="margin: 5px auto; text-align: center">
+					        	[#if content.mediaType=='FLV']
+							        <object height="450" width="600" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+								        <param name="movie" value="${resTpl}/flash/flvplayer.swf" />
+								        <param name="quality" value="high" />
+								        <param name="allowFullScreen" value="true" />
+								        <param name="FlashVars" value="vcastr_file=${res}/${content.mediaPath!}&BufferTime=3" />
+								        <embed height="450" width="600" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" flashvars="vcastr_file=${content.mediaPath!}" allowfullscreen="true" src="${resTpl}/flash/flvplayer.swf"></embed>
+							        </object>
+						        [#elseif content.mediaType=='FLASH'] <embed height="450" width="600" type="application/x-shockwave-flash" quality="high" src="${res}/${content.mediaPath}" wmode="transparent" align="center"></embed>
+						        [#else] <embed height="450" width="600" type="video/x-ms-wmv" src="${res}/${content.mediaPath}" console="cons" controls="ImageWindow" autostart="true"></embed>[/#if]
+					        </p>
+				        [/#if]
+				        <div class="content">${txt!}</div>
+				        <div class="pagebar">[#include "../style_page/content.html"/]</div>
+				        <div class="editor g_t_r mr5">
+							<strong>责任编辑：${content.editorName} </strong>
+						</div>
+				        <div class="other">
+					        <ul>
+					            <li><strong>上一篇：</strong>[@cms_content id=content.id next='1' channelId=channel.id][#if tag_bean??]<a href="${tag_bean.url}">${tag_bean.title?replace("<br/>","")}</a>[#else]【无】[/#if][/@cms_content]</li>
+					            <li><strong>下一篇：</strong>[@cms_content id=content.id next='0' channelId=channel.id][#if tag_bean??]<a href="${tag_bean.url}">${tag_bean.title?replace("<br/>","")}</a>[#else]【无】[/#if][/@cms_content]</li>
+					        </ul>
+				        </div>
+			        </div>
+	        </div>
+	        [#include "../include/侧边栏.html"/]
+		</div>
+	</div>
+	<!-- 内容结束 -->
+</div>
+[#include "../include/页脚信息栏.html"/]
+</div>
+</body>
+</html>

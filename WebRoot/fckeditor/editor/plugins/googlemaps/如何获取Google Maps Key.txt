@@ -1,0 +1,42 @@
+
+
+到 http://code.google.com/intl/zh-CN/apis/maps/signup.html 申请
+如果上述链接失效，可以通过 Google搜索 Google Maps Key，一般列在第一条的 code.google.com 为官方站
+
+
+如www.newzz.fr.cr申请处理的结果为：
+
+Google Maps API - API Key Signup
+Thank You for Signing Up for a Google Maps API Key!
+Your key is:
+
+ABQIAAAAo9Kzikr1N2BHcyLj6jAIxRRQkciLVXRZBaA2q4KL-8zC0Ik2HxTRVhF4TtDlIHLWcdlTD0kIlEMkKA
+
+This key is good for all URLs consisting of this registered domain (and directory if applicable):
+
+http://www.newzz.fr.cr/Note: for more information on the API key system, consult http://code.google.com/apis/maps/faq.html#keysystem.
+
+How you use your key depends on what Maps API product or service you use. Your key is valid for use within the entire family of Google Maps API solutions. The following examples show how to use your key within the Maps API product family.
+
+JavaScript Maps API Example
+Within the JavaScript Maps API, place the key within the script tag when you load the API:
+
+...
+  // Note: you will need to replace the sensor parameter below with either an explicit true or false value. 
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true_or_false&amp;key=ABQIAAAAo9Kzikr1N2BHcyLj6jAIxRRQkciLVXRZBaA2q4KL-8zC0Ik2HxTRVhF4TtDlIHLWcdlTD0kIlEMkKA" type="text/javascript"></script>
+...See Loading the Maps API in the JavaScript Maps API documentation for more information.
+
+Maps API for Flash Example
+Within the Maps API for Flash, you may place the key within an MXML declaration, declare it directly within code as a Map.key property, or as a flashVars property within the HTML container. A sample MXML declaration is shown below.
+
+...
+  <maps:Map xmlns:maps="com.google.maps.*" id="map" mapevent_mapready="onMapReady(event)" width="100%" height="100%"
+    key="ABQIAAAAo9Kzikr1N2BHcyLj6jAIxRRQkciLVXRZBaA2q4KL-8zC0Ik2HxTRVhF4TtDlIHLWcdlTD0kIlEMkKA"/>
+...See Declaring Maps in the Maps API for Flash documentation for more information.
+
+HTTP Service Example
+Within a Maps API HTTP Service, such as the Static Maps API or Geocoding Service, place the key directly in the request URL:
+
+http://maps.google.com/maps/geo?q=1600+Amphitheatre+Parkway,+Mountain+View,+CA&output=json&oe=utf8\
+&sensor=true_or_false&key=ABQIAAAAo9Kzikr1N2BHcyLj6jAIxRRQkciLVXRZBaA2q4KL-8zC0Ik2HxTRVhF4TtDlIHLWcdlTD0kIlEMkKANote that for all examples, you must replace the sensor parameter with a valid value, based on whether your application uses a sensor to determine a user's location. Check out the API documentation for more information.
+

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<!--
+ * Paragraph dialog window.
+-->
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Paragraph Properties</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="robots" content="noindex, nofollow" />
+		<script src="../../dialog/common/fck_dialog_common.js" type="text/javascript"></script>
+		<script src="parapraph.js" type="text/javascript"></script>
+		<script type="text/javascript">
+
+document.write( FCKTools.GetStyleHtml( GetCommonDialogCss() ) ) ;
+
+		</script>
+	</head>
+	<body scroll="no" style="OVERFLOW: hidden">
+		<table height="100%" cellSpacing="0" cellPadding="0" width="100%" border="0">
+			<tr>
+				<td>
+					<table cellSpacing="0" cellPadding="0" border="0">
+						<tr>
+							<td>
+							<fieldset>
+								<legend><span fckLang=DlgPraMargin>Paragraph Margin</span></legend>
+								<table border=0 cellpadding=5 cellspacing=0 width="100%">
+									<tr>
+										<td>							
+											<table border=0 cellpadding=0 cellspacing=2 width="100%">
+												<tr>
+													<td noWrap><span fckLang=DlgPraMarginTop>MarginTop</span>:</td>
+													<td><input id=d_margintop size=2 value=""></td>
+													<td noWrap><span fckLang=DlgPraMarginBottom>MarginBottom</span>:</td>
+													<td><input id=d_marginbottom size=2 value=""></td>
+												</tr>
+												<tr>
+													<td noWrap><span fckLang=DlgPraMarginLeft>MarginLeft</span>:</td>
+													<td><input id=d_marginleft size=2 value=""></td>
+													<td noWrap><span fckLang=DlgPraMarginRight>MarginRight</span>:</td>
+													<td><input id=d_marginright size=2 value=""></td>
+												</tr>
+											</table>						
+										</td>
+									</tr>
+								</table>
+							</fieldset>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<fieldset>
+								<legend><span fckLang=DlgPraOther>Other</span></legend>
+								<table border=0 cellpadding=5 cellspacing=0 width="100%">
+									<tr>
+										<td>							
+											<table border=0 cellpadding=0 cellspacing=2 width="100%">
+												<tr>
+													<td noWrap><span fckLang=DlgAlign>Align</span>:</td>
+													<td>
+														<select id=d_align>
+														<option value='' selected fckLang=DlgComDefault></option>
+														<option value='left' fckLang=DlgAlignLeft></option>
+														<option value='right' fckLang=DlgAlignRight></option>
+														<option value='center' fckLang=DlgAlignCenter></option>
+														<option value='justify' fckLang=DlgAlignFull></option>
+														</select>			
+													</td>
+													<td noWrap><span fckLang=DlgPraLineHeight>LineHeight</span>:</td>
+													<td><input id=d_lineheight size=2 value=""></td>
+												</tr>
+												<tr>
+													<td noWrap><span fckLang=DlgPraTextIndent>TextIndent</span>:</td>
+													<td><input id=d_textindent size=2 value=""></td>
+													<td noWrap><span fckLang=DlgPraWordSpacing>WordSpacing</span>:</td>
+													<td><input id=d_letterspacing size=2 value=""></td>
+												</tr>
+											</table>							
+										</td>
+									</tr>
+								</table>
+								</fieldset>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+	</html>

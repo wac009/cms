@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${site.name}</title>
+<meta http-equiv="keywords" content="${site.name}"/>
+<meta http-equiv="description" content="${site.name}"/>
+[#include "../include/head_res.inc"/]
+</head>
+
+<body>
+[#include "../include/页头顶栏.html"/]
+<div id="container">
+	<!--导航-->
+    [#include "../include/页头导航栏.html"/]
+    <!--图文栏-->
+    [#include "../include/页头图文栏.html"/]
+	<!--快讯搜索-->
+    [#include "../include/页头滚动栏.html"/]
+<div id="content" class="channel_page">
+		<div class="position"> 您现在正在浏览： <a href="${base}/">首页</a>&raquo; 全文检索列表</div>
+			<div class="mt5">
+				<!-- 内容列表开始 -->
+				<div class="w750 fl">
+				    <div class="left_top">
+				      <h2>搜索结果</h2>
+				    </div>
+				    <div class="left_div w748">
+						<div class="w96" style="min-height:800px;">
+						[#if q??]
+						 [@cms_lucene_page q=q channelId=channelId descLen='100' append='...' count='10']
+						    <div class="search_msg">
+								您搜索的<span class="red">“${q!}”</span>， 本页显示 <span class="red">${tag_list?size} 条</span> 查询结果，[@process_time/]
+							</div>
+							[#list tag_list as s]
+						     <dl class="list3">
+								<dt><span>[<a href="${s.ctgUrl}" target="_blank">${s.ctgName}</a>]</span>  <a href="${s.url}" title="${s.title?replace('<br/>','')}" target="_blank">${s.title?replace('<br/>','')}</a></dt>
+								[#if s.description?? && s.description!='']<dd class="zy">[@text_cut s=s.description len=descLen append=append/]</dd>[/#if]
+								<dd>来源： <a href="${s.originUrl!}" target="_blank">${s.origin!'本站原创'}</a> &nbsp;&nbsp; 发布时间： ${s.releaseDate} </dd>
+							 </dl>
+							 [/#list]
+							 <div class="pagination">[@cms_pagination sysPage='1'/]</div>
+						    [/@cms_lucene_page]	  
+				         [/#if]	
+						</div>
+				    </div>
+				  </div>
+				  <!-- 内容列表结束 -->
+				  [#include "../include/侧边栏.html"/]
+			</div>
+</div>
+[#include "../include/页脚信息栏.html"/]
+</div>
+</body>
+</html>

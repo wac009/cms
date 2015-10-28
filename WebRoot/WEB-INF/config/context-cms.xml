@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
+
+	<bean id="tplMessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="cacheSeconds" value="0"/>
+		<property name="basenames">
+			<list>
+				<value>/WEB-INF/languages/cms_tpl/messages</value>
+			</list>
+		</property>
+	</bean>
+	<!--标签-->
+	<bean id="cms_pagination" class="com.cc.cms.action.directive.PaginationDirective"/>
+	<bean id="cms_channel_list" class="com.cc.cms.action.directive.ChannelListDirective"/>
+	<bean id="cms_channel_page" class="com.cc.cms.action.directive.ChannelPageDirective"/>
+	<bean id="cms_channel" class="com.cc.cms.action.directive.ChannelDirective"/>
+	<bean id="cms_content" class="com.cc.cms.action.directive.ContentDirective"/>
+	<bean id="cms_content_list" class="com.cc.cms.action.directive.ContentListDirective"/>
+	<bean id="cms_content_page" class="com.cc.cms.action.directive.ContentPageDirective"/>
+	<bean id="cms_tag_list" class="com.cc.cms.action.directive.ContentTagListDirective"/>
+	<bean id="cms_tag_page" class="com.cc.cms.action.directive.ContentTagPageDirective"/>
+	<bean id="cms_topic_list" class="com.cc.cms.action.directive.TopicListDirective"/>
+	<bean id="cms_topic_page" class="com.cc.cms.action.directive.TopicPageDirective"/>
+	<bean id="cms_comment_list" class="com.cc.cms.action.directive.CommentListDirective"/>
+	<bean id="cms_comment_page" class="com.cc.cms.action.directive.CommentPageDirective"/>
+	<bean id="cms_guestbook_ctg_list" class="com.cc.cms.action.directive.GuestbookCtgListDirective"/>
+	<bean id="cms_guestbook_list" class="com.cc.cms.action.directive.GuestbookListDirective"/>
+	<bean id="cms_guestbook_page" class="com.cc.cms.action.directive.GuestbookPageDirective"/>
+	<bean id="cms_vote" class="com.cc.cms.action.directive.VoteDirective"/>
+	<bean id="cms_friendlink_ctg_list" class="com.cc.cms.action.directive.FriendlinkCtgListDirective"/>
+	<bean id="cms_friendlink_list" class="com.cc.cms.action.directive.FriendlinkListDirective"/>
+	<bean id="cms_lucene_list" class="com.cc.cms.lucene.LuceneDirectiveList"/>
+	<bean id="cms_lucene_page" class="com.cc.cms.lucene.LuceneDirectivePage"/>
+	<bean id="cms_advertising" class="com.cc.cms.action.directive.AdvertisingDirective"/>
+	
+	<!--SERVICE-->
+	<bean id="staticPageSvc" class="com.cc.cms.staticpage.service.StaticPageSvcImpl">
+		<property name="tplMessageSource" ref="tplMessageSource"/>
+		<property name="freeMarkerConfigurer">
+			<bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+				<property name="freemarkerVariables">
+					<map>
+						<entry key="uuid" value-ref="uuid"/>
+						<entry key="process_time" value-ref="process_time"/>
+						<entry key="text_cut" value-ref="text_cut"/>
+						<entry key="html_cut" value-ref="html_cut"/>
+						<entry key="cms_pagination" value-ref="cms_pagination"/>
+						<entry key="cms_channel_list" value-ref="cms_channel_list"/>
+						<entry key="cms_channel_page" value-ref="cms_channel_page"/>
+						<entry key="cms_channel" value-ref="cms_channel"/>
+						<entry key="cms_content" value-ref="cms_content"/>
+						<entry key="cms_content_list" value-ref="cms_content_list"/>
+						<entry key="cms_content_page" value-ref="cms_content_page"/>
+						<entry key="cms_tag_list" value-ref="cms_tag_list"/>
+						<entry key="cms_tag_page" value-ref="cms_tag_page"/>
+						<entry key="cms_topic_list" value-ref="cms_topic_list"/>
+						<entry key="cms_topic_page" value-ref="cms_topic_page"/>
+						<entry key="cms_comment_list" value-ref="cms_comment_list"/>
+						<entry key="cms_comment_page" value-ref="cms_comment_page"/>
+						<entry key="cms_guestbook_ctg_list" value-ref="cms_guestbook_ctg_list"/>
+						<entry key="cms_guestbook_list" value-ref="cms_guestbook_list"/>
+						<entry key="cms_guestbook_page" value-ref="cms_guestbook_page"/>
+						<entry key="cms_vote" value-ref="cms_vote"/>
+						<entry key="cms_friendlink_ctg_list" value-ref="cms_friendlink_ctg_list"/>
+						<entry key="cms_friendlink_list" value-ref="cms_friendlink_list"/>
+						<entry key="cms_lucene_list" value-ref="cms_lucene_list"/>
+						<entry key="cms_lucene_page" value-ref="cms_lucene_page"/>
+						<entry key="cms_advertising" value-ref="cms_advertising"/>
+					</map>
+				</property>
+				<property name="templateLoaderPath" value=""/>
+				<property name="freemarkerSettings">
+					<props>
+						<prop key="tag_syntax">auto_detect</prop>
+						<prop key="template_update_delay">5</prop>
+						<prop key="defaultEncoding">UTF-8</prop>
+						<prop key="url_escaping_charset">UTF-8</prop>
+						<prop key="locale">zh_CN</prop>
+						<prop key="boolean_format">true,false</prop>
+						<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+						<prop key="date_format">yyyy-MM-dd</prop>
+						<prop key="time_format">HH:mm:ss</prop>
+						<prop key="number_format">0.######</prop>
+						<prop key="whitespace_stripping">true</prop>
+						<prop key="auto_import">/WEB-INF/ftl/pony/index.ftl as p,/WEB-INF/ftl/spring.ftl as s</prop>
+					</props>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<!--LISTENER-->
+	<bean id="luceneListener" class="com.cc.cms.lucene.LuceneListener"/>
+	<bean id="staticPageListener" class="com.cc.cms.staticpage.StaticPageListener"/>
+	
+	<bean id="contentSvcImpl" class="com.cc.cms.service.main.impl.ContentSvcImpl">
+		<property name="listenerList">
+			<list>
+				<ref bean="luceneListener"/>
+				<ref bean="staticPageListener"/>
+			</list>
+		</property>
+	</bean>
+</beans>

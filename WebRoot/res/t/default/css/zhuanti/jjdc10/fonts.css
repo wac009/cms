@@ -1,0 +1,42 @@
+/*
+YUI version: 3.1.1 build: 47
+
+修改by wangcheng2010/6/18
+*/
+/**
+ * Percents could work for IE, but for backCompat purposes, we are using keywords.
+ * x-small is for IE6/7 quirks mode.
+ */
+body {
+	font:12px/1.1 arial,helvetica,clean,"\5b8b\4f53",sans-serif;
+	*font-size:small; /* for IE */
+	*font:x-small; /* for IE in quirks mode */
+}
+
+/* 设置默认字体 
+   TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;font-weight:normal;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/*to enable resizing for IE*/
+input,textarea,select {	*font-size:100%;font-family:inherit;font-size:inherit;font-weight:inherit;}
+
+/**
+ * Nudge down to get to 13px equivalent for these form elements
+ */ 
+select,input,button,textarea {font:99% arial,helvetica,clean,sans-serif;}
+
+/**
+ * To help tables remember to inherit
+ */
+table {font-size:inherit;font:100%;}
+
+/**
+ * Bump up IE to get to 13px equivalent for these fixed-width elements
+ */
+pre,code,kbd,samp,tt {font-family:monospace;*font-size:108%;line-height:100%;}
+
+b ,strong{font-weight: bold;}

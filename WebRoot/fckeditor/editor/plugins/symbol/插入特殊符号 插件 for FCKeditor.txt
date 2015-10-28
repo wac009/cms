@@ -1,0 +1,17 @@
+﻿
+
+插入特殊符号 插件 for FCKeditor (RichSpecialChar for FCKeditor)
+  
+   Support:  Lajox ;  Email: lajox@19www.com
+
+================================================================================================
+添加说明：
+
+1. 上传 symbol 整个文件夹 到 fckeditor/editor/plugins 目录下。
+
+2. 在 fckeditor/fckconfig.js 中 相应位置 加入 一行以下代码（如 可以在最后一行加入）：
+   
+       FCKConfig.Plugins.Add( 'symbol','zh-cn,en' ) ; //这里加入了 特殊符号 插件
+       
+3. 设置 fckeditor/fckconfig.js 的 ToolbarSets 按钮设置部分，即在FCKConfig.ToolbarSets 中相应位置加入
+    一个按钮值 'symbol'

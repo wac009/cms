@@ -1,0 +1,11 @@
+/*----------------------------------------
+Name: footer.css
+Developed by: 王成
+Copyright: 全国老龄办信息中心
+----------------------------------------*/
+
+@charset "utf-8";
+
+#footer{clear:both;width:977px;text-align:center;padding:10px 0 10px 0;line-height:22px;}
+#footer .flink{width:977px;height:30px; line-height:30px; background-color:#940306; color:#FFF; }
+#footer .flink a{color:#FFF;}

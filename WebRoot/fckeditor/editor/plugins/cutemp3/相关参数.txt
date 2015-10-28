@@ -1,0 +1,16 @@
+
+参数：
+
+
+width=200 长度
+
+songVolume=100 音量
+autoStart=true 自动播放
+repeatPlay=true 循环播放
+showDownload=true  显示下载
+backColor=000000 背景颜色
+frontColor=ffffff 进度条颜色
+
+实现代码：
+
+<embed src="cutemp3/mp3player.swf?file=http://127.0.0.1/music/1.mp3&amp;songVolume=100&amp;backColor=000000&amp;frontColor=ffffff&amp;autoStart=true&amp;repeatPlay=true&amp;showDownload=true" width="200" height="20" type="application/x-shockwave-flash"></embed>

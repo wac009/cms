@@ -1,0 +1,23 @@
+
+/*页面居中*/
+body {text-align: center;}
+#container {margin: 0 auto;	text-align: left;background-color:#FFF;}
+
+/*提示信息样式*/
+.action_okmsg,.action_warnmsg,.action_errormsg
+{margin-top:5px;padding: 4px 10px 3px 30px;background-repeat: no-repeat;background-position: 5px 4px;text-align:left;}
+.action_okmsg 	 {background-color:#F0FFF0;border:1px solid #00EA00;background-image: url(../img/msg_ok.gif);}
+.action_warnmsg  {background-color:#EDF3FA;border:1px solid #408FD0;background-image: url(../img/msg_warning.gif);}
+.action_errormsg {background-color:#FFEFEE;border:1px solid #FF6860;background-image: url(../img/msg_error.gif);}
+.errormsg{float:left;background: url(../img/error.png) no-repeat 0 4px;color:red;padding-left:20px;font-style:italic;white-space: nowrap;}
+
+.msgPage{padding-top:120px;}
+.msgDiv{width: 500px;margin:0 auto;text-align: left;border: 1px solid #aaa;}
+.msgPage_title {background-color: #3c96e8;font-weight: bold;color: #fff;padding: 6px 10px 8px 7px;font-size:12px;}
+.msgPage_text{padding:52px 0 40 150px;background:url(../img/msg_warning_big.gif) no-repeat 20px 35px;font-size:18px;
+			  font-weight: bolder;font-family: "Microsoft JhengHei", "微軟正黑體", "Microsoft YaHei", "微软雅黑";}
+.msgPage_Href {padding: 10px 8px 25px 8px;background-color: #fff;text-align: center;font-size:14px;}
+
+.errorPage_title{background-color:red;}
+.errorPage_text{background-image:url(../img/msg_error_big.gif) }
+.errorPage_left{width:auto;white-space: nowrap;}

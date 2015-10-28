@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 管理员默认设置，命名空间/manage,默认拦截器是用户权限管理控制拦截器 未登录则跳转到登录页面，否则跳转到管理主界面 -->
+	<package name="admin-default" namespace="/manage" extends="struts-web">
+		<default-interceptor-ref name="UACStack" />
+	</package>
+	<package name="admin-defaultAjax" namespace="/manage/ajax" extends="struts-ajax">
+		<default-interceptor-ref name="UACStack" />
+		<action name="*_*" method="{2}" class="web.action.admin.{1}Act" />
+	</package>
+	<!--用户登录配置 -->
+	<package name="admin-login" extends="struts-web">
+		<action name="login!*" method="{1}" class="web.action.admin.loginAct">
+			<result type="redirect">${redirectUrl}</result>
+			<result name="loginpage">/WEB-INF/manage/login.jsp</result>
+			<result name="maintain">/WEB-INF/manage/login_maintain.jsp</result>
+		</action>
+	</package>
+	<!--主界面配置 -->
+	<package name="admin-main" extends="admin-default">
+		<action name="main_*" method="{1}" class="web.action.admin.mainAct">
+			<param name="indexId">${indexId}</param>
+			<result name="{1}">/WEB-INF/manage/{1}.jsp</result>
+		</action>
+	</package>
+	<!-- 管理项通配设置 通配符匹配原则:*_*_*与*_*优先级相同，位于前面的优先匹配，*_*_*也可替代*_* -->
+	<package name="admin-common" extends="admin-default">
+		<action name="*_main" method="main" class="web.action.admin.{1}Act">
+			<result name="main">/WEB-INF/manage/main.jsp</result>
+		</action>
+		<action name="fileUpload_*_*" method="{1}" class="web.action.admin.fileUploadAct">
+			<result type="freemarker">/WEB-INF/manage/common/{2}.html</result>
+		</action>
+		<action name="*_*_*" method="{2}" class="web.action.admin.{1}Act">
+			<result name="index">/WEB-INF/manage/{1}/index.jsp</result>
+			<result name="list">/WEB-INF/manage/{1}/list.jsp</result>
+			<result name="input">/WEB-INF/manage/{1}/{3}.jsp</result>
+			<result name="{2}">/WEB-INF/manage/{1}/{2}.jsp</result>
+			<result name="{3}">/WEB-INF/manage/{1}/{3}.jsp</result>
+			<result name="defResult">/WEB-INF/manage/{1}/${defResult}</result>
+			<result name="defResult_freemarker" type="freemarker">/WEB-INF/manage/{1}/${defResult}</result>
+		</action>
+	</package>
+</struts>

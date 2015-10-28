@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${channel.title!channel.name} - ${site.name}</title>
+<meta http-equiv="keywords" content="${channel.keywords!}"/>
+<meta http-equiv="description" content="${channel.description!}"/>
+[#include "../include/head_res.inc"/]
+</head>
+
+<body>
+<div id="container">
+[#include "../include/页头导航栏.html"/]
+
+<div id="content">
+	<div class="mt3 fl">
+		<div class="mt5">
+			<!-- 内容列表开始 -->
+			<div class="w980 fl">
+			    <div class="left_top">
+			      <h2><a href="${base}/">首页</a> &raquo; [#list channel.nodeList as n]<a href="${n.url}" target="_blank">${n.name}</a>[#if n_has_next] &raquo; [/#if][/#list]</h2>
+			    </div>
+			    <div class="left_div w978">
+					<div class="w978" style="min-height:600px;">
+					[@cms_content_page channelId=channel.id count=channel.pageSize sysPage='1' pageClass='pagination' styleList='1-1' ctgForm='0' ctgClass='red' lineHeight='11' bottomLine='1' headMark='3' dateFormat='yyyy-MM-dd' datePosition='2' dateClass='gray' channelOption='2' tpl='2'/]
+					</div>
+			    </div>
+			  </div>
+			</div>
+	</div>
+</div>
+</div>
+[#include "../include/页脚信息栏.html"/]
+</body>
+</html>

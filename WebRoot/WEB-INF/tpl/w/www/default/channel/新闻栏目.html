@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${channel.title!channel.name} - ${site.name}</title>
+<meta http-equiv="keywords" content="${channel.keywords!}"/>
+<meta http-equiv="description" content="${channel.description!}"/>
+[#include "../include/head_res.inc"/]
+</head>
+
+<body>
+[#include "../include/页头顶栏.html"/]
+<div id="container">
+[#include "../include/页头导航栏.html"/]
+[#include "../include/页头滚动栏.html"/]
+
+<div id="content">
+	<!-- 宣传栏开始 -->
+ 	<!-- <div class="ad_2">
+ 		<div class="ad_21"><img src="${resTpl}/img/ads/ad_2_1.jpg" /></div>
+ 		<div class="ad_22"><img src="${resTpl}/img/ads/ad_2_2.jpg" /></div>
+ 		<div class="ad_23"><img src="${resTpl}/img/ads/ad_2_3.jpg" /></div>
+ 	</div> -->
+	<!-- 宣传栏结束 -->
+	<div class="mt3 fl">
+		<div class="position"> 您现在正在浏览： <a href="${base}/">首页</a> &raquo; [#list channel.nodeList as n]<a href="${n.url}" target="_blank">${n.name}</a>[#if n_has_next] &raquo; [/#if][/#list]</div>
+		<div class="mt5">
+			<!-- 内容列表开始 -->
+			<div class="w750 fl">
+			    <div class="left_top">
+			      <h2>${channel.name!}</h2>
+			    </div>
+			    <div class="left_div w748">
+					<div class="w96" style="min-height:800px;">
+					[@cms_content_page channelId=channel.id count=channel.pageSize sysPage='1' pageClass='pagination' styleList='1-1' ctgForm='0' ctgClass='red' lineHeight='11' bottomLine='1' headMark='3' dateFormat='yyyy-MM-dd' datePosition='2' dateClass='gray' channelOption='2' tpl='2'/]
+					</div>
+			    </div>
+			  </div>
+			  <!-- 内容列表结束 -->
+			  [#include "../include/侧边栏.html"/]
+			</div>
+	</div>
+</div>
+[#include "../include/页脚信息栏.html"/]
+</div>
+</body>
+</html>

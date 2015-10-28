@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>十八届三中全会专题</title>
+<script src="${resSys}/jquery/jquery.js" type="text/javascript"></script>
+<script src="${resSys}/festival/festival.js" type="text/javascript"></script>
+<script src="${resTpl}/js/front.js" type="text/javascript"></script>
+<link href="${resTpl}/css/zhuanti/sbjsz.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div id="container">
+       <div id="header">
+           <div id="banner"></div>
+           <div id="navi">
+                <ul>
+                	<li><a href="http://www.cncaprc.gov.cn"  target="_blank">网站首页</a></li>
+                    <li><a href="http://www.cncaprc.gov.cn/sbjjsjd/index.jhtml"  target="_blank">精神解读</a></li>
+                    <li><a href="http://www.cncaprc.gov.cn/sbjmtbd/index.jhtml"  target="_blank">媒体报导</a></li>
+                    <li><a href="http://www.cncaprc.gov.cn/sbjxxdt/index.jhtml"  target="_blank">学习动态</a></li>
+                </ul>
+           </div>
+       </div>
+		<div id="flash" class="fl mt10">
+        	[@cms_content_list typeId='3' styleList='3-1' titLen='30' append='...'  count='5' flashWidth='398' flashHeight='282' textHeight='0' channelId='324' channelOption='1' tpl='2' orderBy='3'/]
+        </div>  
+        <div class="box ml10 fl w360">
+	        <div class="title">
+	         <span class="t"><a href="http://www.cncaprc.gov.cn/sbjjsjd/index.jhtml"  target="_blank">精神解读</a></span>
+	       </div>
+	       <div class="list">
+	         <ul>
+	            [@cms_content_list channelId='321' count='6' titLen='15' append='...' channelOption='2' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+		          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+				  [/#list]
+		         [/@cms_content_list]
+	         </ul>
+	       </div>
+	    </div>
+      <div class="clear"></div>
+      <div class="box fl w365">
+        <div class="title">
+         	<span class="t"><a href="http://www.cncaprc.gov.cn/sbjmtbd/index.jhtml"  target="_blank">媒体报导</a></span>
+       </div>
+       <div class="list">
+         <ul>
+            [@cms_content_list channelId='322' count='6' titLen='15' append='...' channelOption='2' dateFormat='MM-dd' ]
+	          [#list tag_list as a]
+	          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+			  [/#list]
+	         [/@cms_content_list]
+         </ul>
+       </div>
+    </div>
+    
+    <div class="box ml10 fl w360">
+        <div class="title">
+         <span class="t"><a href="http://www.cncaprc.gov.cn/sbjxxdt/index.jhtml"  target="_blank">学习动态</a></span>
+       </div>
+       <div class="list">
+         <ul>
+            [@cms_content_list channelId='323' count='6' titLen='15' append='...' channelOption='2' dateFormat='MM-dd' ]
+	          [#list tag_list as a]
+	          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+			  [/#list]
+	         [/@cms_content_list]
+         </ul>
+       </div>
+    </div>
+           
+	 <div id="footer">
+	  版权所有：全国老龄工作委员会办公室     &nbsp;&nbsp;&nbsp;  网站管理：全国老龄办信息中心   </div>  
+    </div>
+</div>
+ 
+</body>
+</html>

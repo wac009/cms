@@ -1,0 +1,106 @@
+﻿<!--
+/*********************************************************************************************************/
+/**
+ * 插入代码超强版 插件 For Fckeditor (Support: Lajox ; Email: lajox@19www.com)
+ */
+/*********************************************************************************************************/
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>InsertCode Properties</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="noindex, nofollow" name="robots">
+<link href="../common/fck_dialog_common.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+var oEditor = window.parent.InnerDialogLoaded() ;
+var FCKLang = oEditor.FCKLang ;
+var FCKInsertCode = oEditor.FCKInsertCode ;
+var fckWby=false,fckYs=false;
+
+window.onload = function ()
+{
+    oEditor.FCKLanguageManager.TranslatePage( document ) ;
+    window.parent.SetOkButton( true ) ;    
+}
+function Ok()
+{
+	var mCopy;
+	var sE = document.getElementById('icLan');
+	var sV = sE.options[sE.selectedIndex].innerHTML;
+	var hh = document.getElementById('hhao').checked;
+	var zd = document.getElementById('zheDie').checked;
+	var yy = document.getElementById('yuYan').checked;
+	var cText = document.getElementById('icTxt').value;
+	var cols  = document.getElementById('cols');
+	var rows  = document.getElementById('rows');
+	if(!(rows.disabled)&&!(rows.disabled))
+	{
+	if(cols.value<=0){
+		alert(FCKLang.DlgAlertCols);
+		return false ;
+		}
+	if(rows.value<=0) {
+		alert(FCKLang.DlgAlertRows);
+		return false ;
+		}
+	}
+	
+	FCKInsertCode.Add(sE.value,sV,cText,hh,zd,yy,fckWby,fckYs,cols.value,rows.value);
+    return true ;
+}
+function wbychk()
+{
+  var a = document.getElementById('wby');
+  var b = document.getElementById('ys');
+  var c = document.getElementById('cols');
+  var d = document.getElementById('rows');
+  
+  document.getElementById('zheDie').disabled = a.checked;
+  document.getElementById('yuYan').disabled = a.checked;
+  document.getElementById('icLan').disabled = a.checked;
+  document.getElementById('hhao').disabled = a.checked;
+  
+  fckWby=a.checked;
+  fckYs=b.checked;
+  b.disabled=!fckWby;
+  c.disabled=!fckWby;
+  d.disabled=!fckWby;  
+}
+</script>
+</head>
+<body scroll="no" style="OVERFLOW: hidden;">
+<table height="100%" cellSpacing="1" cellPadding="5" width="100%" border="0">
+  <tr>
+    <td><table align="center" border="0" cellPadding="5">
+        <tr>
+          <td style="vertical-align: top;"><span fckLang="DlgLanguage">Language</span></td>
+          <td><select id="icLan">
+              <option value="xhtml">XML/HTML</option>
+              <option value="cpp">C/C++</option>
+              <option value="javascript">JavaScript</option>
+              <option value="css">CSS</option>
+              <option value="csharp">C#</option>            
+              <option value="java">Java</option>
+              <option value="php">PHP</option>
+              <option value="python">Python</option>
+              <option value="ruby">Ruby</option>
+              <option value="sql">SQL</option>
+              <option value="vb">ASP/Visual Basic</option>
+            </select><input type="checkbox" name="yuYan" id="yuYan" checked="true"><span fckLang="DlgDisplayLanguage">Display Language</span> <input type="checkbox" value="1" name="hhao" checked="true" id="hhao"/><span fckLang="DlgDisplayID">Display ID</span> <input type="checkbox" value="1" name="zheDie" id="zheDie"><span fckLang="DlgAllowShowHide">Allow Show/Hide</span>
+          </td>
+        </tr>
+        <tr><td></td><td>
+        <input type="checkbox" name="wby" id="wby" onclick="wbychk()"><span fckLang="DlgDisplayByText">Display By Text</span> <input type="checkbox" name="ys" id="ys" checked="true" disabled="true" onclick="wbychk()"><span fckLang="DlgDisplayRunCopySaveButton">Display Run/Copy/Save Button</span> 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span fckLang="DlgArea">Text Area:</span>&nbsp;&nbsp;
+		<span fckLang="DlgAreaCols">Cols:</span><input type="text" name="cols" id="cols" size="3" value="70" disabled="true"> <span fckLang="DlgAreaRows">Rows:</span><input type="text" name="rows" id="rows" size="3" value="16" disabled="true">
+        </td></tr>
+        <tr>
+          <td style="vertical-align: top;"><span fckLang="DlgCode">Code</span></td>
+          <td><textarea id="icTxt" cols="55" rows="16" style="font-family: 'Courier New', Monospace; border: 1px solid #ccc; padding: 5px;"></textarea></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</body>
+</html>

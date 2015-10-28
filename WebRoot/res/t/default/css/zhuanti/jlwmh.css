@@ -1,0 +1,49 @@
+
+@import url(../common.css);
+
+body {margin: 0;	padding: 0;	text-align: center;}
+#container {width: 800px;	margin: 0 auto;	background-color: #FFF;	text-align: left;}
+#header {width: 800px;background-color: #FFF;	height: 160px;}
+#banner {width: 800px;background: url(../../img/jlwmh/banner.gif) no-repeat;height: 128px;}
+
+#navi {width: 800px; background-color:#82A9C8;	height: 32px;line-height:32px; 	padding-left: 50px;}
+#navi ul li {width: 90px;	float: left;text-decoration: none;}
+#navi ul li a{font-weight:bold;font-size: 14px;	color: #FFF;}
+
+.time {float: right;}
+.w1000{width:1000px;}
+.w768{width:768px;}
+.w320{width:320px;}
+
+.h280{height:280px;}
+.h320{height:320px;}
+
+.box {margin-top: 10px;padding:15px;float: left;border: #82A9C8 1px solid;}
+
+.box .title {width: 100%;height: 31px;line-height:31px;}
+.box .title .t{height:30px;font-size: 15px;float: left;font-weight:bold; border-bottom:#82A9C8 1px solid;padding:0 10px;}
+.box .title a{color:#05487F;}
+.box2{width:380px;height:320px;border-right:#82A9C8 dashed 1px;}
+.box3{width:380px;height:160px}
+.box4{width:360px;height:310px;padding-left:20px;}
+.box5{width:362px;height:210px;}
+.box6{width:362px;height:210px;margin-left:12px;}
+.box6 .title .t{border:none;}
+
+.box .list {width: 360px;float: left;background-color: #FFF;padding-top: 10px;}
+.box .list ul li {width: 360px;list-style: none;height: 29px;float: left;background: url(../../img/jlwmh/list.gif) no-repeat;background-position: 10px 3px;}
+.box .list ul li a {width: 320px;text-decoration: none;	color: #000;overflow: hidden;font-size: 14px;margin-left: 20px;}
+.box .list ul li a:hover {color: #C00}
+
+.box6 .list{width:200px;}
+.box6 .pic{width:150px;height:150px;}
+.box62 .list{width:360px;}
+
+.box .tab{height:33px; background:url(../img/title.jpg) repeat-x; }
+.box .title a.tabon{display:inline-block;border-bottom:#82A9C8 1px solid;}
+
+.box .content{text-indent: 28px;font-size:14px;padding-top:10px;line-height:27px;}
+
+#footer {clear: both;float: left;background-color: #fff;width: 800px;height: 50px;margin-top: 10px;font-size: 12px;
+	font: "宋体";text-align: center;	line-height: 20px;border-top: #82A9C8 2px solid;padding-top: 20px;}
+

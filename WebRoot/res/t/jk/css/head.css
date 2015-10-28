@@ -1,0 +1,37 @@
+/*----------------------------------------
+Name: header.css
+Developed by: 曹清，王成
+Date Created: 2012-05-20
+Last Updated: 2012-06-20
+Copyright: 全国老龄办信息中心
+----------------------------------------*/
+
+@charset "utf-8";
+
+/*顶部--------------------------------------*/
+#top{background:url(../img/box_bg.gif) repeat-x; height:32px; line-height:29px; width:100%;margin: 0 auto; }
+#topfunc{height:28px; line-height:28px;}
+#topfunc a{color: #999;padding:0 1px;}
+#topfunc a:hover{color:#FAA037;}
+	
+#head{width:980px;height:74px; background:url(../img/bg_nav.gif) no-repeat;}
+#navi{width:600px;height:50px; padding-top:20px;line-height:50px;margin-left:360px;}
+#navi ul li{width:80px;float: left;text-decoration: none;}
+#navi ul li a{font-size: 14px;	color: #fff;}
+
+#jianjie{width:970px;height:181px;background:url(../img/bg_jianjie.gif) no-repeat;padding:5px;color:#fff;}
+#jianjie .text{width:480px;height:160px;float:left;padding:10px;}
+#jianjie .title{font-size:14px;font-weight:bold;border-bottom:2px solid #fff;width:80px;padding-bottom:10px;padding-left:5px;}
+#jianjie .content{text-indent:30px;font-size:14px;color:#fff;}
+#jianjie .pic{width:400px;padding:10px;margin-left:20px;}
+#jianjie .pic img{width:400px;height:160px;}
+
+
+
+
+
+
+
+
+
+

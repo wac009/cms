@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
+	
+	<!--密码加密器-->
+	<bean id="pwdEncoder" class="com.cc.common.security.encoder.PwdEncoder">
+		<property name="salt">
+			<value>CNCACMS</value>
+		</property>
+	</bean>
+	<!--验证码生成器-->
+	<bean id="imageCaptchaService" class="com.cc.common.checkcode.CaptchaService">
+		<constructor-arg type="com.octo.captcha.service.captchastore.CaptchaStore" index="0">
+			<ref bean="fastHashMapCaptchaStore"/>
+		</constructor-arg>   
+		<!--which captcha Engine you use-->   
+		<constructor-arg type="com.octo.captcha.engine.CaptchaEngine" index="1">
+			<ref bean="captchaEngine"/>
+		</constructor-arg>   
+		<constructor-arg index="2">   
+			<value>180</value>   
+		</constructor-arg>   
+		<constructor-arg index="3">   
+			<value>100000</value>   
+		</constructor-arg>   
+		<constructor-arg index="4">   
+			<value>75000</value>   
+		</constructor-arg>  
+	</bean>
+	<bean id="fastHashMapCaptchaStore" class="com.octo.captcha.service.captchastore.FastHashMapCaptchaStore"/>   
+	<!--you can define more than one captcha engine here -->   
+	<bean id="captchaEngine" class="com.cc.common.checkcode.GMailEngine"/>
+	
+	<!--图片处理-->
+	<bean id="imageScale" class="com.cc.common.image.ImageScaleImpl" init-method="init">
+		<property name="tryMagick" value="false"/>
+	</bean>
+	
+	<!--系统上下文信息PROVIDER-->
+	<bean id="contextPvd" class="com.cc.common.struts2.ContextPvdImpl" autowire="byName"/>
+	
+	<!--执行时间标签-->
+	<bean id="uuid" class="com.cc.common.web.freemarker.UUIDDirective"/>
+	<bean id="process_time" class="com.cc.common.web.freemarker.ProcessTimeDirective"/>
+	<bean id="text_cut" class="com.cc.common.web.freemarker.TextCutDirective"/>
+	<bean id="html_cut" class="com.cc.common.web.freemarker.HtmlCutDirective"/>
+	
+	<bean id="ipSeeker" class="com.cc.common.ipseek.IPSeekerImpl" init-method="init">
+		<property name="dir" value="/WEB-INF/ipseek"/>
+		<property name="filename" value="QQWry.Dat"/>
+	</bean>
+	
+</beans>

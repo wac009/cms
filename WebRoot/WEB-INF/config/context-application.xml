@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-lazy-init="false">
+	
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>/WEB-INF/config/jdbc.properties</value>
+		</property>
+	</bean>
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<!-- C3P0连接池配置 -->
+		<property name="autoCommitOnClose" value="${jdbc.autoCommitOnClose}" />
+		<property name="acquireRetryAttempts" value="${cpool.acquireRetryAttempts}" />
+		<property name="checkoutTimeout" value="${cpool.checkoutTimeout}" />
+		<property name="breakAfterAcquireFailure" value="${cpool.breakAfterAcquireFailure}" />
+		<property name="initialPoolSize" value="${cpool.initialPoolSize}" />
+		<property name="minPoolSize" value="${cpool.minPoolSize}" />
+		<property name="maxPoolSize" value="${cpool.maxPoolSize}" />
+		<property name="maxIdleTime" value="${cpool.maxIdleTime}" />
+		<property name="idleConnectionTestPeriod" value="${cpool.idleConnectionTestPeriod}" />
+		<property name="acquireIncrement" value="${cpool.acquireIncrement}" />
+		<property name="numHelperThreads" value="${cpool.numHelperThreads}" />
+	</bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<value>
+				hibernate.dialect=${hibernate.dialect}
+				hibernate.show_sql=${hibernate.show_sql}
+				hibernate.format_sql=${hibernate.format_sql}
+				hibernate.query.substitutions=${hibernate.query.substitutions}
+				hibernate.jdbc.batch_size=${hibernate.jdbc.batch_size}
+				hibernate.jdbc.fetch_size=${hibernate.jdbc.fetch_size}
+				hibernate.connection.release_mode=${hibernate.connection.release_mode}
+				hibernate.cache.use_query_cache=${hibernate.cache.use_query_cache}
+			</value>
+		</property>
+		<property name="mappingLocations">
+			<list>
+				<value>classpath*:/com/cc/cms/entity/assist/hbm/*.hbm.xml</value>
+				<value>classpath*:/com/cc/cms/entity/main/hbm/*.hbm.xml</value>
+				<value>classpath*:/com/cc/core/entity/hbm/*.hbm.xml</value>
+			</list> 
+		</property>
+		<property name="entityInterceptor">   
+			<ref bean="treeInterceptor"/>
+		</property>
+		<property name="cacheProvider">
+			<ref bean="cacheProvider"/>
+		</property>
+		<property name="lobHandler">
+			<ref bean="lobHandler" />
+		</property>
+	</bean>
+
+	<bean id="cacheProvider" class="com.cc.common.orm.hibernate3.SpringEhCacheProvider">
+		<property name="configLocation">
+			<value>/WEB-INF/config/ehcache-hibernate.xml</value>
+		</property>
+		<property name="diskStoreLocation">
+			<value>/WEB-INF/cache/hibernate</value>
+		</property>
+	</bean>
+	<bean id="lobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler" lazy-init="true" />
+	<bean id="treeInterceptor" class="com.cc.common.struts2.interceptor.TreeIntercptor" />
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<context:component-scan base-package="com.cc" />
+	<tx:annotation-driven transaction-manager="transactionManager" />
+</beans>

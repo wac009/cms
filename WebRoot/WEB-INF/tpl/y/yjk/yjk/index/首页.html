@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${site.name}</title>
+<meta http-equiv="keywords" content="${site.name}"/>
+<meta http-equiv="description" content="${site.name}"/>
+[#include "../include/head_res.inc"/]
+</head>
+<body>
+
+[#include "../include/页头顶栏.html"/]
+
+<div id="container">
+	[#include "../include/页头导航栏.html"/]
+    <!--主体内容-->
+    <div id="content">
+    	<div id="left">
+        	<!--简介-->
+            <div id="jianjie" class="box">
+            	<div class="title"><img src="${resTpl}/img/title_xhjj.gif" /></div>
+                <div class="desc">[@cms_channel id='1']  ${tag_bean.txt!}  [/@cms_channel]</div>
+            </div>
+            <!--领导成员-->
+            <div class="mt5"><img src="${resTpl}/img/ldcy.jpg" /></div>
+            <!--形象大使-->
+            <div id="dashi" class="mt5 box">
+            	<div class="title"><img src="${resTpl}/img/title_xxds.gif" /></div>
+                <div class="list">
+                	<ul>
+                		[@cms_content_list channelId='248' count='2' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+				          [#list tag_list as a]
+							   <li>
+							   		<div class="img fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a></div>
+		                            <div class="tit fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len='8' append=append/]</a></div>
+		                            <div class="desc fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.description append=append/]</a></div>
+							   </li>
+						  [/#list]
+				         [/@cms_content_list]
+                    </ul>
+                </div>
+            </div>
+            <!--组织机构-->
+            <div id="zuzhi" class="box mt5">
+            	<div class="title"><img src="${resTpl}/img/title_zzjg.gif" /></div>
+            	<div class="list">
+                	<ul>
+                    	<!-- <li>顾问名单</li><li>办事机构</li>
+                        <li>分支机构</li><li>专家委员会</li> -->
+                        [@cms_content_list channelId='260' count='4' titLen='23' append='...' channelOption='0' dateFormat='MM-dd' ]
+				          [#list tag_list as a]
+				          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+						  [/#list]
+			         	[/@cms_content_list]
+                    </ul>
+                </div>
+            </div>
+            <!--会员机构-->
+            <div id="huiyuan" class="mt5 box">
+            	<div class="title"><img src="${resTpl}/img/title_hyjg.gif" /></div>
+                <div class="list">
+                	<ul>
+                        [@cms_content_list channelId='246' count='8' titLen='23' append='...' channelOption='0' dateFormat='MM-dd' ]
+				          [#list tag_list as a]
+				          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+						  [/#list]
+			         	[/@cms_content_list]
+                    </ul>
+                </div>
+            </div>
+            <!--在线调查-->
+            <div id="diaocha" class="mt5 box">
+            	<div class="title"><img src="${resTpl}/img/title_zxdc.gif" /></div>
+                [#include "../include/投票栏.html"/]
+            </div>
+            <!--相关链接-->
+            <div id="lianjie" class="mt5 box">
+            	<div class="title"><img src="${resTpl}/img/title_xglj.gif" /></div>
+            	<div class="wssc">[#include "../include/wssc.htm"/]</div>
+            </div>
+        </div>
+        <div id="center" class="ml10">
+        	<!--最新资讯-->
+        	<div id="zixun" class="box2">
+            	<div class="title"><span class="tx fl">最新资讯</span><span class="t_bg fl"></span></div>
+                <div class="flash fl">[@cms_content_list typeId='3' styleList='3-1' titLen='18' append='...'  count='5' flashWidth='255' flashHeight='178' textHeight='22' channelId='241' channelOption='1' tpl='2' orderBy='3'/]</div>
+                <div class="list fl">
+                    [@cms_content_list channelId='241' count='7' titLen='17' append='...' channelOption='0' dateFormat='MM-dd' ]
+			          [#list tag_list as a]
+					  [#if a_index = 0]
+					  <div class="focus">
+						  	<a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.stit len='15' append=append/]</a>
+					  </div>
+					  <div class=""><ul>
+					  [#else]
+			          <li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+					  [/#if]
+					  [/#list]
+					  </ul></div>
+			         [/@cms_content_list]
+                </div>
+            </div>
+            <!--bann-->
+            <div id="b1" class="mt5"><img src="${resTpl}/img/20110906_banner.gif" /></div>
+            <!--协会活动-->
+            <div id="huodong" class="box2 mt5">
+            	<div class="title"><span class="tx fl">协会活动</span><span class="t_bg fl"></span></div>
+                <div class="list fl">
+                    <div class="">
+                    	<ul><!-- 
+                        	[@cms_content_list channelId='243' count='7' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+								   <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+							  [/#list]
+					         [/@cms_content_list]   -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--专家访谈-->
+            <div id="fangtan" class="mt5 box2 box3 fl">
+            	<div class="title"><span class="tx fl">专家访谈</span><span class="t_bg fl"></span></div>
+              <!--   [@cms_content_list channelId='245' count='6' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+				  [#if a_index = 0]
+				  <div class="focus">
+                	<div class="img fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a></div>
+                    <div class="sub fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.stit append=append/]</a></div>
+                  </div>
+				  <div class="list"><ul>
+				  [#else]
+					   <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+				  [/#if]
+				  [/#list]
+				  </ul></div>
+		         [/@cms_content_list] -->
+            </div>
+            <!--各地动态-->
+            <div id="difang" class="ml10 mt5 box2 box3 fl">
+            	<div class="title"><span class="tx fl">各地动态</span><span class="t_bg fl"></span></div>
+              <!--  [@cms_content_list channelId='244' count='6' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+				  [#if a_index = 0]
+				  <div class="focus">
+                	<div class="img fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a></div>
+                    <div class="sub fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.stit append=append/]</a></div>
+                  </div>
+				  <div class="list"><ul>
+				  [#else]
+					   <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+				  [/#if]
+				  [/#list]
+				  </ul></div>
+		         [/@cms_content_list]-->
+            </div>
+            <!--养生保健-->
+            <div id="yangshen" class="mt5 box2 box3 fl">
+            	<div class="title"><img src="${resTpl}/img/title_yangsheng.gif" /></div>
+             <!--   [@cms_content_list channelId='253' count='6' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+				  [#if a_index = 0]
+				  <div class="focus">
+                	<div class="img fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a></div>
+                    <div class="sub fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.stit append=append/]</a></div>
+                  </div>
+				  <div class="list"><ul>
+				  [#else]
+					   <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+				  [/#if]
+				  [/#list]
+				  </ul></div>
+		         [/@cms_content_list]-->
+            </div>
+            <!--饮食科学-->
+            <div id="difang" class="ml10 mt5 box2 box3 fl">
+            	<div class="title"><img src="${resTpl}/img/title_yinshi.gif" /></div>
+             <!--   [@cms_content_list channelId='254' count='6' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+				  [#if a_index = 0]
+				  <div class="focus">
+                	<div class="img fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a></div>
+                    <div class="sub fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.stit append=append/]</a></div>
+                  </div>
+				  <div class="list"><ul>
+				  [#else]
+					   <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+				  [/#if]
+				  [/#list]
+				  </ul></div>
+		         [/@cms_content_list]-->
+            </div>
+            <!--医药与急救-->
+            <div id="difang" class="mt5 box2 box3 fl">
+            	<div class="title"><img src="${resTpl}/img/title_jijiuzhishi.gif" /></div>
+             <!--   [@cms_content_list channelId='255' count='6' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+				  [#if a_index = 0]
+				  <div class="focus">
+                	<div class="img fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a></div>
+                    <div class="sub fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.stit append=append/]</a></div>
+                  </div>
+				  <div class="list"><ul>
+				  [#else]
+					   <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+				  [/#if]
+				  [/#list]
+				  </ul></div>
+		         [/@cms_content_list]-->
+            </div>
+            <!--心灵驿站-->
+            <div id="difang" class="ml10 mt5 box2 box3 fl">
+            	<div class="title"><img src="${resTpl}/img/title_xinlingyizhan.gif" /></div>
+              <!--  [@cms_content_list channelId='247' count='6' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+				  [#if a_index = 0]
+				  <div class="focus">
+                	<div class="img fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a></div>
+                    <div class="sub fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.stit append=append/]</a></div>
+                  </div>
+				  <div class="list"><ul>
+				  [#else]
+					   <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+				  [/#if]
+				  [/#list]
+				  </ul></div>
+		         [/@cms_content_list]-->
+            </div>
+        </div>
+        <!--通知-->
+        <div id="right" class="ml10">
+        	<div id="tongzhi" class="box box4">
+            	<div class="title"><img src="${resTpl}/img/title_tzgg.gif" /></div>
+                <div class="list">
+                	<ul>
+                    <!--	[@cms_content_list channelId='242' count='9' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+				          [#list tag_list as a]
+							   <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+						  [/#list]
+				         [/@cms_content_list]  -->
+                    </ul>
+                </div>
+            </div>
+            <!--下载-->
+        	<div id="xiazai" class="mt5"><img src="${resTpl}/img/banner_sm2.gif" /></div>
+            <!--视频播放-->
+            <div id="shipin" class="box box5 mt5 fl">
+                <div class="title"><img src="${resTpl}/img/title_shipin.gif" /></div>
+             <!--   [@cms_content_list channelId='252' count='4' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+				  [#if a_index = 0]
+				  <div class="focus">
+                	<div class="img fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a></div>
+                    <div class="sub fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.stit append=append/]</a></div>
+                  </div>
+				  <div class="list"><ul>
+				  [#else]
+					   <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+				  [/#if]
+				  [/#list]
+				  </ul></div>
+		         [/@cms_content_list]-->
+            </div>
+            <!--政策查询-->
+            <div id="zhengce" class="box box4 mt5 fl" >
+            	<div class="title"><img src="${resTpl}/img/title_xgzccx.gif" /></div>
+                <div class="list">
+                	<ul>
+                    <!--	[@cms_content_list channelId='251' count='9' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+				          [#list tag_list as a]
+							   <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+						  [/#list]
+				         [/@cms_content_list]  -->
+                    </ul>
+                </div>
+            </div>
+            <!--就医指南-->
+            <div id="jiuyi" class="box box5 mt5 fl">
+                <div class="title"><img src="${resTpl}/img/title_jyzn.gif" /></div>
+              <!--  [@cms_content_list channelId='257' count='6' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+				  [#if a_index = 0]
+				  <div class="focus">
+                	<div class="img fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a></div>
+                    <div class="sub fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.stit append=append/]</a></div>
+                  </div>
+				  <div class="list"><ul>
+				  [#else]
+					   <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+				  [/#if]
+				  [/#list]
+				  </ul></div>
+		         [/@cms_content_list]-->
+            </div>
+            <!--养老机构-->
+            <div id="jigou" class="box box5 mt5 fl">
+                <div class="title"><img src="${resTpl}/img/title_yljgjj.gif" /></div>
+               <!-- [@cms_content_list channelId='250' count='4' titLen='18' append='...' channelOption='0' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+				  [#if a_index = 0]
+				  <div class="focus">
+                	<div class="img fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a></div>
+                    <div class="sub fl"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.stit append=append/]</a></div>
+                  </div>
+				  <div class="list"><ul>
+				  [#else]
+					   <li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+				  [/#if]
+				  [/#list]
+				  </ul></div>
+		         [/@cms_content_list]-->
+            </div>
+        </div>        
+    </div>
+    <!--页底-->      
+    [#include "../include/页脚信息栏.html"/]
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

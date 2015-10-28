@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>敬老文明号专题</title>
+<script src="${resSys}/jquery/jquery.js" type="text/javascript"></script>
+<script src="${resSys}/festival/festival.js" type="text/javascript"></script>
+<script src="${resTpl}/js/front.js" type="text/javascript"></script>
+<link href="${resTpl}/css/zhuanti/jlwmh.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div id="container">
+       <div id="header">
+           <div id="banner"></div>
+           <div id="navi">
+                <ul>
+                	<li><a href="http://www.cncaprc.gov.cn"  target="_blank">网站首页</a></li>
+                    <li><a href="http://www.cncaprc.gov.cn/ztjlwmhpp/index.jhtml"  target="_blank">品牌介绍</a></li>
+                    <li><a href="http://www.cncaprc.gov.cn/ztjlwmhmt/index.jhtml"  target="_blank">媒体关注</a></li>
+                    <li><a href="http://www.cncaprc.gov.cn/ztjlwmhzc/index.jhtml"  target="_blank">政策文件</a></li>
+                    <li><a href="http://www.cncaprc.gov.cn/ztjlwmhgd/index.jhtml"  target="_blank">各地动态</a></li>
+                    <li><a href="http://www.cncaprc.gov.cn/ztjlwmhbz/index.jhtml"  target="_blank">表彰集体</a></li>
+                    <li><a href="http://www.cncaprc.gov.cn/ztjlwmhck/index.jhtml"  target="_blank">参考案例</a></li>
+                    <li><a href="http://www.cncaprc.gov.cn/ztjlwmhftzb/index.jhtml"  target="_blank">访谈摘编</a></li>
+                </ul>
+           </div>
+       </div>
+      
+      <div class="box w768 h280 fl">
+           <div class="title">
+                 <span class="t">品牌介绍</span>
+           </div>
+           <div class="content">
+<p>经全国评比达标表彰工作协调小组批准，全国老龄委从2012年起在全国开展“敬老文明号”创建活动。这是我国第一次在全国范围内开展以为老服务为主题的社会性、群众性精神文明创建活动。</p>
+<p>“敬老文明号”是在经营、管理和服务等工作岗位上，积极开展优质为老服务工作的先进集体。创建活动面向全国涉老部门、为老服务组织、公共服务窗口行业，在全国、省(区、市)、市(地、州)、县(市、区)四级开展。创建活动以落实各项惠老优待政策、创新为老服务方式方法、提高为老服务质量、推动社会主义精神文明建设为主要内容，每三年进行一次评比表彰，数量不超过1300个。</p>
+<p>开展“敬老文明号”创建活动，旨在深入贯彻落实中央关于老龄工作的方针政策，进一步弘扬尊老敬老的传统美德，广泛动员社会各界参与尊老敬老社会活动，落实老年优待政策，推动基层老龄工作，促进社会主义精神文明建设和社会和谐，对积极应对人口老龄化、提高为老服务水平、提升社会各界的老龄意识和敬老意识都具有重要意义。</p>
+           </div>
+      </div>
+      
+      <div class="box w768 h320 fl">
+      	<div class="box2 fl">
+        	<div class="box3">
+            	<div class="title">
+                 <span class="t"><a href="http://www.cncaprc.gov.cn/ztjlwmhzc/index.jhtml"  target="_blank">政策文件</a></span>
+               </div>
+               <div class="list">
+                 <ul>
+                    [@cms_content_list channelId='295' count='4' titLen='20' append='...' channelOption='2' dateFormat='MM-dd' ]
+			          [#list tag_list as a]
+			          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+					  [/#list]
+			         [/@cms_content_list]
+                 </ul>
+               </div>
+            </div>
+        	<div class="box3">
+            	<div class="title">
+                 <span class="t"><a href="http://www.cncaprc.gov.cn/ztjlwmhmt/index.jhtml"  target="_blank">媒体关注</a></span>
+               </div>
+               <div class="list">
+                 <ul>
+                    [@cms_content_list channelId='294' count='4' titLen='20' append='...' channelOption='2' dateFormat='MM-dd' ]
+			          [#list tag_list as a]
+			          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+					  [/#list]
+			         [/@cms_content_list]
+                 </ul>
+               </div>
+            </div>
+        </div>   
+        <div class="box4 fl">
+            <div class="title">
+             <span class="t"><a href="http://www.cncaprc.gov.cn/ztjlwmhgd/index.jhtml"  target="_blank">各地动态</a></span>
+           </div>
+           <div class="list">
+             <ul>
+                	[@cms_content_list channelId='296' count='9' titLen='20' append='...' channelOption='2' dateFormat='MM-dd' ]
+			          [#list tag_list as a]
+			          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+					  [/#list]
+			         [/@cms_content_list]
+             </ul>
+           </div>
+        </div>       
+      </div>
+     
+      <div class="box box5 fl">
+        <div class="title">
+         <span class="t"><a href="http://www.cncaprc.gov.cn/ztjlwmhcjwt/index.jhtml"  target="_blank">常见问题及解答</a></span>
+       </div>
+       <div class="list">
+         <ul>
+            [@cms_content_list channelId='300' count='6' titLen='20' append='...' channelOption='2' dateFormat='MM-dd' ]
+	          [#list tag_list as a]
+	          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+			  [/#list]
+	         [/@cms_content_list]
+         </ul>
+       </div>
+    </div>
+    <div class="box box6 fl">
+        <div class="title tab">
+         <span class="t "><a href="http://www.cncaprc.gov.cn/ztjlwmhftzb/index.jhtml"  target="_blank"  id="tabmenu_10" name="tabmenu_10" onmouseover="Show_Tab(1,0,2,'','tabon')" class="tabon" >访谈</a></span>
+         <span class="t "><a href="http://www.cncaprc.gov.cn/ztjlwmhftsj/index.jhtml" target="_blank"  id="tabmenu_11" name="tabmenu_11" onmouseover="Show_Tab(1,1,2,'','tabon')">事迹介绍</a></span>
+       </div>
+       <div id="tabcontent_10" >
+	       <div class="list">
+	         <ul>
+	            [@cms_content_list channelId='299' count='6' titLen='20' append='...' channelOption='2' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+		          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+				  [/#list]
+		         [/@cms_content_list]
+	         </ul>
+	       </div>
+	       <div class="pic fl">
+	       		[@cms_content_list count='1' channelOption='1' channelId='299' typeId='2' descLen='40' append='...']
+	              	 [#list tag_list as a]
+	              	 	<div><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a>
+	              	 	<span class="txt"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></span></div>
+	                 [/#list]
+	              [/@cms_content_list]
+	       </div>
+	     </div>
+	     <div class="box62 hide" id="tabcontent_11" >
+	       <div class="list">
+	         <ul>
+	            [@cms_content_list channelId='301' count='6' titLen='20' append='...' channelOption='2' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+		          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+				  [/#list]
+		         [/@cms_content_list]
+	         </ul>
+	       </div>
+	     </div>
+    </div>
+           
+	 <div id="footer">
+	  版权所有：全国老龄工作委员会办公室     &nbsp;&nbsp;&nbsp;  网站管理：全国老龄办信息中心   </div>  
+    </div>
+</div>
+ 
+</body>
+</html>

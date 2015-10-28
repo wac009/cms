@@ -1,0 +1,36 @@
+/*
+理念：清除和重置是紧密不可分的
+特色：1.适应中文 2.基于最新主流浏览器
+*/
+html{color:#000;background:#FFF;}
+/*html{overflow-y: scroll; } 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html, body { height:100%;} /* 同时设置html是为了兼容FF */
+
+/*body {font-size: 12px; color: black; line-height: 150%; text-align: center; height:100%;}*/
+
+/*	TODO remove settings on BODY since we can't namespace it.*/
+*{vertical-align:baseline;outline: 0;padding: 0;margin: 0;border:0;}
+
+/* 重置列表元素 */
+ol, ul ,li {list-style:none;}
+
+/* 重置文本格式元素 */
+a:link,a:visited, a:hover,a:active { text-decoration:none;}
+
+abbr,acronym {border:0;font-variant:normal;}
+/* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+abbr[title], acronym[title] {border-bottom: 1px dotted;cursor: help;}
+
+q:before, q:after { content: ''; }
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+button, input, select, textarea {font-size: 100%; }/* 使得表单元素在 ie 下能继承字体大小 */
+table {border-collapse: collapse;border-spacing: 0;}/* 重置表格元素 */
+caption,th,td{text-align:left;}
+hr {border: none;height: 1px;}/* 重置 hr */
+
+/* to preserve line-height and selector appearance */
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+img {border: none;text-decoration:none;line-height:0;display:inline-block;}

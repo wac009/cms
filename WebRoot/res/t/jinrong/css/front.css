@@ -1,0 +1,99 @@
+/*----------------------------------------
+Developed by: 曹清，王成
+Date Created: 2012-05-20
+Last Updated: 2012-06-20
+Copyright: 全国老龄办信息中心
+----------------------------------------*/
+
+@charset "utf-8";
+
+@import url(common.css);
+@import url(head.css);
+@import url(footer.css);
+
+b ,strong{font-weight: bold;}
+
+/**container**/
+#container{width:1000px;}
+#content{width:1000px; margin-top:3px;}
+
+.box{border:1px solid #C8C8C8;}
+.title{height:19px; background:url(../img/bg-c-t.jpg) repeat-x;padding:5px 0 0 10px; font:14px; font-weight:bold;}
+.tk-title{width:31px;height:119px; background:url(../img/bg-yq-t.jpg) no-repeat center;}
+.tk-title span{color:#F00;font-weight:bold;display:block;width:15px;margin:30px 0 0 8px;}
+
+.more{margin:0 2px 0 0; font-weight:normal;}
+.split{background:url(../img/split1.jpg) repeat-x; height:3px;}
+.list {padding:5px;}
+.list div{height:22px;}
+.list a{overflow:hidden; white-space:nowrap;width:200px;display:inline-block; background:url(../img/bg-list.jpg) no-repeat left center;padding-left:10px;margin-top:5px; float:left;}
+.list .time{display:inline-block;width:70px;text-align:right;margin-top:5px; float:right;}
+.zj-list{width:160px;padding:5px;}
+	.zj-list div{width:155px;height:55px; background:url(../img/split2.jpg) repeat-x left bottom;padding-top:8px; padding-bottom:5px;}
+	.zj-list div img{width:47px;height:43px;padding:2px;border:1px solid #CCC;float:left;}
+	.zj-list div a{display:inline-block;float:left;width:92px;height:45px; overflow: auto; white-space: normal;background:none;padding-left:10px;margin:0; float:left; overflow:hidden;}
+.xw-list .img{padding:6px 0 0 5px;}
+	.xw-list img a{display:inline-block;float:left;margin-left:5px;}
+	.xw-list img{border:none;width:131px;height:107px;}
+
+.intro{width:94px;height:119px;}
+.intro .name{display:inline-block;width:94px;height:22px;text-align:center;font-weight:bold; background:url(../img/bg-yuqing-split.jpg) no-repeat bottom center;padding-top:8px;}
+.intro .c-period{display:inline-block;width:94px;height:15px;text-align:center;padding-top:10px;}
+.intro .t-period{display:inline-block;width:94px;height:15px;text-align:center;padding:10px 0 10px 0;background:url(../img/bg-yuqing-split.jpg) no-repeat bottom center;}
+.intro .read-pre,.read-current{display:inline-block;text-align:center;padding:5px 0 0 7px;}
+.cover img{width:90px;height:119px;border-left:1px solid #ccc;}
+
+
+
+.jigou-list{padding:10px;}
+.jigou-list a{display:block; background: url(../img/bg-jglink.jpg) no-repeat left center;padding-left:15px;margin-top:20px;}
+.jigou-list a:hover{ text-decoration:underline;}
+
+/*焦点图片------------------------------------------*/
+.jdpic{width:600px; height:295px; text-align:center;}
+.focus { overflow:hidden; zoom:1; position:relative;width:600px; height:295px;}
+.focus dl, .focus-tbj { position:absolute; bottom:0; left:0; width:470px; height:80px; color:#fff; }
+.focus-tbj {background:#000; opacity:.5; -moz-opacity:.5; filter:alpha(opacity=50); z-index:10; }
+.focus dl {display:none; z-index:99; }
+.focus dl dt, .focus dl dd { padding:0 15px 0 20px; }
+.focus dl dt {font-weight:bold; font-size:14px; padding-top:5px; }
+.focus dl dd {height:44px; overflow:hidden; }
+.focus-m { height:300px; overflow:hidden; float:left; width:100%; position:relative; z-index:10; }
+.focus-m ul {right:245px; position:absolute; }
+.focus-m li {height:300px; }
+.focus-m li img {width:470px; height:300px; vertical-align:top; background:url(../img/img/loading.gif) center no-repeat; }
+.focus-n {float:left; width:236px; margin-left:-236px; }
+.focus-n ul {padding-top:1px; zoom:1; }
+.focus-n li {text-align:left; height:53px; overflow:hidden; cursor:pointer; background-color:#f3f3f3; color:#2b6bad; position:relative; z-index:20; background:url(../img/img/focus.png) right -61px no-repeat; margin-top:-1px; padding-top:8px; }
+.focus-n li a { display:block; height:44px; padding:0 5px 0 88px; cursor:pointer; overflow:hidden; }
+.focus-n li a:hover { text-decoration:none; color:#2B6BAD; }
+.focus-n li img { position:absolute; top:5px; left:11px; width:67px; height:50px; }
+.focus-n .select { background-position:right 0; color:#000; z-index:25; }
+.focus-n .select a, .focus-n .select a:hover { color:#000; }
+
+/**-------------**/
+.focus1{width:206px; height:45px; background:url(../img/bg-tongzhi-focus.jpg) repeat-x;padding:10px 5px 5px 5px;}
+.focus1 a{display:inline-block;width:206px;height:18px;;padding:0 5px;margin-top:5px;color:#F00; line-height:20px; overflow:hidden;}
+.focus2{width:289px; height:52px;padding:5px;}
+	.focus2 a{display:inline-block;width:230px;height:18px;padding:5px 0;color:#F00; line-height:20px;}
+	.focus2 img{border:1px solid #CCC;widht:50px;height:46px;padding:2px;}
+
+.focus3{padding:5px;height:75px;}
+    .focus3 img{width:88px;height:67px;padding:1px;margin-right:10px;border:1px solid #ccc;}
+	.focus3 a{display:block;}
+	.focus3 .zj-title{width:185px;height:20px;color:red;font-weight:bold;}
+	.focus3 .intro{width:185px;height:55px;}
+
+.focus4{width:206px;height:78px;padding:5px; background:url(../img/split1.jpg) repeat-x bottom center;}
+	.focus4 .ft{width:25px;height:78px; background:url(../img/bg-lt-focus.jpg) no-repeat top;color:#FFF;margin-right:3px;}
+	.focus4 .ft span{display:inline-block;width:15px;padding:3px 0 0 4px;}
+	.focus4 .rd-title{display:block;width:175px;height:20px;line-height:20px;font-weight:bold; overflow:hidden; text-overflow:ellipsis;}
+	.focus4 .detail{display:block;width:175px;height:58px; text-indent:24px;padding-top:2px;line-height:16px;}
+	
+.lj-list{width:950px;padding-top:5px;}
+.lj-list a{display:inline-block;margin:12px 0 5px 20px;}
+
+	 
+
+
+

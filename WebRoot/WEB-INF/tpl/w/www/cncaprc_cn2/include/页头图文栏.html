@@ -1,0 +1,39 @@
+<div id="tw">
+  	<div class="text">
+      	<span>智能化养老实验基地</span>
+          <span>生活用品</span>
+          <span>度假旅游</span>
+          <span>护理培训机构</span>
+          <span>上善养老机构</span>
+          <span>老年游戏</span>
+          <span>老年人才</span>
+          <span>老年保健用品</span>
+          <span>信息科技产品</span>
+          <span>活动社区</span>
+          <span>老年教育</span>
+          <span>老年用品</span>
+          <span>宜居社区</span>
+          <span>老年用品</span>
+      </div>
+      <div class="pic ">
+      	 [@cms_content_list channelId='212' count='2' titLen='10' append='...' channelOption='0' dateFormat='MM-dd' ]
+		     [#list tag_list as a]
+		     	<div class="fl">
+		     		 <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><span class="img"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></span></a>
+		     		 <span class="txt"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.description len='32'  append=append/]</a></span>
+		         </div>
+			[/#list]
+		[/@cms_content_list]
+		
+		<div class="notice fl">
+			<div class="t">[@cms_channel id='351']<a href="${tag_bean.url}" target="_blank" >通知公告</a>[/@cms_channel]</div>
+			[@cms_content_list channelId='351' count='3' channelOption='0' dateFormat='MM-dd' ]
+		     [#list tag_list as a]
+		     	<div >
+		     		 <span class="c"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') /]</a></span>
+		         </div>
+			[/#list]
+		[/@cms_content_list]
+		</div>
+      </div>
+ </div>

@@ -1,0 +1,61 @@
+/*----------------------------------------
+Copyright: 全国老龄办信息中心
+----------------------------------------*/
+
+@charset "utf-8";
+
+@import url(common.css);
+@import url(head.css);
+@import url(footer.css);
+
+
+body{font-size:13px;}
+#container{width:977px;}
+/*边框---------------------------------------------*/
+.border1{border:1px solid #ccc;}
+
+/*主页-------------------------------------*/
+#content{margin-top:5px;width:977px;}
+#left{width:220px;float:left;}
+#center{width:540px;float:left;}
+#right{width:220px;float:left;}
+.more{color:#999;font-size:13px;line-height:30px;}
+
+/*flash*/
+#flash{}
+/*公告*/
+#gonggao{width:290px;height:317px; background:url(../../../img/jjdc10/dc_bg.gif) no-repeat;}
+#gonggao .title{width:100%;height:40px; color:#fff; font-size:16px;}
+#gonggao .title .t{height:40px; line-height:40px;margin-left:90px;font-weight:bold; letter-spacing:10px;}
+#gonggao .list{padding:10px;}
+#gonggao .list ul li{padding-left:10px; background:url(../../../img/jjdc10/bg-list.jpg) left center no-repeat;line-height:26px;}
+
+
+
+.box1 {width:334px;height:260px;border:1px solid #ccc;}
+.box1 .title{width:100%;height:30px; background:url(../../../img/jjdc10/titlebar.png); color:#FAA037; font-size:14px; }
+.box1 .title .t{height:30px; line-height:30px;margin-left:25px;color:#940306;font-weight:bold;}
+.box1 .list{padding:10px;}
+.box1 .list ul li{padding-left:10px; background:url(../../../img/jjdc10/bg-list.jpg) left center no-repeat;line-height:26px;}
+
+.box2 {width:282px;height:260px;border:1px solid #ccc;}
+.box2 .title{width:100%;height:30px; background:url(../../../img/jjdc10/titlebar.png); color:#FAA037; font-size:14px;}
+.box2 .title .t{height:30px; line-height:30px;margin-left:25px;color:#940306; font-weight:bold;}
+.box2 .list{padding:10px;}
+.box2 .list ul li{padding-left:10px; background:url(../../../img/jjdc10/bg-list.jpg) left center no-repeat;line-height:26px;}
+
+.box3 {width:975px;height:220px;border:1px solid #ccc;}
+.box3 .title{width:100%;height:30px; background:url(../../../img/jjdc10/c_title.png); color:#FAA037; font-size:14px; }
+.box3 .title .t{height:30px; line-height:30px;margin-left:25px;color:#940306;font-weight:bold;}
+.box3 .list{padding:10px;}
+.box3 img{width:190px;height:140px;}
+
+#fuzhu .list {line-height:23px;}
+
+
+
+
+
+
+
+

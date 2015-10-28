@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+	<defaultCache maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true" diskSpoolBufferSizeMB="30" 
+				  maxElementsOnDisk="10000000" diskPersistent="false" diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU"/>
+	
+	<cache name="org.hibernate.cache.StandardQueryCache" maxElementsInMemory="50" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="org.hibernate.cache.UpdateTimestampsCache" maxElementsInMemory="5000" eternal="true"  overflowToDisk="true"/>
+	
+	<cache name="com.cc.core.entity.Sys" maxElementsInMemory="20" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.core.entity.DbTpl" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.core.entity.Ftp" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	
+	<cache name="com.cc.cms.entity.main.Area" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Channel" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.ChannelExt" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.ChannelTxt" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>	
+	<cache name="com.cc.cms.entity.main.Channel.child" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Channel.attr" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Channel.viewGroups" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Channel.contriGroups" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Channel.users" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>	
+	<cache name="com.cc.cms.entity.main.Config" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Config.attr" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Content" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Content.attachments" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Content.attr" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Content.pictures" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Content.tags" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Content.viewGroups" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.ContentAttachment" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.ContentCheck" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>	
+	<cache name="com.cc.cms.entity.main.ContentCount" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.ContentExt" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.ContentPicture" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.ContentTag" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>	
+	<cache name="com.cc.cms.entity.main.ContentTxt" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.ContentType" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.EmailConfig" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Group" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>	
+	<cache name="com.cc.cms.entity.main.Group.viewChannels" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>	
+	<cache name="com.cc.cms.entity.main.Group.contriChannels" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>	
+	<cache name="com.cc.cms.entity.main.Log" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.MarkConfig" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.MemberConfig" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Model" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>	
+	<cache name="com.cc.cms.entity.main.ModelItem" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Periodical" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.PeriodicalAttachment" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.PeriodicalCatalog" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>	
+	<cache name="com.cc.cms.entity.main.Permission" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Permission.child" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Publication" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.PublicationType" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Role" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Site" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Site.txt" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Site.cfg" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Site.attr" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>	
+	<cache name="com.cc.cms.entity.main.SiteModel" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Template" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.Topic" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.User" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.User.channels" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.UserExt" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.main.UserSite" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	
+	<cache name="com.cc.cms.entity.assist.Acquisition" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.AcquisitionHistory" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.AcquisitionTemp" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.Advertising" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.Advertising.attr" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.AdvertisingSpace" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.Comment" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.CommentExt" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.Friendlink" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.FriendlinkCtg" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.Guestbook" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.GuestbookCtg" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.GuestbookExt" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.Keyword" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.Message" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.Message.receiverMsgs" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.ReceiverMessage" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.Sensitivity" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.SiteFlow" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.VoteItem" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>	
+	<cache name="com.cc.cms.entity.assist.VoteRecord" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>
+	<cache name="com.cc.cms.entity.assist.VoteTopic" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>	
+	<cache name="com.cc.cms.entity.assist.VoteTopic.items" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="7200" overflowToDisk="true"/>			  
+				  
+	
+</ehcache>

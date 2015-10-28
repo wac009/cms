@@ -1,0 +1,39 @@
+
+@import url(../common.css);
+
+body {margin: 0;	padding: 0;	text-align: center;}
+#container {width: 800px;	margin: 0 auto;	background-color: #FFF;	text-align: left;}
+#header {width: 800px;background-color: #FFF;	height: 160px;}
+#banner {width: 800px;background: url(../../img/sbjsz/banner.jpg) no-repeat;height: 150px;}
+
+#navi {width: 800px; background-color:#82A9C8;	height: 32px;line-height:32px; 	padding-left: 50px;}
+#navi ul li {width: 180px;	float: left;text-decoration: none;text-align:center;}
+#navi ul li a{font-weight:bold;font-size: 14px;	color: #FFF;}
+
+.time {float: right;}
+.w768{width:768px;}
+.w365{width:365px;}
+.w360{width:360px;}
+
+.h280{height:280px;}
+.h320{height:320px;}
+
+.box {margin-top: 10px;padding:4px 15px 15px 15px;float: left;border: #82A9C8 1px solid;height:260px;}
+.box .title {width: 100%;height: 31px;line-height:31px;}
+.box .title .t{height:30px;font-size: 15px;float: left;font-weight:bold; border-bottom:#82A9C8 1px solid;padding:0 10px;}
+.box .title a{color:#05487F;}
+
+.box .list {width: 330px;float: left;background-color: #FFF;padding-top: 10px;}
+.box .list ul li {width: 330px;list-style: none;height: 29px;float: left;background: url(../../img/sbjsz/list.gif) no-repeat;background-position: 10px 3px;}
+.box .list ul li a {width: 300px;text-decoration: none;	color: #000;overflow: hidden;font-size: 14px;margin-left: 20px;}
+.box .list ul li a:hover {color: #C00}
+
+.box .tab{height:33px; background:url(../img/title.jpg) repeat-x; }
+.box .title a.tabon{display:inline-block;border-bottom:#82A9C8 1px solid;}
+
+.box .content{text-indent: 28px;font-size:14px;padding-top:10px;line-height:27px;}
+
+#footer {clear: both;float: left;background-color: #fff;width: 800px;height: 50px;margin-top: 10px;font-size: 12px;text-align: center;	line-height: 20px;border-top: #82A9C8 2px solid;padding-top: 20px;}
+
+
+

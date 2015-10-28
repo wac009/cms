@@ -1,0 +1,850 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${site.name}</title>
+<meta http-equiv="keywords" content="${site.name}"/>
+<meta http-equiv="description" content="${site.name}"/>
+[#include "../include/head_res.inc"/]
+</head>
+
+<body>
+[#include "../include/页头顶栏.html"/]
+<div id="container">
+[#include "../include/页头导航栏.html"/]
+[#include "../include/页头滚动栏.html"/]
+
+<div id="content">
+   <div class="w200 fl mt5">
+   
+   		<!-- 机构设置 -->
+   		<div class="about border1 w198 fl">
+   			[@cms_channel_list parentId='46']
+   				[#list tag_list as c]
+					<span class="w96 fl"><a href="${c.url}" title="${c.name}" target="_blank">${c.name}</a></span>
+				[/#list]
+         	[/@cms_channel_list]
+        </div>
+        <!-- 成员单位 -->
+        <div class="about2 border1 w198 fl mt5">
+   			[@cms_channel_list parentId='286']
+   				[#list tag_list as c]
+					<span class="w96 fl"><a href="${c.url}" title="${c.name}" target="_blank">${c.name}</a></span>
+				[/#list]
+         	[/@cms_channel_list]
+        </div>
+        
+        <div class="left w198  border1 mt5 fl pb10"> 
+                <div class="title fl w198" style="margin-top:2px;">
+                     <h2 style="color:red;font-weight:bold;">地方老龄亮点</h2>
+                </div>
+                <div class="list fl w98 pt5">
+                      <ul class="u2"><!-- id:284 -->
+						[@cms_content_list count='7' titLen='13' channelOption='0' channelId='284' orderBy='1' ]
+							[#list tag_list as a]
+								<li><a href="${a.url}" title="${a.title?replace('<br/>','')}"  target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+							[/#list]
+					 	[/@cms_content_list]
+                       </ul>
+                </div>
+                <div class="title fl w198" style="margin-top:5px;">
+                     <h2 style="">老龄热点</h2>
+                </div>
+                <div class="list fl w98 pt5">
+                      <ul class="u2"><!-- id:284 -->
+						[@cms_content_list count='8' titLen='13' channelOption='0' channelId='85' orderBy='1' ]
+							[#list tag_list as a]
+								<li><a href="${a.url}" title="${a.title?replace('<br/>','')}"  target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+							[/#list]
+					 	[/@cms_content_list]
+                       </ul>
+                </div>                   
+                <div class="title fl w198 mt5">
+                     <h2>地方老龄网站集群</h2>
+                </div>
+                <div class="list">
+                　	 <span class="x-t">省级 • 计划单列市</span>
+                     <div class="fl w98 site">
+                             <ul>
+                                    <li><a href="http://guangxi.cncaprc.gov.cn"  target="_blank">广西</a></li>
+                                    <li><a href="http://shanxi.cncaprc.gov.cn" target="_blank">陕西</a></li>
+                                    <li><a href="#" target="_blank">海南</a></li>
+                                    <li><a href="http://www.jsllw.gov.cn/"  target="_blank">江苏</a></li>
+                                    <li><a href="http://www.ahllb.cn/"  target="_blank">安徽</a></li>
+                                    <li><a href="http://www.sdpca.org.cn/"  target="_blank">山东</a></li>
+                                    <li><a href="http://www.shanghai60.org.cn/"  target="_blank">上海</a></li>
+                                    <li><a href="http://www.hn12349.com/"  target="_blank">河南</a></li>
+                                    <li><a href="http://www.hbyinfa.gov.cn"  target="_blank">河北</a></li>
+                                    <li><a href="http://www.scllw.org.cn"  target="_blank">四川</a></li>
+                                    <li><a href="http://www.fjll.gov.cn"  target="_blank">福建</a></li>
+                                    <li><a href="http://www.jlllw.org.cn"  target="_blank">吉林</a></li>
+                                    <li><a href="http://www.hljllw.gov.cn/"  target="_blank">黑龙江</a></li>
+                                    <li><a href="http://220.163.118.6:9080/YNLL/"  target="_blank">云南</a></li>
+                                    <li><a href="http://www.qingdaolaoling.gov.cn/"  target="_blank">青岛</a></li>
+                             </ul>
+                     </div>
+                     <span class="x-t">地方网站群</span>
+                     <div class="fl w98 site">
+                             <ul>
+                                    <li class="prov"><a href="#">陕西：</a></li>
+                                    <li><a href="#">宝鸡</a></li>
+                                    <li><a href="#">咸阳</a></li>
+                                    <li><a href="#">渭南</a></li>
+                                    <li><a href="#">铜川</a></li>
+                                    <li><a href="#">延安</a></li>
+                                    <li><a href="#">榆林</a></li>
+                                    <li><a href="#">汉中</a></li>
+                                    <li><a href="#">安康</a></li>
+                                    <li><a href="#">商洛</a></li>
+                                    <li><a href="#">杨陵</a></li>
+                                    <li class="prov"><a href="#">内蒙古：</a></li>
+                                    <li><a href="#">呼和浩特</a></li>
+                                    <li><a href="#">包头</a></li>
+                                    <li><a href="#">乌海</a></li>
+                                    <li><a href="#">赤峰</a></li>
+                                    <li><a href="#">鄂尔多斯</a></li>
+                                    <li><a href="#">通辽</a></li>
+                                    <li><a href="#">呼伦贝尔</a></li>
+                                    <li><a href="#">乌兰察布</a></li>
+                                    <li><a href="#">锡林郭勒</a></li>
+                                    <li><a href="#">兴安</a></li>
+                                    <li class="prov"><a href="#">湖南：</a></li>
+                                    <li><a href="#">长沙</a></li>
+                                    <li><a href="#">株洲</a></li>
+                                    <li><a href="#">衡阳</a></li>
+                                    <li><a href="#">益阳</a></li>
+                                    <li><a href="#">岳阳</a></li>
+                                    <li><a href="#">邵阳</a></li>
+                                    <li><a href="#">荆州</a></li>
+                                    <li><a href="#">娄底</a></li>
+                                    <li><a href="#">永州</a></li>
+                                    <li><a href="#">怀化</a></li>
+                                    <li><a href="#">张家界</a></li>
+                                    <li><a href="#">湘西</a></li>
+                             </ul>
+                     </div>
+                </div>
+                <!-- 老年维权 begin-->
+                <div class="title fl w198 mt5">
+                     <h2>[@cms_channel id='55']<a href="${tag_bean.url}" target="_blank">权益保障</a>[/@cms_channel]</h2>
+                </div>
+                <div class="list w98 h200">
+                        <ul class="u2">
+                        		[@cms_content_list count='10' titLen='13' channelOption='2' channelId='7' append='...']
+								[#list tag_list as a]
+									<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+								[/#list]
+						 	[/@cms_content_list]
+                        </ul>
+                </div>
+                <!-- 老龄论坛-->
+                <div class="title fl w198 mt5">
+                     <h2>老龄论坛</h2>
+                </div>
+                <div class="list fl w98">
+                       　  <ul class="u2">
+	                             <li><a href="http://old.cncaprc.gov.cn:8080/forum/939.html" target="_blank" title="《条例》实施五周年麒麟区老龄事业和老龄工作发展实现大跨越">
+								《条例》实施五周年麒麟区...</a></li>							
+								<li><a href="http://old.cncaprc.gov.cn:8080/forum/937.html" target="_blank" title="我已年过70，在北京乘公交车仍须买票！">
+								我已年过70，在北京乘公交...</a></li>
+								<li><a href="http://old.cncaprc.gov.cn:8080/forum/936.html" target="_blank" title="老年大学低廉学费让中国文人的知识受严重漠视贬值">
+								老年大学低廉学费让中国文...</a></li>
+								<li><a href="http://old.cncaprc.gov.cn:8080/forum/928.html" target="_blank" title="老河口市坚持“三讲”">
+								老河口市坚持“三讲”</a></li>
+								<li><a href="http://old.cncaprc.gov.cn:8080/forum/926.html" target="_blank" title="呼吁">
+								呼吁</a></li>
+								<li><a href="http://old.cncaprc.gov.cn:8080/forum/924.html" target="_blank" title="让老人“老有所学，老有所乐”浙江电大培训学院（浙江老年电视大学电大直属教学点）举行第一期老年人公益电脑培训班开学典礼">
+								让老人“老有所学，老有所乐...</a></li>
+								<li><a href="http://old.cncaprc.gov.cn:8080/forum/913.html" target="_blank" title="提供创新时尚、健康使用的老年礼品、养老用品和保健器械">
+								提供创新时尚、健康使用的...</a></li>
+								<li><a href="http://old.cncaprc.gov.cn:8080/forum/912.html" target="_blank" title="农村养老，并非不能承受之重">
+								农村养老，并非不能承受之重</a></li>						
+								<li><a href="http://old.cncaprc.gov.cn:8080/forum/900.html" target="_blank" title="老年证能全国通用吗？">
+								老年证能全国通用吗？</a></li>
+								<li><a href="http://old.cncaprc.gov.cn:8080/forum/878.html" target="_blank" title="农村留守老人的养老该何去何从">
+								农村留守老人的养老该何去何从</a></li>
+								<li><a href="http://old.cncaprc.gov.cn:8080/forum/877.html" target="_blank" title="省市县三级老龄办机构编制体制亟待理顺">
+								省市县三级老龄办机构编制...</a></li>
+								<li><a href="http://old.cncaprc.gov.cn:8080/forum/872.html" target="_blank" title="空巢老人问题刻不容缓">
+								空巢老人问题刻不容缓</a></li>
+                           </ul>
+                </div>
+         </div>
+         
+        <div class="ad1"><a href="http://www.cehca.com/"><img src="${resTpl}/img/gg1.jpg" /></a></div>
+        <div class="ad2"><a href="http://www.crexpo.com.cn/"><img src="${resTpl}/img/gg2.jpg" /></a></div>
+         
+        <div class="w198 box1">
+                <div class="title">
+                     <span class="t">网站导航</span>
+                </div>
+                <div class="wssc">[#include "../include/wssc.htm"/]</div>
+        </div>
+   </div>
+   <!-- 页面中部 -->
+   <div class="w565 mt5 ml5 fl">
+   		<!-- 老龄新闻 -->
+        <div id="xinwen">
+            <div class="flash border1 fl">
+            	[@cms_content_list typeId='3' styleList='3-1' titLen='18' append='...'  count='5' flashWidth='276' flashHeight='228' textHeight='22' channelId='1' channelOption='1' tpl='2' orderBy='3'/]
+			</div>
+            <div class="list fl">
+                 <div class="title-xw">
+                        <span class="tt-xw">[@cms_channel id='1']<a href="${tag_bean.url}" target="_blank">${tag_bean.name}</a>[/@cms_channel]</span>
+                        <span class="more">[@cms_channel id='1']<a href="${tag_bean.url}" target="_blank"><img src="${resTpl}/img/more1.jpg"/></a>[/@cms_channel]</span>
+                 </div>
+                 <ul>
+                 [@cms_content_list channelId='1' count='8' titLen='14' append='...' channelOption='0' dateFormat='MM-dd' ]
+		          [#list tag_list as a]
+				  [#if a_index = 0]
+				  <div class="focus"> 
+		          	  <li>
+					  	<a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len='16' append=append/]</a>
+					  </li>
+				  </div>
+				  <div class="text-xw mt5">
+				  [#else]
+		          <li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+				  [/#if]
+				  [/#list]
+				  </div>
+		         [/@cms_content_list]
+		         </ul>
+           </div>
+        </div>
+		<!-- 机关工作/领导讲话/机关党建 -->
+		<div class="box1 w278">
+             <div class="title tab">
+                      <!-- <span class="t gtc">[@cms_channel id='3']<a href="${tag_bean.url}" target="_blank" class="tabon"  id="tabmenu_10" name="tabmenu_10"  onmouseover="Show_Tab(1,0,3,'','tabon')" >${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span class="img_tab"><img src="${resTpl}/img/ttx.jpg" /></span> --> 
+                      <span class="t gtc">[@cms_channel id='2']<a href="${tag_bean.url}" target="_blank"  id="tabmenu_11" name="tabmenu_11" onmouseover="Show_Tab(1,1,3,'','tabon')">${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span class="img_tab"><img src="${resTpl}/img/ttx.jpg" /></span> 
+                      <span class="t gtc">[@cms_channel id='28']<a href="${tag_bean.url}" target="_blank"  id="tabmenu_12" name="tabmenu_12" onmouseover="Show_Tab(1,2,3,'','tabon')">${tag_bean.name}</a>[/@cms_channel]</span>
+             </div>
+             <div class="list">
+                     <!-- <div class="text" id="tabcontent_10">
+                             <ul>
+                                [@cms_content_list channelId='3' count='6' titLen='16' append='...' channelOption='0' dateFormat='MM-dd' ]
+						          [#list tag_list as a]
+						          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+								  [/#list]
+						         [/@cms_content_list]
+                            </ul>
+                    </div> -->
+                    <div class="text" id="tabcontent_11" >
+                             <ul>
+                                [@cms_content_list channelId='2' count='6' titLen='16' append='...' channelOption='0' dateFormat='MM-dd' ]
+						          [#list tag_list as a]
+						          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+								  [/#list]
+						         [/@cms_content_list]
+                            </ul>
+                    </div>
+                    <div class="text" id="tabcontent_12" style="display:none">
+                             <ul>
+                                [@cms_content_list channelId='28' count='6' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+						          [#list tag_list as a]
+						          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+								  [/#list]
+						         [/@cms_content_list]
+                            </ul>
+                    </div>
+             </div>
+		</div>
+		<!-- 成员单位涉老工作 -->
+        <div class="box1 w278 ml5">
+             <div class="title">
+                      <span class="t">[@cms_channel id='31']<a href="${tag_bean.url}" target="_blank" >${tag_bean.name}</a>[/@cms_channel]</span>
+             </div>
+             <div class="list">
+                     <div class="text">
+                             <ul>
+                                [@cms_content_list channelId='31' count='6' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+						          [#list tag_list as a]
+						          	<li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+								  [/#list]
+						         [/@cms_content_list]
+                            </ul>
+                    </div>
+             </div>
+		</div>
+        
+        <!-- 第一个横幅 -->
+        <div class="ad3">
+        	<a href="http://www.cncaprc.gov.cn/ztjly/index.jhtml" target="_blank"><img src="${resTpl}/img/ads/ad3_3.jpg" /></a>
+        	<!-- 老年法 
+        	<a href="http://www.cncaprc.gov.cn/lnbzf/index.jhtml" target="_blank"><img src="${resTpl}/img/ads/ad3_2.jpg" /></a>
+        	-->
+        </div>
+        
+        <!-- 地方动态 -->
+        <div class="box1 w563">
+             <div class="title tab">
+                 <div class="t">[@cms_channel id='4']<a href="${tag_bean.url}"  id="tabmenu_20" name="tabmenu_20"  onmouseover="Show_Tab(2,0,7,'','')">地方动态</a>[/@cms_channel]</div>
+                 <div class="t2">
+                      <span>[@cms_channel id='287']<a href="${tag_bean.url}" id="tabmenu_21" name="tabmenu_21"  onmouseover="Show_Tab(2,1,7,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span>[@cms_channel id='288']<a href="${tag_bean.url}" id="tabmenu_22" name="tabmenu_22"  onmouseover="Show_Tab(2,2,7,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span>[@cms_channel id='289']<a href="${tag_bean.url}" id="tabmenu_23" name="tabmenu_23"  onmouseover="Show_Tab(2,3,7,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span>[@cms_channel id='290']<a href="${tag_bean.url}" id="tabmenu_24" name="tabmenu_24"  onmouseover="Show_Tab(2,4,7,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span>[@cms_channel id='291']<a href="${tag_bean.url}" id="tabmenu_25" name="tabmenu_25"  onmouseover="Show_Tab(2,5,7,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span>[@cms_channel id='292']<a href="${tag_bean.url}" id="tabmenu_26" name="tabmenu_26"  onmouseover="Show_Tab(2,6,7,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                  </div>
+            </div>
+            <div class="list" id="tabcontent_20" >
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='4' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+            <div class="list" id="tabcontent_21" style="display:none">
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='287' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+            <div class="list" id="tabcontent_22" style="display:none">
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='288' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+            <div class="list" id="tabcontent_23" style="display:none">
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='289' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+            
+            <div class="list" id="tabcontent_24" style="display:none">
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='290' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li></span><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+            <div class="list" id="tabcontent_25" style="display:none">
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='291' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li></span><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+            <div class="list" id="tabcontent_26" style="display:none">
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='292' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+        </div>
+        <!-- 老龄统计 -->
+        <div class="box1 w278">
+             <div class="title">
+                  <span class="t">[@cms_channel id='13']<a href="${tag_bean.url}" target="_blank" >${tag_bean.name}</a>[/@cms_channel]</span>
+             </div>
+             <div class="list">
+                  <div class="text">
+                       <ul>
+                           [@cms_content_list channelId='13' count='6' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                  </div>
+             </div>
+        </div>
+        <!-- 政策法规 -->
+        <div class="box1 w278 ml5">
+             <div class="title">
+                  <span class="t">[@cms_channel id='6']<a href="${tag_bean.url}" target="_blank" >${tag_bean.name}</a>[/@cms_channel]</span>
+             </div>
+             <div class="list">
+                  <div class="text">
+                       <ul>
+                           [@cms_content_list channelId='6' count='6' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                  </div>
+             </div>
+        </div>
+        <!-- 专题活动 -->
+        <div id="zhuanti">
+                <div class="title">
+                     <div class="t">专题活动</div>
+                </div>
+                <div class="img">
+                     [@cms_content_list count='10' styleList='2-5' titLen='10' channelOption='0' tpl='2' channelId='18'  rightPadding='10' picWidth='130' picHeight='90' tpyeId='2' noTitle='1' rollSpeed='30' target='1'/]
+                </div>
+        </div>
+        <!-- 老龄研究 -->
+        <div class="box1 w563">
+             <div class="title tab">
+                 <div class="t" >[@cms_channel id='8']<a href="${tag_bean.url}"  id="tabmenu_30" name="tabmenu_30"  onmouseover="Show_Tab(3,0,4,'','')">${tag_bean.name}</a>[/@cms_channel]</div>
+                 <div class="t2">
+                      <span>[@cms_channel id='35']<a href="${tag_bean.url}"  id="tabmenu_31" name="tabmenu_31"  onmouseover="Show_Tab(3,1,4,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span>[@cms_channel id='34']<a href="${tag_bean.url}" id="tabmenu_32" name="tabmenu_32"  onmouseover="Show_Tab(3,2,4,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span>[@cms_channel id='33']<a href="${tag_bean.url}" id="tabmenu_33" name="tabmenu_33"  onmouseover="Show_Tab(3,3,4,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                  </div>
+            </div>
+            <div class="list">
+                 <div class="text2" id="tabcontent_30" >
+                       <ul>
+                           [@cms_content_list channelId='8' count='12' titLen='16' append='...' channelOption='1' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+                 <div class="text2" id="tabcontent_31" style="display:none">
+                       <ul>
+                           [@cms_content_list channelId='35' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+                 <div class="text2" id="tabcontent_32" style="display:none">
+                       <ul>
+                           [@cms_content_list channelId='34' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+                 <div class="text2" id="tabcontent_33" style="display:none">
+                       <ul>
+                           [@cms_content_list channelId='33' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time"></span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+           </div>
+       </div>
+       <!-- 老龄产业 -->
+       <div class="box1 w563">
+             <div class="title tab">
+                 <div class="t">[@cms_channel id='9']<a href="${tag_bean.url}"  id="tabmenu_40" name="tabmenu_40"  onmouseover="Show_Tab(4,0,7,'','')">${tag_bean.name}</a>[/@cms_channel]</div>
+                 <div class="t2">
+                      <span>[@cms_channel id='40']<a href="${tag_bean.url}" id="tabmenu_44" name="tabmenu_44"  onmouseover="Show_Tab(4,4,7,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span>[@cms_channel id='39']<a href="${tag_bean.url}" id="tabmenu_42" name="tabmenu_42"  onmouseover="Show_Tab(4,2,7,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span>[@cms_channel id='37']<a href="${tag_bean.url}" id="tabmenu_43" name="tabmenu_43"  onmouseover="Show_Tab(4,3,7,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span>[@cms_channel id='38']<a href="${tag_bean.url}" id="tabmenu_45" name="tabmenu_45"  onmouseover="Show_Tab(4,5,7,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span>[@cms_channel id='41']<a href="${tag_bean.url}" id="tabmenu_46" name="tabmenu_46"  onmouseover="Show_Tab(4,6,7,'','tabon3')">${tag_bean.name}</a>[/@cms_channel]</span>
+                  </div>
+            </div>
+            <div class="list" id="tabcontent_40" >
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='9' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+            <div class="list" id="tabcontent_44" style="display:none">
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='40' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+            <div class="list" id="tabcontent_42" style="display:none">
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='39' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+            <div class="list" id="tabcontent_43" style="display:none">
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='37' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+            
+            <div class="list" id="tabcontent_45" style="display:none">
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='38' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li></span><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+            <div class="list" id="tabcontent_46" style="display:none">
+                 <div class="text2" >
+                       <ul>
+                          	[@cms_content_list channelId='41' count='12' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+					          [#list tag_list as a]
+					          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+							  [/#list]
+					         [/@cms_content_list]
+                       </ul>
+                 </div>
+            </div>
+        </div>
+        
+        <!-- 第二通栏 -->
+        <!-- <div class="ad4"><a href="http://old.cncaprc.gov.cn:8080/jlwmh/index.html"><img src="${resTpl}/img/ads/ad4.jpg" /></a></div> -->
+        <!-- 敬老文明号 -->
+        <!-- <div class="ad4"><a href="http://www.cncaprc.gov.cn/ztjlwmh/index.jhtml" target="_black"><img src="${resTpl}/img/ads/ad4.jpg" /></a></div> -->
+        <!-- 老年法 -->
+        <div class="ad4"><a href="http://www.cncaprc.gov.cn/lnbzf/index.jhtml" target="_black"><img src="${resTpl}/img/ads/laonianfa.jpg" /></a></div>
+        
+        
+       <!-- 国际交流 -->
+        <div class="box1 w278">
+        	 <div class="title tab">
+                      <span class="t gtc">[@cms_channel id='5']<a href="${tag_bean.url}" target="_blank" class="tabon"  id="tabmenu_50" name="tabmenu_50"  onmouseover="Show_Tab(5,0,2,'','tabon')" >${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span class="t gtc">[@cms_channel id='42']<a href="${tag_bean.url}" target="_blank"  id="tabmenu_51" name="tabmenu_51" onmouseover="Show_Tab(5,1,2,'','tabon')">${tag_bean.name}</a>[/@cms_channel]</span>
+             </div>
+             <div class="list">
+                     <div class="text" id="tabcontent_50" >
+                             <ul>
+                                [@cms_content_list channelId='5' count='6' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+						          [#list tag_list as a]
+						          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+								  [/#list]
+						         [/@cms_content_list]
+                            </ul>
+                     </div>
+                     <div class="text" id="tabcontent_51" style="display:none">
+                             <ul>
+                                [@cms_content_list channelId='42' count='6' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+						          [#list tag_list as a]
+						          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+								  [/#list]
+						         [/@cms_content_list]
+                            </ul>
+                    </div>
+             </div>
+        </div>
+        <!-- 为老服务 -->
+        <div class="box1 w278 ml5">
+        	<div class="title tab">
+                      <span class="t gtc">[@cms_channel id='11']<a href="${tag_bean.url}" target="_blank" class="tabon"  id="tabmenu_60" name="tabmenu_60"  onmouseover="Show_Tab(6,0,2,'','tabon')" >${tag_bean.name}</a>[/@cms_channel]</span>
+                      <span class="t t75 gtc" >[@cms_channel id='43']<a href="${tag_bean.url}" target="_blank"  id="tabmenu_61" name="tabmenu_61" onmouseover="Show_Tab(6,1,2,'','tabon80')">${tag_bean.name}</a>[/@cms_channel]</span>
+             </div>
+             <div class="list">
+                     <div class="text" id="tabcontent_60" >
+                             <ul>
+                                [@cms_content_list channelId='11' count='6' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+						          [#list tag_list as a]
+						          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+								  [/#list]
+						         [/@cms_content_list]
+                            </ul>
+                     </div>
+                     <div class="text" id="tabcontent_61" style="display:none">
+                             <ul>
+                                [@cms_content_list channelId='43' count='6' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+						          [#list tag_list as a]
+						          	<li></span><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+								  [/#list]
+						         [/@cms_content_list]
+                            </ul>
+                     </div>
+             </div>
+	    </div>
+        <!-- 银龄行动 -->
+        <div class="box1 w278">
+             <div class="title">
+                      <span class="t">[@cms_channel id='14']<a href="${tag_bean.url}" target="_blank" >${tag_bean.name}</a>[/@cms_channel]</span>
+             </div>
+             <div class="list">
+                     <div class="text">
+                             <ul>
+                                [@cms_content_list channelId='14' count='6' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+						          [#list tag_list as a]
+						          	<li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+								  [/#list]
+						         [/@cms_content_list]
+                            </ul>
+                     </div>
+             </div>
+		</div>
+        <!-- 老龄人物 -->
+        <div class="box1 w278 ml5">
+        	<div class="title tab">
+        			<span class="t gtc">[@cms_channel id='10']<a href="${tag_bean.url}" target="_blank" class="tabon"  id="tabmenu_70" name="tabmenu_70"  onmouseover="Show_Tab(7,0,3,'','tabon')" >${tag_bean.name}</a>[/@cms_channel]</span>
+                    <span class="t gtc">[@cms_channel id='86']<a href="${tag_bean.url}" target="_blank"  id="tabmenu_71" name="tabmenu_71"  onmouseover="Show_Tab(7,1,3,'','tabon')" >${tag_bean.name}</a>[/@cms_channel]</span>
+                    <span class="t gtc">[@cms_channel id='52']<a href="${tag_bean.url}" target="_blank"  id="tabmenu_72" name="tabmenu_72" onmouseover="Show_Tab(7,2,3,'','tabon')">${tag_bean.name}</a>[/@cms_channel]</span>
+             </div>
+             <div class="list">
+             		<div class="text" id="tabcontent_70" >
+                             <ul>
+                                [@cms_content_list channelId='10' count='6' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+						          [#list tag_list as a]
+						          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+								  [/#list]
+						         [/@cms_content_list]
+                            </ul>
+                     </div>
+                     <div class="text" id="tabcontent_71" style="display:none">
+                             <ul>
+                                [@cms_content_list channelId='86' count='6' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+						          [#list tag_list as a]
+						          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+								  [/#list]
+						         [/@cms_content_list]
+                            </ul>
+                    </div>
+                    <div class="text" id="tabcontent_72" style="display:none">
+                             <ul>
+                                [@cms_content_list channelId='52' count='6' titLen='16' append='...' channelOption='2' dateFormat='MM-dd' ]
+						          [#list tag_list as a]
+						          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+								  [/#list]
+						         [/@cms_content_list]
+                            </ul>
+                     </div>
+             </div>
+		</div>
+        <!-- 图说老龄 -->
+        <div class="box1 w563">
+             <div class="title">
+                  <div class="t">[@cms_channel id='15']<a href="${tag_bean.url}" target="_blank" >${tag_bean.name}</a>[/@cms_channel]</div>
+             </div>
+             <div class="img-ts">
+             		[@cms_content_list count='10' styleList='2-4' titLen='10' channelOption='1' tpl='2' channelId='15'  rightPadding='10' picWidth='120' picHeight='110' tpyeId='2' append='...'  rollSpeed='30' target='1'/]
+             </div>
+        </div>
+    </div>
+    
+    <!-- 右侧栏 -->
+    
+	<!-- 最新发布 -->
+   <div class="w225 fl ml5">
+        <div class="box1 w223 h170">
+             <div class="title">
+                  <span class="t">[@cms_channel id='26']<a href="${tag_bean.url}" target="_blank" >最新发布</a>[/@cms_channel]</span>
+             </div>
+             <div class="list">
+                  <div class="w223 fl">
+   		               <ul class="order">
+	                     [@cms_content_list channelId='26' count='6' titLen='12' append='...' channelOption='2' dateFormat='MM-dd' ]
+				          [#list tag_list as a]
+				          	<li class="w195"> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time"><em>${a.date?string(dateFormat)}</em></span></li>
+						  [/#list]
+				         [/@cms_content_list]
+	                  </ul>
+                  </div>
+             </div>
+        </div>
+        
+        <!-- 敬老月 -->
+        <!-- <div class="ad5"><a href="http://old.cncaprc.gov.cn:8080/jinglaoyue/index.html" target="_blank" ><img src="${resTpl}/img/ads/ad5.jpg" /></a></div> -->
+        
+         <!-- 北大养老培训 
+        <div class="ad5"><a href="http://www.cncaprc.gov.cn/zuixin/23937.jhtml" target="_blank" ><img src="${resTpl}/img/ads/bdylpx.jpg" /></a></div>-->
+        <!-- 居家养老调查 -->
+        <!-- <div class="ad5"><a href="http://www.xfak.com" target="_blank"></a></div> -->
+        <!-- <div class="ad5"><a href="http://www.cncaprc.gov.cn/jjdc10/index.jhtml" target="_blank"><img src="${resTpl}/img/vote/diaocha2.jpg" /></a></div> -->
+        <!-- 智能化养老 -->
+        <div class="ad5"><a href="http://www.cncaprc.gov.cn/znhyljd/index.jhtml" target="_blank"><img src="${resTpl}/img/ads/znhyl.jpg" /></a></div>
+        
+        <!-- 舆情杂志 -->
+        [#include "../include/杂志.html"/]
+        
+        <!-- <div class="ad6"><a href="http://old.cncaprc.gov.cn:8080/jcjs/index.html" target="_blank" ><img src="${resTpl}/img/ads/ad6.jpg" /></a></div> -->
+        <!-- 2013博览会 -->
+        <!-- <div class="ad6"><a href="http://www.bjlaobohui.com" target="_blank" ><img src="${resTpl}/img/ads/ad6.jpg" /></a></div> -->
+        <!-- 敬老文明号 -->
+        <div class="ad6"><a href="http://www.cncaprc.gov.cn/ztjlwmh/index.jhtml" target="_blank" ><img src="${resTpl}/img/ads/jinglaowmh.jpg" /></a></div>
+        
+        <div class="box1 w223 h193">
+             <div class="title">
+                  <span class="t">[@cms_channel id='16']<a href="${tag_bean.url}" target="_blank" >中国老龄网络电视台</a>[/@cms_channel]</span>
+             </div>
+             <div class="list">
+                  [@cms_content_list count='1' titLen='16' channelOption='0' channelId='16' descLen='40' append='...']
+	              	 [#list tag_list as a]
+	               	  	<div class="img_tv"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank"><img src="${a.titleImg!site.defImg}" alt="${a.title?replace('<br/>','')}" /></a></div>
+                  		<div class="text_tv"><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></div>
+	                 [/#list]
+	               [/@cms_content_list]
+             </div>
+        </div>
+        
+        <div class="box1 w223 h193">
+             <div class="title">
+                  <span class="t">[@cms_channel id='56']<a href="${tag_bean.url}" target="_blank" >基层老年协会建设</a>[/@cms_channel]</span>
+             </div>
+             <div class="list">
+                 <div class="text3">
+                          <ul>
+                             [@cms_content_list channelId='85' count='6' titLen='16' append='...' channelOption='2'  ]
+						          [#list tag_list as a]
+						          	<li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+								  [/#list]
+						         [/@cms_content_list]
+                          </ul>
+                 </div>
+             </div>
+        </div>
+        
+        <!-- 老年艺术节 -->
+        <!-- <div class="ad7"><a href="http://www.cnlnysj.com/"><img src="${resTpl}/img/r2.jpg" /></a></div> -->
+        <!-- 2013博览会 -->
+        <div class="ad7"><a href="http://www.bjlaobohui.com" target="_blank" ><img src="${resTpl}/img/ads/bolanhui_2.jpg" /></a></div>
+        
+        <div class="box1 w223 h193">
+             <div class="title">
+                 <span class="t">[@cms_channel id='53']<a href="${tag_bean.url}" target="_blank" >敬老文明号</a>[/@cms_channel]</span>
+             </div>
+             <div class="list">
+             	<div class="text3">
+             		<ul>
+                 	[@cms_content_list channelId='53' count='6' titLen='16' append='...' channelOption='1'  ]
+	              		  [#list tag_list as a]
+			          		<li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+					  	  [/#list]
+	               	[/@cms_content_list]
+	               	</ul>
+	              </div>
+             </div>
+        </div>
+        
+        <div class="box1 w223 h193">
+             <div class="title">
+                  <span class="t">[@cms_channel id='27']<a href="${tag_bean.url}" target="_blank" >年度重大事件</a>[/@cms_channel]</span>
+             </div>       
+             <div class="list">
+                  <div class="text3">
+                          <ul>
+                             [@cms_content_list channelId='27' count='6' titLen='16' append='...' channelOption='2'  ]
+						          [#list tag_list as a]
+						          	<li> <a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a></li>
+								  [/#list]
+						         [/@cms_content_list]
+                          </ul>
+                  </div>
+             </div>
+       </div>
+        
+        <div class="ad8"><a href="http://www.zgllcy.org/chanye/"><img src="${resTpl}/img/r3.jpg" /></a></div>
+        
+        <div class="box1 w223 h193">
+             <div class="title tab">	
+             	 <span class="t gtc"><a href="/guestbook.jspx" target="_blank" class="tabon"  id="tabmenu_90" name="tabmenu_90"  onmouseover="Show_Tab(9,0,2,'','tabon')" >网上信访</a></span>
+                 <span class="t gtc"><a href="/guestbook.jspx" target="_blank"  id="tabmenu_91" name="tabmenu_91" onmouseover="Show_Tab(9,1,2,'','tabon')">建言献策</a></span>
+             </div>
+             <div class="list">
+                   <div class="text3" id="tabcontent_90" >
+                          	[@cms_guestbook_list count='1' checked='1' ctgId='1']
+								 [#list tag_list as m]
+									<div class="guestbook">
+										<p class="t">[@text_cut s=m.titleHtml len='15' append='...'/]</p>
+										<p class="c">[@text_cut s=m.contentHtml len='100' append='...'/] [网友]</p>
+								   </div>
+								 [/#list]
+							 [/@cms_guestbook_list]	
+                   </div>
+                   <div class="text3" id="tabcontent_91" style="display:none">
+                          	[@cms_guestbook_list count='1' checked='1' ctgId='2']
+								 [#list tag_list as m]
+									<div class="guestbook">
+										<p class="t">[@text_cut s=m.titleHtml len='15' append='...'/]</p>
+										<p class="c">[@text_cut s=m.contentHtml len='100' append='...'/] [网友]</p>
+								   </div>
+								 [/#list]		   
+							 [/@cms_guestbook_list]	
+                   </div>
+             </div>
+         </div>
+         
+        <div class="box1 w223 h193">
+        	<div class="title tab">
+        		 <span class="t gtc"><a class="tabon"  id="tabmenu_100" name="tabmenu_100" onmouseover="Show_Tab(10,0,2,'','tabon')">在线调查</a></span>
+             	 <span class="t gtc"><a href="/guestbook.jspx" target="_blank"  id="tabmenu_101" name="tabmenu_101"  onmouseover="Show_Tab(10,1,2,'','tabon')" >在线问答</a></span>
+             </div>
+             <div class="list">
+                     <div class="text3 vote" id="tabcontent_100" >
+                           [#include "../include/投票栏.html"/] 
+                         <!--<a href="http://www.xfak.com" target="_blank"><img src="${resTpl}/img/vote/diaocha.jpg" /></a>-->
+                     </div>
+                     <div class="text3" id="tabcontent_101" style="display:none">
+                         [@cms_guestbook_list count='1' checked='1' ctgId='3']
+								 [#list tag_list as m]
+									<div class="guestbook">
+										<p class="t">${m.titleHtml!}</p>
+										<p class="c">[@text_cut s=m.contentHtml len='100' append='...'/] [网友]</p>
+								   </div>
+								 [/#list]
+							 [/@cms_guestbook_list]	
+                     </div>
+             </div>
+        </div>
+        
+        <div class="ad9"><a href="http://www.cncaprc.cn" target="_blank"><img src="${resTpl}/img/ads/ad9.jpg" /></a></div>
+        <div class="ad10"><img src="${resTpl}/img/ads/ad10.jpg" /></div>
+         
+   </div>
+</div>
+<!--hotlink_begin-->
+<!-- [#include "../include/页脚友情链接栏.html"/] -->
+<!--hotlink_end-->
+<!--foot_begin-->
+[#include "../include/页脚信息栏.html"/]
+<!--foot_end-->
+</div>
+</body>
+</html>

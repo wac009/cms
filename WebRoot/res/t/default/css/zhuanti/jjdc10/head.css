@@ -1,0 +1,15 @@
+/*----------------------------------------
+Name: header.css
+Copyright: 全国老龄办信息中心
+----------------------------------------*/
+
+@charset "utf-8";
+
+/*顶部--------------------------------------*/
+#top{background:url(../../../img/jjdc10/T_bj.png) repeat-x; height:29px; line-height:29px;width:100%;color: #999;margin: 0 auto; }
+	#topfunc{width:977px;height:28px; line-height:28px;}
+	#topfunc a{color: #999;padding:0 1px;}
+	#topfunc a:hover{color:#FAA037;}
+	#banner {width:977px;height:100px; background:url(../../../img/jjdc10/banner.gif) left top no-repeat;}
+	#navi{width:957px;height:46px; background:url(../../../img/jjdc10/nav_bg.gif) left top no-repeat;padding-left:30px;}
+	#navi a{float:left;display:inline-block;width:100px;height:34px;line-height:34px; text-align:center;color:#FFF;font-size:14px;font-weight:bold;}

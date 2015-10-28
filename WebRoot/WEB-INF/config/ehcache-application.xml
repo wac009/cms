@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+	<defaultCache maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="120" timeToLiveSeconds="120"	overflowToDisk="true" diskSpoolBufferSizeMB="30" maxElementsOnDisk="10000000" diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU" />
+		
+	<cache name="com.cc.cache.Homepage" maxElementsInMemory="100" eternal="false" timeToIdleSeconds="7200" timeToLiveSeconds="8640" overflowToDisk="true" diskSpoolBufferSizeMB="30" maxElementsOnDisk="30" diskPersistent="true" />
+	<cache name="com.cc.cache.Channelpage" maxElementsInMemory="20" eternal="false" timeToIdleSeconds="7200" timeToLiveSeconds="8640" overflowToDisk="true" diskSpoolBufferSizeMB="30" maxElementsOnDisk="200" diskPersistent="true" />
+	<cache name="com.cc.cache.Website.DOMAIN2ID" maxElementsInMemory="3000" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="7200" overflowToDisk="false" />
+	<cache name="com.cc.cache.Website.Alias2DOMAIN" maxElementsInMemory="3000" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="7200" overflowToDisk="false" />
+	<cache name="com.cc.cache.User.LOGINNAME2ID" maxElementsInMemory="3000" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="7200" overflowToDisk="false" />
+	<cache name="com.cc.cache.CommonId" maxElementsInMemory="10000" overflowToDisk="false" eternal="false"	timeToIdleSeconds="3600" timeToLiveSeconds="7200" />
+	<cache name="com.cc.cache.Website" maxElementsInMemory="3000" overflowToDisk="true" eternal="false"	timeToIdleSeconds="3600" timeToLiveSeconds="7200" />
+	<cache name="com.cc.cache.Permission" maxElementsInMemory="1000" overflowToDisk="true" eternal="true" />
+	<cache name="com.cc.cache.Channel" maxElementsInMemory="10000" overflowToDisk="true" eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="7200" />
+	<cache name="com.cc.cache.AdminRights" maxElementsInMemory="1000" overflowToDisk="true" eternal="true" />
+	<cache name="com.cc.cache.contentType" maxElementsInMemory="100" overflowToDisk="true" eternal="false"	timeToIdleSeconds="3600" timeToLiveSeconds="7200" />
+</ehcache>

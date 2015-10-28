@@ -1,0 +1,18 @@
+﻿
+/*********************************************************************************************************/
+/**
+ * 插入HTML模板 for Fckeditor (Support: Lajox ; Email: lajox@19www.com)
+ */
+/*********************************************************************************************************/
+
+插入HTML模板 for Fckeditor 
+
+添加说明：
+
+1. 上传 htmltiles文件夹到 fckeditor/editor/plugins/ 下 
+
+2. 修改 Fckeditor/fckconfig.js 中相应位置 添加一行下面代码，比如在最后一行添加：
+
+    FCKConfig.Plugins.Add( 'htmltiles','zh-cn,en') ; //这里加入了 插入HTML模板 插件
+    
+3. 修改 Fckeditor/fckconfig.js ，在工具栏设置部分 FCKConfig.ToolbarSets中相应位置添加 'HtmlTiles'

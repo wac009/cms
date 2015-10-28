@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
+	
+	<!--缓存配置-->
+	<bean id="cacheManager" class="com.cc.common.web.WebEhCacheManagerFacotryBean">
+		<property name="configLocation">
+			<value>/WEB-INF/config/ehcache-application.xml</value>
+		</property>
+		<!-- 
+		<property  name="diskStoreLocation">
+			<value>/WEB-INF/cache/application</value>
+		</property>
+		 -->
+	</bean>
+	<!--首页缓存-->
+	<bean id="homepageCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager" />
+		</property>
+		<property name="cacheName">
+			<value>com.cc.cache.Homepage</value>
+		</property>
+		<qualifier value="homepage" />
+	</bean>
+	<!--栏目页缓存-->
+	<bean id="channelPageCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager" />
+		</property>
+		<property name="cacheName">
+			<value>com.cc.cache.Channelpage</value>
+		</property>
+		<qualifier value="channelpage" />
+	</bean>
+	<!--域名缓存-->
+	<bean id="websiteDomainCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager" />
+		</property>
+		<property name="cacheName">
+			<value>com.cc.cache.Website.DOMAIN2ID</value>
+		</property>
+		<qualifier value="websiteDomain" />
+	</bean>
+	<!--域名别名缓存-->
+	<bean id="websiteAliasCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager" />
+		</property>
+		<property name="cacheName">
+			<value>com.cc.cache.Website.Alias2DOMAIN</value>
+		</property>
+		<qualifier value="websiteAlias" />
+	</bean>
+	<!--通用ID缓存-->
+	<bean id="commonIdCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager" />
+		</property>
+		<property name="cacheName">
+			<value>com.cc.cache.CommonId</value>
+		</property>
+		<qualifier value="commonId" />
+	</bean>
+
+	<!--站点缓存-->
+	<bean id="websiteCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager" />
+		</property>
+		<property name="cacheName">
+			<value>com.cc.cache.Website</value>
+		</property>
+		<qualifier value="website" />
+	</bean>
+	<!--功能菜单 缓存-->
+	<bean id="permissionCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager" />
+		</property>
+		<property name="cacheName">
+			<value>com.cc.cache.Permission</value>
+		</property>
+		<qualifier value="permission" />
+	</bean>
+	<!-- 管理员权限缓存 -->
+	<bean id="adminRightsCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager" />
+		</property>
+		<property name="cacheName">
+			<value>com.cc.cache.AdminRights</value>
+		</property>
+		<qualifier value="adminRights" />
+	</bean>
+	<!--栏目 缓存-->
+	<bean id="channelCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager" />
+		</property>
+		<property name="cacheName">
+			<value>com.cc.cache.Channel</value>
+		</property>
+		<qualifier value="channel" />
+	</bean>
+	<!--内容类型缓存-->
+	<bean id="contentTypeCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager" />
+		</property>
+		<property name="cacheName">
+			<value>com.cc.cache.contentType</value>
+		</property>
+		<qualifier value="contentType" />
+	</bean>
+	<!--SESSION缓存-->
+	<bean id="sessionCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager"/>
+		</property>
+		<property name="cacheName">
+			<value>com.cc.ccache.Session</value>
+		</property>
+		<qualifier value="session"/>
+	</bean>
+	<!--内容计数缓存-->
+	<bean id="contentCountCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager"/>
+		</property>
+		<property name="cacheName">
+			<value>com.cc.ccache.ContentCount</value>
+		</property>		
+		<qualifier value="contentCount"/>
+	</bean>
+	
+	<!--站点流量缓存-->
+	<bean id="siteFlowCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager"/>
+		</property>
+		<property name="cacheName">
+			<value>com.cc.ccache.SiteFlow</value>
+		</property>		
+		<qualifier value="siteFlow"/>
+	</bean>
+</beans>

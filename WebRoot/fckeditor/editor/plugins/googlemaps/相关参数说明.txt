@@ -1,0 +1,42 @@
+
+相关参数说明：
+
+====================================================================================================
+
+--------------------------
+
+FCKConfig.GoogleMaps_Width = ''; 	// The width of the map area  地图区域宽度
+FCKConfig.GoogleMaps_Height = ''; 	// The height of the map area  地图区域高度
+FCKConfig.GoogleMaps_CenterLat = ''; 	// The latitude of the center  中心纬度
+FCKConfig.GoogleMaps_CenterLon = ''; 	// The longitude of the center  中心经度
+FCKConfig.GoogleMaps_Zoom = ''; 	// The zoom level		缩放级别
+FCKConfig.GoogleMaps_MarkerText = ''; 	// The text for the marker	标记文本
+FCKConfig.GoogleMaps_WrapperClass = ''; 	// 请查看下面的FCKConfig.GoogleMaps_WrapperClass 参数说明	
+FCKConfig.GoogleMaps_PublicKey = ''; 		// 请查看下面的FCKConfig.GoogleMaps_PublicKey 参数说明
+
+使用方法： 在 fckeditor/fckconfig.js 中 加入以上这些参数：
+
+/*** 
+ ********** FCKConfig.GoogleMaps_WrapperClass 参数说明：*****************
+
+The Google Maps automatically fills the width and height of the generated div, so if you want to add a little spacing and a border, you need to use a div around it. If this entry contains a non-empty value then such a div will be generated with this class.
+Important: in the preview inside the editor, the class will be applied to an image, not a div!
+
+在谷歌地图会自动填写的宽度和高度生成的分区，所以如果你想添加一个小间隔和边界，你需要使用它周围一科。如果此项包含一个非空值，那么这样的分区都必须与这个类生成的。 
+重要提示：在编辑器内预览，类将适用于图像，而不是一个div！
+***/
+/*** 
+ ********** FCKConfig.GoogleMaps_PublicKey 参数说明：*****************
+1. English description:
+If you are using the editor in a different domain than the final location of the web, the maps won't work correctly by default. In this situation you must use this setting. First, set the GoogleMaps_Key to the key of the domain where FCKeditor will be run, and then you have two options: 
+Set an emtpy value for GoogleMaps_PublicKey (FCKConfig.GoogleMaps_PublicKey = '';) this means that when the user wants to create a map he must supply the key for the final domain. This is useful if you don't know beforehand all the domains where that installation will be used. Of course, you must explain to your users how to get an API Key
+Set the value of the final domain in GoogleMaps_PublicKey. For the user this means no troubles at all, everything works automatically
+2. 中文描述：
+如果您使用的是一个比网站的最终位置不同的域编辑，地图将无法正常工作的情况下。在这种情况下，您必须使用此设置。首先，设置GoogleMaps_Key到域的关键是在fckeditor的运行，然后你有两种选择： 
+设置一个GoogleMaps_PublicKey emtpy值（FCKConfig.GoogleMaps_PublicKey = '';）这意味着，当用户想创建一个映射，他必须提供的最后域的关键。这是有用的，如果你事先不知道的所有在该装置将使用域。当然，你必须向你的用户如何获得API密钥
+设置在GoogleMaps_PublicKey最终域值。对于用户，这意味着完全没有烦恼，一切自动运行
+***/
+
+
+
+

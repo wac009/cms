@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全国智能化养老实验基地</title>
+<meta http-equiv="keywords" content="养老 智能化 智能化养老实验基地"/>
+<meta http-equiv="description" content="全国智能化养老实验基地"/>
+[#include "default/include/head_res.inc"/]
+</head>
+
+<body>
+[#include "default/include/页头顶栏.html"/]
+<div id="container">
+[#include "default/include/页头导航栏.html"/]
+[#include "default/include/页头滚动栏.html"/]
+
+<div id="content">
+	<!-- 宣传栏开始 -->
+ 	<!-- <div class="ad_2">
+ 		<div class="ad_21"><img src="${resTpl}/img/ads/ad_2_1.jpg" /></div>
+ 		<div class="ad_22"><img src="${resTpl}/img/ads/ad_2_2.jpg" /></div>
+ 		<div class="ad_23"><img src="${resTpl}/img/ads/ad_2_3.jpg" /></div>
+ 	</div> -->
+	<!-- 宣传栏结束 -->
+	<div class="mt3 fl">
+		<div class="position"> 您现在正在浏览： <a href="${base}/">首页</a> &raquo; [#list channel.nodeList as n]<a href="${n.url}" target="_blank">${n.name}</a>[#if n_has_next] &raquo; [/#if][/#list]</div>
+		<div class="mt5">
+			<!-- 内容列表开始 -->
+			<div class="w750 fl">
+			    <div class="left_top">
+			      <h2>最新动态</h2>
+			    </div>
+			    <div class="left_div w748">
+					<div class="w96" style="min-height:800px;">
+					[@cms_content_page channelId='333' count=channel.pageSize sysPage='1' pageClass='pagination' styleList='1-1' ctgForm='0' ctgClass='red' lineHeight='11' bottomLine='1' headMark='3' dateFormat='yyyy-MM-dd' datePosition='2' dateClass='gray' channelOption='2' tpl='2'/]
+					</div>
+			    </div>
+			  </div>
+			  <!-- 内容列表结束 -->
+			  [#include "default/include/侧边栏_智能化基地.html"/]
+			</div>
+	</div>
+</div>
+[#include "default/include/页脚信息栏.html"/]
+</div>
+</body>
+</html>

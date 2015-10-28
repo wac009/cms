@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全国老龄办党的群众路线教育实践活动专题</title>
+<script src="${resSys}/jquery/jquery.js" type="text/javascript"></script>
+<script src="${resSys}/festival/festival.js" type="text/javascript"></script>
+<script src="${resTpl}/js/front.js" type="text/javascript"></script>
+<link href="${resTpl}/css/zhuanti/dqzlx.css" rel="stylesheet" type="text/css"/>
+<link href="${resTpl}/css/common.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div id="container">
+       <div id="header">
+           <div id="banner"></div>
+           <div id="navi">
+            	<a href="http://www.cncaprc.gov.cn"  target="_blank">网站首页</a>
+                <a href="http://www.cncaprc.gov.cn/dqzlxjyjg/index.jhtml"  target="_blank">老龄办机关</a>
+                <a href="http://www.cncaprc.gov.cn/dqzlxjysj/index.jhtml"  target="_blank">上级精神</a>
+                <a href="http://www.cncaprc.gov.cn/dqzlxjyzs/index.jhtml"  target="_blank">直属单位</a>
+           </div>
+       </div>
+     
+      <div id="flash">
+          [@cms_content_list typeId='3' styleList='3-1' titLen='18' append='...'  count='5' flashWidth='460' flashHeight='260' textHeight='22' channelId='278' channelOption='2' tpl='2' orderBy='3'/]
+      </div>
+      
+      <div class="dongtai">
+           <div class="title">
+                 <span class="tt">老龄办机关</span>
+                 <span class="more"><a href="http://www.cncaprc.gov.cn/dqzlxjyjg/index.jhtml"  target="_blank">更多>></a></span>
+           </div>
+           <div class="list">
+             <ul>
+                    [@cms_content_list channelId='279' count='8' titLen='21' append='...' channelOption='2' dateFormat='MM-dd' ]
+			          [#list tag_list as a]
+			          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+					  [/#list]
+			         [/@cms_content_list]
+              </ul>
+           </div>
+      </div>
+     
+      <div class="content">
+           <div class="title">
+                 <span class="tt">上级精神</span>
+                 <span class="more"><a href="http://www.cncaprc.gov.cn/dqzlxjysj/index.jhtml"  target="_blank">更多>></a></span>
+           </div>
+           <div class="list">
+             <ul>
+                 [@cms_content_list channelId='280' count='8' titLen='21' append='...' channelOption='2' dateFormat='MM-dd' ]
+			          [#list tag_list as a]
+			          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+					  [/#list]
+			         [/@cms_content_list]
+              </ul>
+           </div>
+      </div>
+      
+      <div class="content-right">
+           <div class="title">
+                 <span class="tt">直属单位</span>
+                 <span class="more"><a href="http://www.cncaprc.gov.cn/dqzlxjyzs/index.jhtml"  target="_blank">更多>></a></span>
+           </div>
+           <div class="list">
+             <ul>
+                  [@cms_content_list channelId='281' count='8' titLen='21' append='...' channelOption='2' dateFormat='MM-dd' ]
+			          [#list tag_list as a]
+			          	<li><a href="${a.url}" title="${a.title?replace('<br/>','')}" target="_blank">[@text_cut s=a.title?replace('<br/>','') len=titLen append=append/]</a><span class="time">${a.date?string(dateFormat)}</span></li>
+					  [/#list]
+			         [/@cms_content_list]
+              </ul>
+           </div>
+      </div> 
+      
+ <div id="footer">
+版权所有：全国老龄工作委员会办公室 
+  <br />
+  网站管理：全国老龄办信息中心 ICP备案编号：京ICP备 08103269 邮编：100011 </div>  
+    </div>       
+</div>
+ 
+</body>
+</html>
